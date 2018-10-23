@@ -35,11 +35,17 @@ public class PlayerMove : MonoBehaviour
         RigidBody = GetComponent<Rigidbody>();
 	}
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter(Collision CollisionInfo)
     {
-        if(collision.gameObject.tag == "Ground")
+        if(CollisionInfo.gameObject.tag == "Ground")
         {
             IsGrounded = true;
+        }
+        
+        if(CollisionInfo.gameObject.tag == "Enemy")
+        {
+            ThisTransform.position = new Vector3(0.0f, 3.0f, 0.0f);
+            ThisTransform.rotation = Quaternion.identity;
         }
     }
 

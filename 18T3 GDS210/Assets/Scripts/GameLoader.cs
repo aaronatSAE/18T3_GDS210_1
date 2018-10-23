@@ -45,6 +45,7 @@ public class GameLoader : MonoBehaviour
     private bool IsButtonPressed = false;
 
     private int i;
+    public int HighScore;
 
     Event KeyEvent;
 

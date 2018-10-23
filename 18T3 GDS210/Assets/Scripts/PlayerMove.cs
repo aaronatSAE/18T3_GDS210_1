@@ -6,11 +6,30 @@ public class PlayerMove : MonoBehaviour
 {
     private Transform ThisTransform;
     private Rigidbody RigidBody;
+    public int LivesRemaining;
+    public int Score;
     public float JumpHeight = 512.0f;
     public float RunSpeed = 16.0f;
     public bool IsGrounded;
 
-	void Start ()
+
+    public static PlayerMove GameInstance = null;
+
+    private void Awake()
+    {
+        if (GameInstance == null)
+        {
+            GameInstance = this;
+        }
+
+        if (GameInstance != this)
+        {
+            Destroy(gameObject);
+        }
+        //called first
+    }
+
+    void Start ()
     {
         ThisTransform = transform;
         RigidBody = GetComponent<Rigidbody>();

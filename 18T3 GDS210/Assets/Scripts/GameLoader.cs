@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using SpeechLib;
 using UnityEngine.UI;
+using System.IO;
 using UnityEngine.SceneManagement;
+using UnityEngine.Video;
 
 public class GameLoader : MonoBehaviour
 {
     public GameObject Options;
     public GameObject Accessibility;
-    public GameObject SoundManager;
+    public GameObject AVManager;
     public GameObject LeftButton;
     public GameObject RightButton;
     public GameObject JumpButton;
@@ -25,12 +27,24 @@ public class GameLoader : MonoBehaviour
     public Resolution[] Resolutions;
     public Dropdown ResolutionDropdown;
     public Toggle FullScreenToggle;
-    public Slider SFFXVolume;
+    public Slider SFXVolume;
     public Slider MusicVolume;
+    public Image ButtonColourRed;
+    public Image ButtonColourGreen;
+    public Image ButtonColourBlue;
+    public Image ButtonTextRed;
+    public Image ButtonTextGreen;
+    public Image ButtonTextBlue;
+    public AudioSource MusicSource;
+    public AudioSource SFXSource;
+    public AudioSource VideoAudio;
+    public VideoPlayer VideoPlayer;
 
     private string ButtonText;
 
     private bool IsButtonPressed = false;
+
+    private int i;
 
     Event KeyEvent;
 
@@ -75,7 +89,9 @@ public class GameLoader : MonoBehaviour
             WindowSize.GetComponent<CanvasScaler>().referenceResolution = new Vector2(1920, 1080);
         }
 
-        SoundManager = GameObject.Find("Sound Manager");
+        AVManager = GameObject.Find("AVManager");
+
+        Load();
         //called second
     }
 
@@ -116,6 +132,7 @@ public class GameLoader : MonoBehaviour
     {
         Options.SetActive(false);
         Accessibility.SetActive(false);
+        Save();
     }
 
     public void OnLeftButtonClick()
@@ -216,6 +233,82 @@ public class GameLoader : MonoBehaviour
                 StopCoroutine(GetNewKey());
                 break;
         }
+    }
+
+    public void Load()
+    {
+        if (File.Exists(Application.persistentDataPath + "/gamesettings.json"))
+        {
+            Gamemanager = JsonUtility.FromJson<GameManager>(File.ReadAllText(Application.persistentDataPath + "/gamesettings.json"));
+
+            ResolutionDropdown.value = Gamemanager.ResolutionIndex;
+            ResolutionDropdown.RefreshShownValue();
+
+            CharacterMoveLeft = (KeyCode)System.Enum.Parse(typeof(KeyCode), Gamemanager.LeftKey, true);
+            LeftButton.transform.GetChild(0).GetComponent<Text>().text = Gamemanager.LeftKey;
+
+            CharacterMoveRight = (KeyCode)System.Enum.Parse(typeof(KeyCode), Gamemanager.RightKey, true);
+            RightButton.transform.GetChild(0).GetComponent<Text>().text = Gamemanager.RightKey;
+
+            CharacterJump = (KeyCode)System.Enum.Parse(typeof(KeyCode), Gamemanager.JumpKey, true);
+            JumpButton.transform.GetChild(0).GetComponent<Text>().text = Gamemanager.JumpKey;
+
+            CharacterThrow = (KeyCode)System.Enum.Parse(typeof(KeyCode), Gamemanager.ThrowKey, true);
+            ThrowButton.transform.GetChild(0).GetComponent<Text>().text = Gamemanager.ThrowKey;
+
+            AVManager.transform.GetChild(0).GetComponent<AudioSource>().volume = SFXVolume.value = Gamemanager.SFXVolume;
+            AVManager.transform.GetChild(1).GetComponent<AudioSource>().volume = MusicVolume.value = Gamemanager.MusicVolume;
+            AVManager.transform.GetChild(2).GetComponent<AudioSource>().volume = SFXVolume.value;
+        }
+        else
+        {
+            Gamemanager.ResolutionIndex = Screen.currentResolution.width;
+            Gamemanager.FullScreen = FullScreenToggle.isOn;
+
+            Gamemanager.LeftKey = CharacterMoveLeft.ToString();
+            LeftButton.transform.GetChild(0).GetComponent<Text>().text = Gamemanager.Leftkey;
+
+            Gamemanager.RightKey = CharacterMoveRight.ToString();
+            RightButton.transform.GetChild(0).GetComponent<Text>().text = Gamemanager.RightKey;
+
+            Gamemanager.JumpKey = CharacterJump.ToString();
+            JumpButton.transform.GetChild(0).GetComponent<Text>().text = Gamemanager.JumpKey;
+
+            Gamemanager.ThrowKey = CharacterThrow.ToString();
+            ThrowButton.transform.GetChild(0).GetComponent<Text>().text = Gamemanager.ThrowKey;
+
+            Gamemanager.SFXVolume = SFXVolume.value = 0.5f;
+            Gamemanager.MusicVolume = MusicVolume.value = 0.5f;
+
+            Gamemanager.UIButtoncolour = new Color32(255, 255, 255, 255);
+            ButtonColourRed.GetComponent<Image>().color = new Color32(Gamemanager.UIButtoncolour.r, 0, 0, Gamemanager.UIButtoncolour.a);
+            ButtonColourGreen.GetComponent<Image>().color = new Color32(0, Gamemanager.UIButtoncolour.g, 0, Gamemanager.UIButtoncolour.a);
+            ButtonColourBlue.GetComponent<Image>().color = new Color32(0, 0, Gamemanager.UIButtoncolour.b, Gamemanager.UIButtoncolour.a);
+
+            Gamemanager.UIButtontextcolour = new Color32(0, 0, 0, 255);
+            ButtonTextRed.GetComponent<Image>().color = new Color32(Gamemanager.UIButtontextcolour.r, 0, 0, Gamemanager.UIButtontextcolour.a);
+            ButtonTextGreen.GetComponent<Image>().color = new Color32(0, Gamemanager.UIButtontextcolour.g, 0, Gamemanager.UIButtontextcolour.a);
+            ButtonTextBlue.GetComponent<Image>().color = new Color32(0, 0, Gamemanager.UIButtontextcolour.b, Gamemanager.UIButtontextcolour.a);
+
+            i = 0;
+            while (Gamemanager.ResolutionIndex != Resolutions[i].width)
+            {
+                i++;
+            }
+
+            Gamemanager.ResolutionIndex = i;
+            ResolutionDropdown.value = i;
+
+            ResolutionDropdown.RefreshShownValue();
+
+            Save();
+        }
+    }
+
+    public void Save()
+    {
+        string jsondata = JsonUtility.ToJson(Gamemanager, true);
+        File.WriteAllText(Application.persistentDataPath + "/gamesettings.json", jsondata);
     }
 
     public void Speak(string text)

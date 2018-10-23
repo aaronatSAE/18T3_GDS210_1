@@ -6,7 +6,15 @@ public class BulletCollision : MonoBehaviour
 {
     private void OnCollisionEnter(Collision CollisionInfo)
     {
-        if(CollisionInfo.transform.tag == "Ground" || CollisionInfo.transform.tag == "Enemy")
+        if (CollisionInfo.transform.tag == "Ground")
+        {
+            this.gameObject.SetActive(false);
+        }
+    }
+
+    private void OnTriggerEnter(Collider TriggerInfo)
+    {
+        if (TriggerInfo.transform.tag == "Enemy")
         {
             this.gameObject.SetActive(false);
         }

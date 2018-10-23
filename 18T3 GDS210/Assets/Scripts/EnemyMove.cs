@@ -6,6 +6,7 @@ public class EnemyMove : MonoBehaviour
 {
     private Transform ThisTransform;
     private Rigidbody RigidBody;
+    public int PointValue;
 
     void Start()
     {
@@ -15,9 +16,9 @@ public class EnemyMove : MonoBehaviour
 
     private void OnCollisionEnter(Collision CollisionInfo)
     {
-        if(CollisionInfo.transform.tag == "ThrownObject")
+        if (CollisionInfo.transform.tag == "ThrownObject")
         {
-            PlayerMove.GameInstance.Score += 100;
+            PlayerMove.GameInstance.Score += PointValue;
 
             if(GameLoader.GameInstance.HighScore < PlayerMove.GameInstance.Score)
             {

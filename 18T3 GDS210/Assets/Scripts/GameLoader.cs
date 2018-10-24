@@ -39,6 +39,11 @@ public class GameLoader : MonoBehaviour
     public AudioSource SFXSource;
     public AudioSource VideoAudio;
     public VideoPlayer VideoPlayer;
+    public Button[] UIButtons;
+    public Text[] UIText;
+
+    private Color32 UIButtonColour;
+    private Color32 UIButtonTextColour;
 
     private string ButtonText;
 
@@ -92,17 +97,21 @@ public class GameLoader : MonoBehaviour
 
         AVManager = GameObject.Find("AVManager");
 
+        UIButtons = FindObjectsOfType<Button>();
+        UIText = FindObjectsOfType<Text>();
+
+        Options.SetActive(false);
+        Accessibility.SetActive(false);
+
         Load();
         //called second
     }
 
-    // Use this for initialization
     void Start ()
     {
 		//called third
 	}
 	
-	// Update is called once per frame
 	void Update ()
     {
 		
@@ -236,6 +245,124 @@ public class GameLoader : MonoBehaviour
         }
     }
 
+    private void OnButtonTextLoad()
+    {
+        foreach (Text texts in UIText)
+        {
+            var ButtonTextColour = texts.GetComponent<Text>().color;
+            ButtonTextColour = new Color32(UIButtonTextColour.r, UIButtonTextColour.g, UIButtonTextColour.b, UIButtonTextColour.a);
+            Gamemanager.UIButtonTextColour = UIButtonTextColour;
+            texts.GetComponent<Text>().color = ButtonTextColour;
+        }
+    }
+
+    private void OnButtonColourLoad()
+    {
+        foreach (Button buttons in UIButtons)
+        {
+            var ButtonColour = buttons.GetComponent<Button>().colors;
+            ButtonColour.normalColor = new Color32(UIButtonColour.r, UIButtonColour.g, UIButtonColour.b, UIButtonColour.a);
+            Gamemanager.UIButtonColour = UIButtonColour;
+            buttons.GetComponent<Button>().colors = ButtonColour;
+        }
+    }
+
+    public void TextRedDrag()
+    {
+        if (Input.mousePosition.x < ButtonTextRed.transform.position.x && UIButtonTextColour.r > 0)
+        {
+            UIButtonTextColour.r = (byte)(UIButtonTextColour.r - 1);
+        }
+        else if (Input.mousePosition.x > ButtonTextRed.transform.position.x && UIButtonTextColour.r < 255)
+        {
+            UIButtonTextColour.r = (byte)(UIButtonTextColour.r + 1);
+        }
+
+        ButtonTextRed.GetComponent<Image>().color = new Color32(UIButtonTextColour.r, 0, 0, Gamemanager.UIButtonColour.a);
+
+        OnButtonTextLoad();
+    }
+
+    public void TextGreenDrag()
+    {
+        if (Input.mousePosition.x < ButtonTextGreen.transform.position.x && UIButtonTextColour.g > 0)
+        {
+            UIButtonTextColour.g = (byte)(UIButtonTextColour.g - 1);
+        }
+        else if (Input.mousePosition.x > ButtonTextGreen.transform.position.x && UIButtonTextColour.g < 255)
+        {
+            UIButtonTextColour.g = (byte)(UIButtonTextColour.g + 1);
+        }
+
+        ButtonTextGreen.GetComponent<Image>().color = new Color32(0, UIButtonTextColour.g, 0, Gamemanager.UIButtonColour.a);
+
+        OnButtonTextLoad();
+    }
+
+    public void TextBlueDrag()
+    {
+        if (Input.mousePosition.x < ButtonTextBlue.transform.position.x && UIButtonTextColour.b > 0)
+        {
+            UIButtonTextColour.b = (byte)(UIButtonTextColour.b - 1);
+        }
+        else if (Input.mousePosition.x > ButtonTextBlue.transform.position.x && UIButtonTextColour.b < 255)
+        {
+            UIButtonTextColour.b = (byte)(UIButtonTextColour.b + 1);
+        }
+
+        ButtonTextBlue.GetComponent<Image>().color = new Color32(0, 0, UIButtonTextColour.b, Gamemanager.UIButtonColour.a);
+
+        OnButtonTextLoad();
+    }
+
+    public void ButtonRedColourDrag()
+    {
+        if (Input.mousePosition.x < ButtonColourRed.transform.position.x && UIButtonColour.r > 0)
+        {
+            UIButtonColour.r = (byte)(UIButtonColour.r - 1);
+        }
+        else if (Input.mousePosition.x > ButtonColourRed.transform.position.x && UIButtonColour.r < 255)
+        {
+            UIButtonColour.r = (byte)(UIButtonColour.r + 1);
+        }
+
+        ButtonColourRed.GetComponent<Image>().color = new Color32(UIButtonColour.r, 0, 0, Gamemanager.UIButtontextcolour.a);
+
+        OnButtonColourLoad();
+    }
+
+    public void ButtonGreenColourDrag()
+    {
+        if (Input.mousePosition.x < ButtonColourGreen.transform.position.x && UIButtonColour.g > 0)
+        {
+            UIButtonColour.g = (byte)(UIButtonColour.g - 1);
+        }
+        else if (Input.mousePosition.x > ButtonColourGreen.transform.position.x && UIButtonColour.g < 255)
+        {
+            UIButtonColour.g = (byte)(UIButtonColour.g + 1);
+        }
+
+        ButtonColourGreen.GetComponent<Image>().color = new Color32(0, UIButtonColour.g, 0, Gamemanager.UIButtontextcolour.a);
+
+        OnButtonColourLoad();
+    }
+
+    public void ButtonBlueColourDrag()
+    {
+        if (Input.mousePosition.x < ButtonColourBlue.transform.position.x && UIButtonColour.b > 0)
+        {
+            UIButtonColour.b = (byte)(UIButtonColour.b - 1);
+        }
+        else if (Input.mousePosition.x > ButtonColourGreen.transform.position.x && UIButtonColour.b < 255)
+        {
+            UIButtonColour.b = (byte)(UIButtonColour.b + 1);
+        }
+
+        ButtonColourBlue.GetComponent<Image>().color = new Color32(0, 0, UIButtonColour.b, Gamemanager.UIButtontextcolour.a);
+
+        OnButtonColourLoad();
+    }
+
     public void Load()
     {
         if (File.Exists(Application.persistentDataPath + "/gamesettings.json"))
@@ -256,6 +383,18 @@ public class GameLoader : MonoBehaviour
 
             CharacterThrow = (KeyCode)System.Enum.Parse(typeof(KeyCode), Gamemanager.ThrowKey, true);
             ThrowButton.transform.GetChild(0).GetComponent<Text>().text = Gamemanager.ThrowKey;
+
+            UIButtonColour = Gamemanager.UIButtonColour;
+            ButtonColourRed.GetComponent<Image>().color = new Color32(UIButtonColour.r, 0, 0, UIButtonColour.a);
+            ButtonColourGreen.GetComponent<Image>().color = new Color32(0, UIButtonColour.g, 0, UIButtonColour.a);
+            ButtonColourBlue.GetComponent<Image>().color = new Color32(0, 0, UIButtonColour.b, UIButtonColour.a);
+            OnButtonColourLoad();
+
+            UIButtonTextColour = Gamemanager.UIButtonTextColour;
+            ButtonTextRed.GetComponent<Image>().color = new Color32(UIButtonTextColour.r, 0, 0, UIButtonTextColour.a);
+            ButtonTextGreen.GetComponent<Image>().color = new Color32(0, UIButtonTextColour.g, 0, UIButtonTextColour.a);
+            ButtonTextBlue.GetComponent<Image>().color = new Color32(0, 0, UIButtonTextColour.b, UIButtonTextColour.a);
+            OnButtonTextLoad();
 
             AVManager.transform.GetChild(0).GetComponent<AudioSource>().volume = SFXVolume.value = Gamemanager.SFXVolume;
             AVManager.transform.GetChild(1).GetComponent<AudioSource>().volume = MusicVolume.value = Gamemanager.MusicVolume;

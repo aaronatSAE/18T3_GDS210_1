@@ -113,41 +113,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &5502936 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1301870445224734, guid: 45ed260a51331b248a3ab3be174bbcdc,
-    type: 2}
-  m_PrefabInternal: {fileID: 1492809778}
---- !u!114 &5502939
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 5502936}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 5
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1618246402}
-          m_MethodName: ButtonRedColourDrag
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 1
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  delegates: []
 --- !u!1 &5722279
 GameObject:
   m_ObjectHideFlags: 0
@@ -222,41 +187,6 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1492809778}
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
---- !u!1 &143771860 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1273908652716824, guid: 45ed260a51331b248a3ab3be174bbcdc,
-    type: 2}
-  m_PrefabInternal: {fileID: 1492809778}
---- !u!114 &143771863
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 143771860}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 5
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1618246402}
-          m_MethodName: TextGreenDrag
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  delegates: []
 --- !u!1 &195080746
 GameObject:
   m_ObjectHideFlags: 0
@@ -394,7 +324,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Delegates:
-  - eventID: 0
+  - eventID: 9
     callback:
       m_PersistentCalls:
         m_Calls:
@@ -626,21 +556,17 @@ Prefab:
       objectReference: {fileID: 1618246402}
     - target: {fileID: 1829464559917020, guid: f86716e1765e4024b95828cf63c2df8b, type: 2}
       propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 224826146724263376, guid: f86716e1765e4024b95828cf63c2df8b,
-        type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: 0.000061035156
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f86716e1765e4024b95828cf63c2df8b, type: 2}
   m_IsPrefabAsset: 0
---- !u!1 &540019929 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1465972292911348, guid: 45ed260a51331b248a3ab3be174bbcdc,
+--- !u!114 &540019931 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114079751430528046, guid: 45ed260a51331b248a3ab3be174bbcdc,
     type: 2}
   m_PrefabInternal: {fileID: 1492809778}
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1001 &556889231
 Prefab:
   m_ObjectHideFlags: 0
@@ -680,9 +606,18 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 1785906553005462, guid: 569238b480a613648854491809e2432a, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 569238b480a613648854491809e2432a, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &602736023 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1799592014068022, guid: 569238b480a613648854491809e2432a,
+    type: 2}
+  m_PrefabInternal: {fileID: 556889231}
 --- !u!1 &612364028
 GameObject:
   m_ObjectHideFlags: 0
@@ -774,59 +709,12 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 224394757886251380, guid: f86716e1765e4024b95828cf63c2df8b,
     type: 2}
   m_PrefabInternal: {fileID: 500304787}
---- !u!1 &814815219 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1770993934648538, guid: 45ed260a51331b248a3ab3be174bbcdc,
+--- !u!114 &814815221 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114337546573728860, guid: 45ed260a51331b248a3ab3be174bbcdc,
     type: 2}
   m_PrefabInternal: {fileID: 1492809778}
---- !u!1 &860511745 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1674151186350874, guid: 45ed260a51331b248a3ab3be174bbcdc,
-    type: 2}
-  m_PrefabInternal: {fileID: 1492809778}
---- !u!114 &860511748
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 860511745}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 5
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1618246402}
-          m_MethodName: TextBlueDrag
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 1
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  delegates: []
---- !u!114 &860511749
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 860511745}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates: []
-  delegates: []
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &864134479 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1546879954095110, guid: 45ed260a51331b248a3ab3be174bbcdc,
@@ -1105,76 +993,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!1 &1280964558 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1096152368497452, guid: 45ed260a51331b248a3ab3be174bbcdc,
-    type: 2}
-  m_PrefabInternal: {fileID: 1492809778}
---- !u!114 &1280964561
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1280964558}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 5
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1618246402}
-          m_MethodName: TextRedDrag
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 1
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  delegates: []
---- !u!1 &1447366937 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1997224576111950, guid: 45ed260a51331b248a3ab3be174bbcdc,
-    type: 2}
-  m_PrefabInternal: {fileID: 1492809778}
---- !u!114 &1447366940
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1447366937}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 5
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1618246402}
-          m_MethodName: ButtonGreenColourDrag
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 1
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  delegates: []
 --- !u!1 &1449354349
 GameObject:
   m_ObjectHideFlags: 0
@@ -1312,7 +1130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Delegates:
-  - eventID: 0
+  - eventID: 9
     callback:
       m_PersistentCalls:
         m_Calls:
@@ -1444,17 +1262,7 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 114079751430528046, guid: 45ed260a51331b248a3ab3be174bbcdc,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1618246402}
-    - target: {fileID: 114337546573728860, guid: 45ed260a51331b248a3ab3be174bbcdc,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1618246402}
-    - target: {fileID: 114624256176653690, guid: 45ed260a51331b248a3ab3be174bbcdc,
+    - target: {fileID: 114162220005228910, guid: 45ed260a51331b248a3ab3be174bbcdc,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1464,15 +1272,51 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1618246402}
-    - target: {fileID: 114162220005228910, guid: 45ed260a51331b248a3ab3be174bbcdc,
+    - target: {fileID: 114624256176653690, guid: 45ed260a51331b248a3ab3be174bbcdc,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1618246402}
-    - target: {fileID: 1546879954095110, guid: 45ed260a51331b248a3ab3be174bbcdc, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
+    - target: {fileID: 114337546573728860, guid: 45ed260a51331b248a3ab3be174bbcdc,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1618246402}
+    - target: {fileID: 114079751430528046, guid: 45ed260a51331b248a3ab3be174bbcdc,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1618246402}
+    - target: {fileID: 114659733082838846, guid: 45ed260a51331b248a3ab3be174bbcdc,
+        type: 2}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1618246402}
+    - target: {fileID: 114045373635369018, guid: 45ed260a51331b248a3ab3be174bbcdc,
+        type: 2}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1618246402}
+    - target: {fileID: 114815778955251406, guid: 45ed260a51331b248a3ab3be174bbcdc,
+        type: 2}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1618246402}
+    - target: {fileID: 114426523244045138, guid: 45ed260a51331b248a3ab3be174bbcdc,
+        type: 2}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1618246402}
+    - target: {fileID: 114496316218854454, guid: 45ed260a51331b248a3ab3be174bbcdc,
+        type: 2}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1618246402}
+    - target: {fileID: 114768126619269258, guid: 45ed260a51331b248a3ab3be174bbcdc,
+        type: 2}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1618246402}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45ed260a51331b248a3ab3be174bbcdc, type: 2}
   m_IsPrefabAsset: 0
@@ -1756,7 +1600,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Delegates:
-  - eventID: 0
+  - eventID: 9
     callback:
       m_PersistentCalls:
         m_Calls:
@@ -1795,7 +1639,7 @@ GameObject:
   - component: {fileID: 1618246401}
   - component: {fileID: 1618246402}
   m_Layer: 0
-  m_Name: Game Manager
+  m_Name: GameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1827,15 +1671,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Options: {fileID: 688164009}
   Accessibility: {fileID: 864134479}
-  AVManager: {fileID: 0}
-  LeftButton: {fileID: 1863152574}
-  RightButton: {fileID: 1695140450}
-  JumpButton: {fileID: 540019929}
-  ThrowButton: {fileID: 814815219}
+  AVManager: {fileID: 602736023}
   CharacterMoveLeft: 97
   CharacterMoveRight: 100
   CharacterJump: 32
   CharacterThrow: 116
+  PlayButton: {fileID: 1872349140}
+  OptionsButton: {fileID: 1449354351}
+  AccessibilityButton: {fileID: 195080748}
+  QuitButton: {fileID: 1616520904}
+  LeftButton: {fileID: 1863152576}
+  RightButton: {fileID: 1695140452}
+  JumpButton: {fileID: 540019931}
+  ThrowButton: {fileID: 814815221}
   WindowSize: {fileID: 1186707706}
   ResolutionDropdown: {fileID: 197661492}
   FullScreenToggle: {fileID: 1126655987}
@@ -1851,14 +1699,16 @@ MonoBehaviour:
   SFXSource: {fileID: 0}
   VideoAudio: {fileID: 0}
   VideoPlayer: {fileID: 0}
+  VideoCamera: {fileID: 0}
   UIButtons: []
   UIText: []
   HighScore: 0
---- !u!1 &1695140450 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1710531918418304, guid: 45ed260a51331b248a3ab3be174bbcdc,
+--- !u!114 &1695140452 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114219655662430928, guid: 45ed260a51331b248a3ab3be174bbcdc,
     type: 2}
   m_PrefabInternal: {fileID: 1492809778}
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &1714057108
 GameObject:
   m_ObjectHideFlags: 0
@@ -1905,7 +1755,7 @@ MonoBehaviour:
   m_Script: {fileID: -619905303, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 1872349138}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &1714057111
@@ -1921,11 +1771,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1863152574 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1586922006064422, guid: 45ed260a51331b248a3ab3be174bbcdc,
+--- !u!114 &1863152576 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114162220005228910, guid: 45ed260a51331b248a3ab3be174bbcdc,
     type: 2}
   m_PrefabInternal: {fileID: 1492809778}
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &1872349138
 GameObject:
   m_ObjectHideFlags: 0
@@ -2066,6 +1917,12 @@ MonoBehaviour:
   - eventID: 0
     callback:
       m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 9
+    callback:
+      m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1872349144}
           m_MethodName: OnMouseOver
@@ -2092,38 +1949,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 957dcf67d3a715c4aba1f3214839fd8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1939879225 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1175752867833582, guid: 45ed260a51331b248a3ab3be174bbcdc,
-    type: 2}
-  m_PrefabInternal: {fileID: 1492809778}
---- !u!114 &1939879228
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1939879225}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 5
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1618246402}
-          m_MethodName: ButtonBlueColourDrag
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 1
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  delegates: []

@@ -12,10 +12,6 @@ public class GameLoader : MonoBehaviour
     public GameObject Options;
     public GameObject Accessibility;
     public GameObject AVManager;
-    public GameObject LeftButton;
-    public GameObject RightButton;
-    public GameObject JumpButton;
-    public GameObject ThrowButton;
 
     public KeyCode CharacterMoveLeft;
     public KeyCode CharacterMoveRight;
@@ -23,6 +19,14 @@ public class GameLoader : MonoBehaviour
     public KeyCode CharacterThrow;
     private KeyCode NewKey;
 
+    public Button PlayButton;
+    public Button OptionsButton;
+    public Button AccessibilityButton;
+    public Button QuitButton;
+    public Button LeftButton;
+    public Button RightButton;
+    public Button JumpButton;
+    public Button ThrowButton;
     public Canvas WindowSize;
     public Resolution[] Resolutions;
     public Dropdown ResolutionDropdown;
@@ -39,6 +43,7 @@ public class GameLoader : MonoBehaviour
     public AudioSource SFXSource;
     public AudioSource VideoAudio;
     public VideoPlayer VideoPlayer;
+    public Camera VideoCamera;
     public Button[] UIButtons;
     public Text[] UIText;
 
@@ -76,6 +81,16 @@ public class GameLoader : MonoBehaviour
 
     private void OnEnable()
     {
+        SFXSource = AVManager.transform.GetChild(0).GetComponent<AudioSource>();
+        MusicSource = AVManager.transform.GetChild(1).GetComponent<AudioSource>();
+        VideoAudio = AVManager.transform.GetChild(2).GetComponent<AudioSource>();
+        VideoPlayer = AVManager.transform.GetChild(2).GetComponent<VideoPlayer>();
+        VideoCamera = AVManager.transform.GetChild(2).GetComponent<Camera>();
+
+        FullScreenToggle.onValueChanged.AddListener(delegate { OnFullScreenToggle(); });
+        ResolutionDropdown.onValueChanged.AddListener(delegate { OnResolutionChanged(); });
+        SFXVolume.onValueChanged.AddListener(delegate { OnSFXSliderChange(); });
+        MusicVolume.onValueChanged.AddListener(delegate { OnMusicSliderChange(); });
         ResolutionDropdown.ClearOptions();
 
         Resolutions = Screen.resolutions;
@@ -94,8 +109,6 @@ public class GameLoader : MonoBehaviour
             WindowSize.GetComponent<CanvasScaler>().matchWidthOrHeight = 0.5f;
             WindowSize.GetComponent<CanvasScaler>().referenceResolution = new Vector2(1920, 1080);
         }
-
-        AVManager = GameObject.Find("AVManager");
 
         UIButtons = FindObjectsOfType<Button>();
         UIText = FindObjectsOfType<Text>();
@@ -117,6 +130,34 @@ public class GameLoader : MonoBehaviour
 		
 	}
 
+    void OnFullScreenToggle()
+    {
+        Gamemanager.FullScreen = Screen.fullScreen = FullScreenToggle.isOn;
+        OnResolutionChanged();
+    }
+
+    void OnResolutionChanged()
+    {
+        Screen.SetResolution(Resolutions[ResolutionDropdown.value].width, Resolutions[ResolutionDropdown.value].height, Gamemanager.FullScreen);
+        Gamemanager.Resolutionindex = ResolutionDropdown.value;
+        ResolutionDropdown.RefreshShownValue();
+
+        if (!FullScreenToggle.isOn)
+        {
+            WindowSize.GetComponent<CanvasScaler>().referenceResolution = new Vector2(Resolutions[ResolutionDropdown.value].width, Resolutions[ResolutionDropdown.value].height);
+        }
+    }
+
+    void OnSFXSliderChange()
+    {
+        SFXSource.volume = Gamemanager.SFXvolume = SFXVolume.value;
+    }
+
+    void OnMusicSliderChange()
+    {
+        MusicSource.volume = Gamemanager.Musicvolume = MusicVolume.value;
+    }
+
     public void OnPlayButtonClicked()
     {
         SceneManager.LoadScene(1, LoadSceneMode.Single);
@@ -126,22 +167,37 @@ public class GameLoader : MonoBehaviour
     {
         Options.SetActive(true);
         ResolutionDropdown.Select();
+        PlayButton.enabled = false;
+        OptionsButton.enabled = false;
+        AccessibilityButton.enabled = false;
+        QuitButton.enabled = false;
+        
     }
 
     public void OnAccessibilityButtonClicked()
     {
         Accessibility.SetActive(true);
+        LeftButton.Select();
+        PlayButton.enabled = false;
+        OptionsButton.enabled = false;
+        AccessibilityButton.enabled = false;
+        QuitButton.enabled = false;
     }
 
     public void OnQuitButtonClicked()
     {
-
+        Application.Quit();
     }
 
     public void OnApplyButtonClick()
     {
         Options.SetActive(false);
         Accessibility.SetActive(false);
+        PlayButton.enabled = true;
+        OptionsButton.enabled = true;
+        AccessibilityButton.enabled = true;
+        QuitButton.enabled = true;
+        PlayButton.Select();
         Save();
     }
 

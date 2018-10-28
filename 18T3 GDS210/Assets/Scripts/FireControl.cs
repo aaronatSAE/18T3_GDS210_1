@@ -36,7 +36,7 @@ public class FireControl : MonoBehaviour
             if (!TrownObjectList[i].activeInHierarchy)
             {
                 TrownObjectList[i].SetActive(true);
-                ThrownObject.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
+                TrownObjectList[i].transform.position = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
                 TrownObjectList[i].GetComponent<Rigidbody>().velocity = transform.right * Speed;
                 break;
             }

@@ -10,11 +10,16 @@ public class BulletCollision : MonoBehaviour
         {
             this.gameObject.SetActive(false);
         }
+
+        if (CollisionInfo.transform.tag == "Enemy")
+        {
+            this.gameObject.SetActive(false);
+        }
     }
 
-    private void OnTriggerEnter(Collider TriggerInfo)
+    private void Update()
     {
-        if (TriggerInfo.transform.tag == "Enemy")
+        if(this.gameObject.transform.position.y <= 0.5f)
         {
             this.gameObject.SetActive(false);
         }

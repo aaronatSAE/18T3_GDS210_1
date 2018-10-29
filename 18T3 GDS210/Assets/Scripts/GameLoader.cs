@@ -31,6 +31,7 @@ public class GameLoader : MonoBehaviour
     public Resolution[] Resolutions;
     public Dropdown ResolutionDropdown;
     public Toggle FullScreenToggle;
+    public Toggle TextToSpeech;
     public Slider SFXVolume;
     public Slider MusicVolume;
     public Image ButtonColourRed;
@@ -45,6 +46,7 @@ public class GameLoader : MonoBehaviour
     public VideoPlayer VideoPlayer;
     public Camera VideoCamera;
     public Button[] UIButtons;
+    public TTS_Button[] UITTSButtons;
     public Text[] UIText;
 
     private Color32 UIButtonColour;
@@ -87,12 +89,6 @@ public class GameLoader : MonoBehaviour
         VideoPlayer = AVManager.transform.GetChild(2).GetComponent<VideoPlayer>();
         VideoCamera = AVManager.transform.GetChild(2).GetComponent<Camera>();
 
-        FullScreenToggle.onValueChanged.AddListener(delegate { OnFullScreenToggle(); });
-        ResolutionDropdown.onValueChanged.AddListener(delegate { OnResolutionChanged(); });
-        SFXVolume.onValueChanged.AddListener(delegate { OnSFXSliderChange(); });
-        MusicVolume.onValueChanged.AddListener(delegate { OnMusicSliderChange(); });
-        ResolutionDropdown.ClearOptions();
-
         Resolutions = Screen.resolutions;
 
         if (Resolutions != null)
@@ -111,10 +107,18 @@ public class GameLoader : MonoBehaviour
         }
 
         UIButtons = FindObjectsOfType<Button>();
+        UITTSButtons = FindObjectsOfType<TTS_Button>();
         UIText = FindObjectsOfType<Text>();
 
+        FullScreenToggle.onValueChanged.AddListener(delegate { OnFullScreenToggle(); });
+        TextToSpeech.onValueChanged.AddListener(delegate { OnTextToSpeechToggle(); });
+        ResolutionDropdown.onValueChanged.AddListener(delegate { OnResolutionChanged(); });
+        SFXVolume.onValueChanged.AddListener(delegate { OnSFXSliderChange(); });
+        MusicVolume.onValueChanged.AddListener(delegate { OnMusicSliderChange(); });
+        ResolutionDropdown.ClearOptions();
+
         Options.SetActive(false);
-        Accessibility.SetActive(false);
+        //Accessibility.SetActive(false);
 
         Load();
         //called second
@@ -134,6 +138,27 @@ public class GameLoader : MonoBehaviour
     {
         Gamemanager.FullScreen = Screen.fullScreen = FullScreenToggle.isOn;
         OnResolutionChanged();
+    }
+
+    public void OnTextToSpeechToggle()
+    {
+        Gamemanager.TextToSpeech = TextToSpeech.isOn;
+
+        if(TextToSpeech.isOn == false)
+        {
+            foreach (TTS_Button buttons in UITTSButtons)
+            {
+                buttons.enabled = false;
+            }
+        }
+        else
+        {
+            foreach (TTS_Button buttons in UITTSButtons)
+            {
+                buttons.enabled = true;
+            }
+        }
+
     }
 
     void OnResolutionChanged()
@@ -427,6 +452,11 @@ public class GameLoader : MonoBehaviour
 
             ResolutionDropdown.value = Gamemanager.ResolutionIndex;
             ResolutionDropdown.RefreshShownValue();
+
+            FullScreenToggle.isOn = Gamemanager.FullScreen;
+            TextToSpeech.isOn = Gamemanager.TextToSpeech;
+
+
 
             CharacterMoveLeft = (KeyCode)System.Enum.Parse(typeof(KeyCode), Gamemanager.LeftKey, true);
             LeftButton.transform.GetChild(0).GetComponent<Text>().text = Gamemanager.LeftKey;

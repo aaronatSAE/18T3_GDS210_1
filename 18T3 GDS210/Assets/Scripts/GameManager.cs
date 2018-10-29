@@ -8,7 +8,7 @@ public class GameManager
     /*Notice that there is base class such as MonoBehaviour being used. If it was then it could not be serialized.                          */
 
     public bool Fullscreen;
-    public bool Autofire;
+    public bool Texttospeech;
     public int Resolutionindex;
     public float Musicvolume;
     public float SFXvolume;
@@ -98,16 +98,16 @@ public class GameManager
         }
     }
 
-    public bool AutoFire
+    public bool TextToSpeech
     {
         get
         {
-            return Autofire;
+            return Texttospeech;
         }
 
         set
         {
-            Autofire = value;
+            Texttospeech = value;
         }
     }
 

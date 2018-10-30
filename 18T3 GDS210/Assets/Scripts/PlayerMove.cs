@@ -45,16 +45,16 @@ public class PlayerMove : MonoBehaviour
         {
             ThisTransform.position = new Vector3(ThisTransform.position.x, ThisTransform.position.y, Ground.transform.position.z);
             ThisTransform.rotation = Quaternion.identity;
+            ThisTransform.GetComponent<PlayerMove>().enabled = true;
             IsGrounded = true;
         }
-    }
 
-    private void OnTriggerEnter(Collider TriggerInfo)
-    {
-        if (TriggerInfo.gameObject.tag == "Enemy")
+        if (CollisionInfo.gameObject.tag == "Enemy")
         {
-            ThisTransform.position = new Vector3(ThisTransform.position.x - 2.5f, 1.0f, 0.0f);
+            ThisTransform.position = new Vector3(ThisTransform.position.x - 2.5f, 2.0f, 0.0f);
             ThisTransform.rotation = Quaternion.identity;
+            ThisTransform.GetComponent<PlayerMove>().enabled = false;
+            IsGrounded = false;
             LivesRemaining -= 1;
         }
     }

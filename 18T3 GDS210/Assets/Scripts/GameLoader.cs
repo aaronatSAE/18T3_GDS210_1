@@ -46,7 +46,6 @@ public class GameLoader : MonoBehaviour
     public VideoPlayer VideoPlayer;
     public Camera VideoCamera;
     public Button[] UIButtons;
-    public TTS_Button[] UITTSButtons;
     public Text[] UIText;
 
     private Color32 UIButtonColour;
@@ -107,7 +106,6 @@ public class GameLoader : MonoBehaviour
         }
 
         UIButtons = FindObjectsOfType<Button>();
-        UITTSButtons = FindObjectsOfType<TTS_Button>();
         UIText = FindObjectsOfType<Text>();
 
         FullScreenToggle.onValueChanged.AddListener(delegate { OnFullScreenToggle(); });
@@ -131,7 +129,19 @@ public class GameLoader : MonoBehaviour
 	
 	void Update ()
     {
-		
+		if(Input.GetKeyDown(KeyCode.Escape) && SceneManager.GetActiveScene().buildIndex != 0)
+        {
+            if(!Options.activeSelf)
+            {
+                Options.SetActive(true);
+                Accessibility.SetActive(true);
+            }
+            else
+            {
+                Options.SetActive(false);
+                Accessibility.SetActive(false);
+            }
+        }
 	}
 
     void OnFullScreenToggle()
@@ -146,16 +156,26 @@ public class GameLoader : MonoBehaviour
 
         if(TextToSpeech.isOn == false)
         {
-            foreach (TTS_Button buttons in UITTSButtons)
+            foreach (Button buttons in UIButtons)
             {
-                buttons.enabled = false;
+                var TTS = buttons.gameObject.GetComponent<TTS_Button>();
+
+                if(TTS != null)
+                {
+                    TTS.enabled = false;
+                }
             }
         }
         else
         {
-            foreach (TTS_Button buttons in UITTSButtons)
+            foreach (Button buttons in UIButtons)
             {
-                buttons.enabled = true;
+                var TTS = buttons.gameObject.GetComponent<TTS_Button>();
+
+                if (TTS != null)
+                {
+                    TTS.enabled = true;
+                }
             }
         }
 

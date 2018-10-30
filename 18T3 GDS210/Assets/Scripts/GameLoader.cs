@@ -23,6 +23,7 @@ public class GameLoader : MonoBehaviour
     public Button OptionsButton;
     public Button AccessibilityButton;
     public Button QuitButton;
+    public Button Menu;
     public Button LeftButton;
     public Button RightButton;
     public Button JumpButton;
@@ -110,7 +111,7 @@ public class GameLoader : MonoBehaviour
 
         FullScreenToggle.onValueChanged.AddListener(delegate { OnFullScreenToggle(); });
         TextToSpeech.onValueChanged.AddListener(delegate { OnTextToSpeechToggle(); });
-        ResolutionDropdown.onValueChanged.AddListener(delegate { OnResolutionChanged(); });
+        ResolutionDropdown.onValueChanged.AddListener(delegate { OnResolutionChange(); });
         SFXVolume.onValueChanged.AddListener(delegate { OnSFXSliderChange(); });
         MusicVolume.onValueChanged.AddListener(delegate { OnMusicSliderChange(); });
         ResolutionDropdown.ClearOptions();
@@ -131,15 +132,17 @@ public class GameLoader : MonoBehaviour
     {
 		if(Input.GetKeyDown(KeyCode.Escape) && SceneManager.GetActiveScene().buildIndex != 0)
         {
-            if(!Options.activeSelf)
+            if (!OptionsButton.gameObject.activeSelf)
             {
-                Options.SetActive(true);
-                Accessibility.SetActive(true);
+                OptionsButton.gameObject.SetActive(true);
+                AccessibilityButton.gameObject.SetActive(true);
+                Time.timeScale = 0;
             }
             else
             {
-                Options.SetActive(false);
-                Accessibility.SetActive(false);
+                OptionsButton.gameObject.SetActive(false);
+                AccessibilityButton.gameObject.SetActive(false);
+                Time.timeScale = 1;
             }
         }
 	}
@@ -147,7 +150,7 @@ public class GameLoader : MonoBehaviour
     void OnFullScreenToggle()
     {
         Gamemanager.FullScreen = Screen.fullScreen = FullScreenToggle.isOn;
-        OnResolutionChanged();
+        OnResolutionChange();
     }
 
     public void OnTextToSpeechToggle()
@@ -181,7 +184,7 @@ public class GameLoader : MonoBehaviour
 
     }
 
-    void OnResolutionChanged()
+    void OnResolutionChange()
     {
         Screen.SetResolution(Resolutions[ResolutionDropdown.value].width, Resolutions[ResolutionDropdown.value].height, Gamemanager.FullScreen);
         Gamemanager.Resolutionindex = ResolutionDropdown.value;
@@ -203,46 +206,100 @@ public class GameLoader : MonoBehaviour
         MusicSource.volume = Gamemanager.Musicvolume = MusicVolume.value;
     }
 
-    public void OnPlayButtonClicked()
+    public void OnPlayButtonClick()
     {
         SceneManager.LoadScene(1, LoadSceneMode.Single);
     }
 
-    public void OnOptionsButtonClicked()
+    public void OnOptionsButtonClick()
     {
-        Options.SetActive(true);
-        ResolutionDropdown.Select();
-        PlayButton.enabled = false;
-        OptionsButton.enabled = false;
-        AccessibilityButton.enabled = false;
-        QuitButton.enabled = false;
-        
+        if(SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            Options.SetActive(true);
+            ResolutionDropdown.Select();
+            PlayButton.enabled = false;
+            OptionsButton.enabled = false;
+            AccessibilityButton.enabled = false;
+            QuitButton.enabled = false;
+        }
+        else
+        {
+            Debug.Log("in game");
+            Options.SetActive(true);
+            ResolutionDropdown.Select();
+            Menu.enabled = false;
+            OptionsButton.enabled = false;
+            AccessibilityButton.enabled = false;
+        }
     }
 
-    public void OnAccessibilityButtonClicked()
+    public void OnAccessibilityButtonClick()
     {
-        Accessibility.SetActive(true);
-        LeftButton.Select();
-        PlayButton.enabled = false;
-        OptionsButton.enabled = false;
-        AccessibilityButton.enabled = false;
-        QuitButton.enabled = false;
+        if (SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            Accessibility.SetActive(true);
+            LeftButton.Select();
+            PlayButton.enabled = false;
+            OptionsButton.enabled = false;
+            AccessibilityButton.enabled = false;
+            QuitButton.enabled = false;
+        }
+        else
+        {
+            Debug.Log("in game");
+            Accessibility.SetActive(true);
+            LeftButton.Select();
+            Menu.enabled = false;
+            OptionsButton.enabled = false;
+            AccessibilityButton.enabled = false;
+        }
+
     }
 
-    public void OnQuitButtonClicked()
+    public void OnQuitButtonClick()
     {
         Application.Quit();
     }
 
+    public void OnInGameMenuClick()
+    {
+        if (!OptionsButton.gameObject.activeSelf)
+        {
+            OptionsButton.gameObject.SetActive(true);
+            AccessibilityButton.gameObject.SetActive(true);
+            Time.timeScale = 0;
+        }
+        else
+        {
+            OptionsButton.gameObject.SetActive(false);
+            AccessibilityButton.gameObject.SetActive(false);
+            Time.timeScale = 1;
+        }
+    }
+
     public void OnApplyButtonClick()
     {
-        Options.SetActive(false);
-        Accessibility.SetActive(false);
-        PlayButton.enabled = true;
-        OptionsButton.enabled = true;
-        AccessibilityButton.enabled = true;
-        QuitButton.enabled = true;
-        PlayButton.Select();
+        if (SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            Options.SetActive(false);
+            Accessibility.SetActive(false);
+            PlayButton.enabled = true;
+            OptionsButton.enabled = true;
+            AccessibilityButton.enabled = true;
+            QuitButton.enabled = true;
+            PlayButton.Select();
+        }
+        else
+        {
+            Debug.Log("in game");
+            Options.SetActive(false);
+            Accessibility.SetActive(false);
+            Menu.enabled = true;
+            OptionsButton.enabled = true;
+            AccessibilityButton.enabled = true;
+            Menu.Select();
+        }
+
         Save();
     }
 

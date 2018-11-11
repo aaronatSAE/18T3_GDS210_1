@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - ThrownObject
   - Checkpoint
+  - Heart
   layers:
   - Default
   - TransparentFX

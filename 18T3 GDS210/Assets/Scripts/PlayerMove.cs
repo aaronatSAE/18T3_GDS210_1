@@ -7,7 +7,7 @@ public class PlayerMove : MonoBehaviour
     private Transform ThisTransform;
     private Rigidbody RigidBody;
     private BoxCollider PlayerCollider;
-    public int HeartPieces = 4;
+    public int HeartPieces = 3;
     public int LivesRemaining;
     public int Score;
     public float JumpHeight = 512.0f;
@@ -53,15 +53,15 @@ public class PlayerMove : MonoBehaviour
 
         if (CollisionInfo.gameObject.tag == "Enemy")
         {
-            ThisTransform.position = new Vector3(Checkpoint.position.x, Checkpoint.position.y + 2, Checkpoint.position.z);
+            ThisTransform.position = new Vector3(ThisTransform.position.x - 2.5f, 2.0f, 0.0f);
             ThisTransform.rotation = Quaternion.identity;
             ThisTransform.GetComponent<PlayerMove>().enabled = false;
             IsGrounded = false;
 
-            if (HeartPieces == 0)
+            if (HeartPieces == -1)
             {
                 LivesRemaining--;
-                HeartPieces = 4;
+                HeartPieces = 3;
                 ThisTransform.position = new Vector3(Checkpoint.position.x, Checkpoint.position.y + 2, Checkpoint.position.z);
             }
             else
@@ -69,7 +69,7 @@ public class PlayerMove : MonoBehaviour
                 HeartPieces--;
             }
 
-            if(LivesRemaining == 0 && HeartPieces == 0)
+            if(LivesRemaining == 0 && HeartPieces == -1)
             {
                 ThisTransform.GetComponent<PlayerMove>().enabled = false;
                 ThisTransform.position = new Vector3(ThisTransform.position.x - 2.5f, 2.0f, 0.0f);

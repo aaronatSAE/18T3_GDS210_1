@@ -6,13 +6,15 @@ public class PlayerMove : MonoBehaviour
 {
     private Transform ThisTransform;
     private Rigidbody RigidBody;
+    private BoxCollider PlayerCollider;
+    public int HeartPieces = 4;
     public int LivesRemaining;
     public int Score;
     public float JumpHeight = 512.0f;
     public float RunSpeed = 16.0f;
     public bool IsGrounded;
 
-    public GameObject Checkpoint;
+    public Transform Checkpoint;
     public GameObject Ground;
 
 
@@ -29,7 +31,6 @@ public class PlayerMove : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        //called first
     }
 
     void Start ()
@@ -37,6 +38,7 @@ public class PlayerMove : MonoBehaviour
         Ground = GameObject.Find("Ground");
         ThisTransform = transform;
         RigidBody = GetComponent<Rigidbody>();
+        PlayerCollider = GetComponent<BoxCollider>();
 	}
 
     private void OnCollisionEnter(Collision CollisionInfo)
@@ -51,11 +53,28 @@ public class PlayerMove : MonoBehaviour
 
         if (CollisionInfo.gameObject.tag == "Enemy")
         {
-            ThisTransform.position = new Vector3(ThisTransform.position.x - 2.5f, 2.0f, 0.0f);
+            ThisTransform.position = new Vector3(Checkpoint.position.x, Checkpoint.position.y + 2, Checkpoint.position.z);
             ThisTransform.rotation = Quaternion.identity;
             ThisTransform.GetComponent<PlayerMove>().enabled = false;
             IsGrounded = false;
-            LivesRemaining -= 1;
+
+            if (HeartPieces == 0)
+            {
+                LivesRemaining--;
+                HeartPieces = 4;
+                ThisTransform.position = new Vector3(Checkpoint.position.x, Checkpoint.position.y + 2, Checkpoint.position.z);
+            }
+            else
+            {
+                HeartPieces--;
+            }
+
+            if(LivesRemaining == 0 && HeartPieces == 0)
+            {
+                ThisTransform.GetComponent<PlayerMove>().enabled = false;
+                ThisTransform.position = new Vector3(ThisTransform.position.x - 2.5f, 2.0f, 0.0f);
+                PlayerCollider.enabled = false;
+            }
         }
     }
 

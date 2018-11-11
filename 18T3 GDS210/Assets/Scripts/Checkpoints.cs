@@ -8,7 +8,7 @@ public class Checkpoints : MonoBehaviour
     {
         if (TriggerInfo.gameObject.tag == "Player")
         {
-            PlayerMove.GameInstance.Checkpoint = this.gameObject;
+            PlayerMove.GameInstance.Checkpoint = this.gameObject.transform;
         }
     }
 }

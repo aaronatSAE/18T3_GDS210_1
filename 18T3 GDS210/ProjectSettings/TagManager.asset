@@ -9,6 +9,7 @@ TagManager:
   - ThrownObject
   - Checkpoint
   - Heart
+  - Exit
   layers:
   - Default
   - TransparentFX

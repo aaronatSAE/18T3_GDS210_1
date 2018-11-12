@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/AntonyClements.unity
     guid: 1852bfa583619004abbf33ead6146078
   - enabled: 1
-    path: Assets/Scenes/TestLevel.unity
-    guid: 846bded17e47e1446a6099a797ee0760
+    path: Assets/Scenes/Level Layouts/AL Level 1 Layout.unity
+    guid: 2e476d8f8aba9614188c90b32fec2dba
   m_configObjects: {}

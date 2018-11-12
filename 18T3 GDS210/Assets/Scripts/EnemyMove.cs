@@ -7,6 +7,7 @@ public class EnemyMove : MonoBehaviour
     private Transform ThisTransform;
     private Rigidbody RigidBody;
     public int PointValue;
+    public float Speed;
 
     void Start()
     {
@@ -27,10 +28,16 @@ public class EnemyMove : MonoBehaviour
 
             this.gameObject.SetActive(false);
         }
+
+        if (CollisionInfo.transform.tag == "Ground" || CollisionInfo.transform.tag == "Enemy")
+        {
+            Speed *= -1.0f;
+        }
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
+
+    // Update is called once per frame
+    void Update ()
+    {
+        transform.Translate(new Vector3(Speed, 0, 0) * Time.deltaTime);
 	}
 }

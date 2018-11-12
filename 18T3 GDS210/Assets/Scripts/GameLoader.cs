@@ -117,7 +117,7 @@ public class GameLoader : MonoBehaviour
         ResolutionDropdown.ClearOptions();
 
         Options.SetActive(false);
-        //Accessibility.SetActive(false);
+        Accessibility.SetActive(false);
 
         Load();
         //called second

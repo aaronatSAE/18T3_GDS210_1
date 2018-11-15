@@ -13,6 +13,8 @@ public class FireControl : MonoBehaviour
 
     private float NextFire = 1.0F;
 
+    public float AvailableScrolls;
+
     List<GameObject> TrownObjectList = new List<GameObject>();
     
     void Start ()
@@ -41,6 +43,8 @@ public class FireControl : MonoBehaviour
                 break;
             }
         }
+
+        AvailableScrolls -= 1;
     }
 
     void Update()
@@ -48,7 +52,11 @@ public class FireControl : MonoBehaviour
         if (Input.GetKey(GameLoader.GameInstance.CharacterThrow) && Time.time > NextFire)
         {
             NextFire = Time.time + FireRate;
-            Spawn();
+
+            if(AvailableScrolls > 0)
+            {
+                Spawn();
+            }
         }
     }
 }

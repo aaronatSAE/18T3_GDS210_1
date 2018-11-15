@@ -1174,7 +1174,7 @@ GameObject:
   - component: {fileID: 249787896}
   m_Layer: 0
   m_Name: Mushroom
-  m_TagString: Ground
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1477,7 +1477,7 @@ GameObject:
   - component: {fileID: 369875007}
   m_Layer: 0
   m_Name: Mushroom (4)
-  m_TagString: Ground
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1780,7 +1780,7 @@ GameObject:
   - component: {fileID: 425710492}
   m_Layer: 0
   m_Name: Mushroom (3)
-  m_TagString: Ground
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3565,7 +3565,7 @@ GameObject:
   - component: {fileID: 1127755655}
   m_Layer: 0
   m_Name: Mushroom (7)
-  m_TagString: Ground
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3874,7 +3874,7 @@ GameObject:
   - component: {fileID: 1344696729}
   m_Layer: 0
   m_Name: Mushroom (2)
-  m_TagString: Ground
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4177,7 +4177,7 @@ GameObject:
   - component: {fileID: 1391422067}
   m_Layer: 0
   m_Name: Mushroom (1)
-  m_TagString: Ground
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4320,7 +4320,7 @@ GameObject:
   - component: {fileID: 1459891201}
   m_Layer: 0
   m_Name: Mushroom (5)
-  m_TagString: Ground
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5168,7 +5168,7 @@ GameObject:
   - component: {fileID: 1699258355}
   m_Layer: 0
   m_Name: Mushroom (6)
-  m_TagString: Ground
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

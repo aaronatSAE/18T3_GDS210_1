@@ -6,6 +6,7 @@ public class EnemyMove : MonoBehaviour
 {
     private Transform ThisTransform;
     private Rigidbody RigidBody;
+    private SpriteRenderer Sprite;
     public int PointValue;
     public float Speed;
 
@@ -13,6 +14,7 @@ public class EnemyMove : MonoBehaviour
     {
         ThisTransform = transform;
         RigidBody = GetComponent<Rigidbody>();
+        Sprite = GetComponent<SpriteRenderer>();
     }
 
     private void OnCollisionEnter(Collision CollisionInfo)
@@ -32,6 +34,15 @@ public class EnemyMove : MonoBehaviour
         if (CollisionInfo.transform.tag == "Ground" || CollisionInfo.transform.tag == "Enemy")
         {
             Speed *= -1.0f;
+
+            if(Speed < 0)
+            {
+                Sprite.flipX = false;
+            }
+            else
+            {
+                Sprite.flipX = true;
+            }
         }
     }
 

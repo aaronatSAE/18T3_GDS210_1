@@ -7,6 +7,8 @@ public class PlayerMove : MonoBehaviour
     private Transform ThisTransform;
     private Rigidbody RigidBody;
     private BoxCollider PlayerCollider;
+    private Animator Animation;
+    private SpriteRenderer Sprite;
     public int HeartPieces = 3;
     public int LivesRemaining;
     public int Score;
@@ -39,6 +41,8 @@ public class PlayerMove : MonoBehaviour
         ThisTransform = transform;
         RigidBody = GetComponent<Rigidbody>();
         PlayerCollider = GetComponent<BoxCollider>();
+        Animation = GetComponent<Animator>();
+        Sprite = GetComponent<SpriteRenderer>();
 	}
 
     private void OnCollisionEnter(Collision CollisionInfo)
@@ -89,11 +93,13 @@ public class PlayerMove : MonoBehaviour
         if (Input.GetKey(GameLoader.GameInstance.CharacterMoveLeft))
         {
             ThisTransform.Translate(Vector3.left * Time.deltaTime * RunSpeed, Space.Self);
+            Sprite.flipX = false;
         }
 
         if (Input.GetKey(GameLoader.GameInstance.CharacterMoveRight))
         {
             ThisTransform.Translate(Vector3.right * Time.deltaTime * RunSpeed, Space.Self);
+            Sprite.flipX = true;
         }
 	}
 }

@@ -486,6 +486,11 @@ Prefab:
       propertyPath: m_Name
       value: Shroomy (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 54248627618072646, guid: 426fc321dffbc104fae730af1b64ecfc,
+        type: 2}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 426fc321dffbc104fae730af1b64ecfc, type: 2}
   m_IsPrefabAsset: 0
@@ -643,6 +648,11 @@ Prefab:
     - target: {fileID: 1444629666575478, guid: 426fc321dffbc104fae730af1b64ecfc, type: 2}
       propertyPath: m_Name
       value: Shroomy (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 54248627618072646, guid: 426fc321dffbc104fae730af1b64ecfc,
+        type: 2}
+      propertyPath: m_Constraints
+      value: 112
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 426fc321dffbc104fae730af1b64ecfc, type: 2}
@@ -1201,6 +1211,11 @@ Prefab:
     - target: {fileID: 1444629666575478, guid: 426fc321dffbc104fae730af1b64ecfc, type: 2}
       propertyPath: m_Name
       value: Shroomy (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 54248627618072646, guid: 426fc321dffbc104fae730af1b64ecfc,
+        type: 2}
+      propertyPath: m_Constraints
+      value: 112
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 426fc321dffbc104fae730af1b64ecfc, type: 2}
@@ -2767,6 +2782,11 @@ Prefab:
       propertyPath: m_Name
       value: Shroomy (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 54248627618072646, guid: 426fc321dffbc104fae730af1b64ecfc,
+        type: 2}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 426fc321dffbc104fae730af1b64ecfc, type: 2}
   m_IsPrefabAsset: 0
@@ -2891,6 +2911,11 @@ Prefab:
     - target: {fileID: 1444629666575478, guid: 426fc321dffbc104fae730af1b64ecfc, type: 2}
       propertyPath: m_Name
       value: Shroomy (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 54248627618072646, guid: 426fc321dffbc104fae730af1b64ecfc,
+        type: 2}
+      propertyPath: m_Constraints
+      value: 112
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 426fc321dffbc104fae730af1b64ecfc, type: 2}
@@ -3172,6 +3197,11 @@ Prefab:
     - target: {fileID: 1444629666575478, guid: 426fc321dffbc104fae730af1b64ecfc, type: 2}
       propertyPath: m_Name
       value: Shroomy (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 54248627618072646, guid: 426fc321dffbc104fae730af1b64ecfc,
+        type: 2}
+      propertyPath: m_Constraints
+      value: 112
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 426fc321dffbc104fae730af1b64ecfc, type: 2}
@@ -4045,6 +4075,11 @@ Prefab:
       propertyPath: m_Name
       value: Shroomy (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 54248627618072646, guid: 426fc321dffbc104fae730af1b64ecfc,
+        type: 2}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 426fc321dffbc104fae730af1b64ecfc, type: 2}
   m_IsPrefabAsset: 0
@@ -4275,6 +4310,11 @@ Prefab:
     - target: {fileID: 4912959810975392, guid: 426fc321dffbc104fae730af1b64ecfc, type: 2}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 54248627618072646, guid: 426fc321dffbc104fae730af1b64ecfc,
+        type: 2}
+      propertyPath: m_Constraints
+      value: 112
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 426fc321dffbc104fae730af1b64ecfc, type: 2}

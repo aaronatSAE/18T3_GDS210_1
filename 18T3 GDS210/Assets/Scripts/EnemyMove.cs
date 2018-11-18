@@ -9,12 +9,18 @@ public class EnemyMove : MonoBehaviour
     private SpriteRenderer Sprite;
     public int PointValue;
     public float Speed;
+    public float Distance;
+    private float Max;
+    private float Min;
 
     void Start()
     {
         ThisTransform = transform;
         RigidBody = GetComponent<Rigidbody>();
         Sprite = GetComponent<SpriteRenderer>();
+
+        Max = ThisTransform.position.x + Distance;
+        Min = ThisTransform.position.x - Distance;
     }
 
     private void OnCollisionEnter(Collision CollisionInfo)
@@ -50,5 +56,22 @@ public class EnemyMove : MonoBehaviour
     void Update ()
     {
         ThisTransform.Translate(new Vector3(Speed, 0, 0) * Time.deltaTime);
+
+        if(Distance != 0)
+        {
+            if (ThisTransform.position.x < Min || ThisTransform.position.x > Max)
+            {
+                Speed *= -1.0f;
+
+                if (Speed < 0)
+                {
+                    Sprite.flipX = false;
+                }
+                else
+                {
+                    Sprite.flipX = true;
+                }
+            }
+        }
 	}
 }

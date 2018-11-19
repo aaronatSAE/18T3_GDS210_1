@@ -3497,6 +3497,7 @@ GameObject:
   - component: {fileID: 1929145370}
   - component: {fileID: 1929145369}
   - component: {fileID: 1929145368}
+  - component: {fileID: 1929145372}
   m_Layer: 0
   m_Name: Sideways Moving Platform
   m_TagString: Untagged
@@ -3565,12 +3566,31 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1929145367}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.158, y: 0.593, z: 0}
+  m_LocalPosition: {x: 2.221, y: 0.671, z: 0}
   m_LocalScale: {x: 0.19104001, y: 0.049999, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1929145372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1929145367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2ccc33ef8a827d4badf4f13d6ae9ecd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Direction: 
+  Speed: 0
+  XAxis: 1
+  MaxXDistance: 2.33
+  MinXDistance: 2.013
+  YAxis: 0
+  MaxYDistance: 0
+  MinYDistance: 0
 --- !u!1 &1948690642
 GameObject:
   m_ObjectHideFlags: 0

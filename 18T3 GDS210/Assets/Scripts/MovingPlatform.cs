@@ -8,8 +8,12 @@ public class MovingPlatform : MonoBehaviour
     private Rigidbody RigidBody;
     public string Direction;
     public float Speed;
-    public float XDistance;
-    public float YDistance;
+    public bool XAxis;
+    public float MaxXDistance = 0.0f;
+    public float MinXDistance = 0.0f;
+    public bool YAxis;
+    public float MaxYDistance = 0.0f;
+    public float MinYDistance = 0.0f;
 
 
 
@@ -30,18 +34,18 @@ public class MovingPlatform : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(XDistance != 0)
+        if(XAxis == true)
         {
-            if(ThisTransform.position.x > XDistance || ThisTransform.position.x < -XDistance)
+            if(ThisTransform.position.x > MaxXDistance || ThisTransform.position.x < MinXDistance)
             {
                 Speed *= -1.0f;
             }
 
         }
 
-        if (YDistance != 0)
+        if (YAxis == true)
         {
-            if (ThisTransform.position.y > YDistance || ThisTransform.position.y < -YDistance)
+            if (ThisTransform.position.y > MaxYDistance || ThisTransform.position.y < MinYDistance)
             {
                 Speed *= -1.0f;
             }

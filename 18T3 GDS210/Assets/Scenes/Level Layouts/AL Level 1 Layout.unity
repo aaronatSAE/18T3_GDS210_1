@@ -4944,7 +4944,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4282752200556834, guid: c5a3fc824d5931642bb1acacfa3aae3c, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -28.687399
+      value: -26.61
       objectReference: {fileID: 0}
     - target: {fileID: 4282752200556834, guid: c5a3fc824d5931642bb1acacfa3aae3c, type: 2}
       propertyPath: m_LocalPosition.z
@@ -4974,9 +4974,10 @@ Prefab:
       propertyPath: m_Name
       value: MovingPlatform (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 4282752200556834, guid: c5a3fc824d5931642bb1acacfa3aae3c, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1.2546235
+    - target: {fileID: 114048452703989384, guid: c5a3fc824d5931642bb1acacfa3aae3c,
+        type: 2}
+      propertyPath: Speed
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5a3fc824d5931642bb1acacfa3aae3c, type: 2}

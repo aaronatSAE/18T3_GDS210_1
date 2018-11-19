@@ -27,6 +27,6 @@ public class ChildOfPlatform : MonoBehaviour
 
     private void OnTriggerExit(Collider TriggerInfo)
     {
-        //TriggerInfo.transform.parent = TriggerInfo.transform;
+        TriggerInfo.transform.parent = null;
     }
 }

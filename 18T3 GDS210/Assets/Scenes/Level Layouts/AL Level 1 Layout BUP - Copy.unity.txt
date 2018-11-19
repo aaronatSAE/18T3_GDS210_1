@@ -3729,6 +3729,30 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4653142033281486, guid: 4507123e293811742813275fcce4d7b9,
     type: 2}
   m_PrefabInternal: {fileID: 986642805}
+<<<<<<< HEAD:18T3 GDS210/Assets/Scenes/Level Layouts/AL Level 1 Layout BUP.unity
+--- !u!4 &1001182369 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4653142033281486, guid: 4507123e293811742813275fcce4d7b9,
+    type: 2}
+  m_PrefabInternal: {fileID: 1531764628}
+--- !u!1 &1039893365 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1069719988104290, guid: e5b9c6ce6b9986547b6c1700bf462616,
+    type: 2}
+  m_PrefabInternal: {fileID: 1654343215}
+--- !u!114 &1039893370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1039893365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1535477b397a95b44a6e04a2118c8cc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+=======
+>>>>>>> ecebc338dc76d28182fd0d769de4588763665628:18T3 GDS210/Assets/Scenes/Level Layouts/AL Level 1 Layout.unity
 --- !u!1001 &1053127572
 Prefab:
   m_ObjectHideFlags: 0

@@ -42,7 +42,7 @@ public class EnemyMove : MonoBehaviour
         {
             Speed *= -1.0f;
 
-            if(Speed < 0)
+            if(Speed > 0)
             {
                 Sprite.flipX = false;
             }
@@ -64,7 +64,7 @@ public class EnemyMove : MonoBehaviour
             {
                 Speed *= -1.0f;
 
-                if (Speed < 0)
+                if (Speed > 0)
                 {
                     Sprite.flipX = false;
                 }

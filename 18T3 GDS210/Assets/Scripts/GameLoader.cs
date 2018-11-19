@@ -114,7 +114,6 @@ public class GameLoader : MonoBehaviour
         ResolutionDropdown.onValueChanged.AddListener(delegate { OnResolutionChange(); });
         SFXVolume.onValueChanged.AddListener(delegate { OnSFXSliderChange(); });
         MusicVolume.onValueChanged.AddListener(delegate { OnMusicSliderChange(); });
-        ResolutionDropdown.ClearOptions();
 
         Options.SetActive(false);
         Accessibility.SetActive(false);

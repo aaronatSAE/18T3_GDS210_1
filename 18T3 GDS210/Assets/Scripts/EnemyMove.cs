@@ -9,18 +9,19 @@ public class EnemyMove : MonoBehaviour
     private SpriteRenderer Sprite;
     public int PointValue;
     public float Speed;
-    public float Distance;
-    private float Max;
-    private float Min;
+    public bool Infinite;
+    public float Max;
+    public float Min;
+    private float PatrolMax;
+    private float PatrolMin;
 
     void Start()
     {
         ThisTransform = transform;
         RigidBody = GetComponent<Rigidbody>();
         Sprite = GetComponent<SpriteRenderer>();
-
-        Max = ThisTransform.position.x + Distance;
-        Min = ThisTransform.position.x - Distance;
+        PatrolMax = ThisTransform.position.x + Max;
+        PatrolMin = ThisTransform.position.x - Min;
     }
 
     private void OnCollisionEnter(Collision CollisionInfo)
@@ -57,9 +58,9 @@ public class EnemyMove : MonoBehaviour
     {
         ThisTransform.Translate(new Vector3(Speed, 0, 0) * Time.deltaTime);
 
-        if(Distance != 0)
+        if(Infinite != true)
         {
-            if (ThisTransform.position.x < Min || ThisTransform.position.x > Max)
+            if (ThisTransform.position.x < PatrolMin || ThisTransform.position.x > PatrolMax)
             {
                 Speed *= -1.0f;
 

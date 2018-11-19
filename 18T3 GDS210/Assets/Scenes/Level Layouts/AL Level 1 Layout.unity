@@ -818,7 +818,7 @@ GameObject:
   - component: {fileID: 212940999}
   m_Layer: 0
   m_Name: Bridge
-  m_TagString: Ground
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1731,7 +1731,7 @@ GameObject:
   - component: {fileID: 516077250}
   m_Layer: 0
   m_Name: Bridge (2)
-  m_TagString: Ground
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2511,7 +2511,7 @@ GameObject:
   - component: {fileID: 930327967}
   m_Layer: 0
   m_Name: Bridge (1)
-  m_TagString: Ground
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3439,12 +3439,12 @@ Prefab:
     - target: {fileID: 114146680604376394, guid: 0140c25bcd2d37847b6faf8efc7d5e38,
         type: 2}
       propertyPath: RunSpeed
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114146680604376394, guid: 0140c25bcd2d37847b6faf8efc7d5e38,
         type: 2}
       propertyPath: JumpHeight
-      value: 345
+      value: 374
       objectReference: {fileID: 0}
     - target: {fileID: 114989187321919562, guid: 0140c25bcd2d37847b6faf8efc7d5e38,
         type: 2}
@@ -5169,7 +5169,7 @@ Prefab:
     - target: {fileID: 114048452703989384, guid: c5a3fc824d5931642bb1acacfa3aae3c,
         type: 2}
       propertyPath: Speed
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114048452703989384, guid: c5a3fc824d5931642bb1acacfa3aae3c,
         type: 2}

@@ -3432,7 +3432,7 @@ Prefab:
     - target: {fileID: 114146680604376394, guid: 0140c25bcd2d37847b6faf8efc7d5e38,
         type: 2}
       propertyPath: JumpHeight
-      value: 352
+      value: 355
       objectReference: {fileID: 0}
     - target: {fileID: 114989187321919562, guid: 0140c25bcd2d37847b6faf8efc7d5e38,
         type: 2}
@@ -5145,7 +5145,7 @@ Prefab:
     - target: {fileID: 114048452703989384, guid: c5a3fc824d5931642bb1acacfa3aae3c,
         type: 2}
       propertyPath: Speed
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114048452703989384, guid: c5a3fc824d5931642bb1acacfa3aae3c,
         type: 2}

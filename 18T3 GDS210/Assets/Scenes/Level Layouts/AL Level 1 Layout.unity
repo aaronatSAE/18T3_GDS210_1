@@ -6060,7 +6060,7 @@ Prefab:
     - target: {fileID: 114048452703989384, guid: c5a3fc824d5931642bb1acacfa3aae3c,
         type: 2}
       propertyPath: Speed
-      value: 3
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 23463563953505042, guid: c5a3fc824d5931642bb1acacfa3aae3c,
         type: 2}
@@ -6257,7 +6257,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4282752200556834, guid: c5a3fc824d5931642bb1acacfa3aae3c, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -22.39
+      value: -22.25
       objectReference: {fileID: 0}
     - target: {fileID: 4282752200556834, guid: c5a3fc824d5931642bb1acacfa3aae3c, type: 2}
       propertyPath: m_LocalPosition.z

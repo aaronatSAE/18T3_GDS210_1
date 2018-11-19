@@ -3427,12 +3427,12 @@ Prefab:
     - target: {fileID: 114146680604376394, guid: 0140c25bcd2d37847b6faf8efc7d5e38,
         type: 2}
       propertyPath: RunSpeed
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 114146680604376394, guid: 0140c25bcd2d37847b6faf8efc7d5e38,
         type: 2}
       propertyPath: JumpHeight
-      value: 345
+      value: 352
       objectReference: {fileID: 0}
     - target: {fileID: 114989187321919562, guid: 0140c25bcd2d37847b6faf8efc7d5e38,
         type: 2}

@@ -3730,14 +3730,11 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 986642805}
 <<<<<<< HEAD
-<<<<<<< HEAD
 --- !u!4 &1001182369 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4653142033281486, guid: 4507123e293811742813275fcce4d7b9,
     type: 2}
   m_PrefabInternal: {fileID: 1531764628}
-=======
->>>>>>> parent of ecebc33... fixed platforms
 =======
 >>>>>>> parent of ecebc33... fixed platforms
 --- !u!1 &1039893365 stripped
@@ -6545,7 +6542,6 @@ Prefab:
   m_SourcePrefab: {fileID: 100100000, guid: e5b9c6ce6b9986547b6c1700bf462616, type: 2}
   m_IsPrefabAsset: 0
 <<<<<<< HEAD
-<<<<<<< HEAD
 --- !u!1001 &1661816182
 Prefab:
   m_ObjectHideFlags: 0
@@ -6605,8 +6601,6 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5a3fc824d5931642bb1acacfa3aae3c, type: 2}
   m_IsPrefabAsset: 0
-=======
->>>>>>> parent of ecebc33... fixed platforms
 =======
 >>>>>>> parent of ecebc33... fixed platforms
 --- !u!1001 &1664748563

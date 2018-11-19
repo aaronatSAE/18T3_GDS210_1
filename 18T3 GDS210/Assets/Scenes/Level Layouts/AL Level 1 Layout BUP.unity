@@ -3729,6 +3729,27 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4653142033281486, guid: 4507123e293811742813275fcce4d7b9,
     type: 2}
   m_PrefabInternal: {fileID: 986642805}
+--- !u!4 &1001182369 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4653142033281486, guid: 4507123e293811742813275fcce4d7b9,
+    type: 2}
+  m_PrefabInternal: {fileID: 1531764628}
+--- !u!1 &1039893365 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1069719988104290, guid: e5b9c6ce6b9986547b6c1700bf462616,
+    type: 2}
+  m_PrefabInternal: {fileID: 1654343215}
+--- !u!114 &1039893370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1039893365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1535477b397a95b44a6e04a2118c8cc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1053127572
 Prefab:
   m_ObjectHideFlags: 0
@@ -6475,7 +6496,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4653142033281486, guid: 4507123e293811742813275fcce4d7b9,
     type: 2}
   m_PrefabInternal: {fileID: 1633786551}
-<<<<<<< HEAD:18T3 GDS210/Assets/Scenes/Level Layouts/AL Level 1 Layout BUP.unity
 --- !u!1001 &1654343215
 Prefab:
   m_ObjectHideFlags: 0
@@ -6577,8 +6597,6 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5a3fc824d5931642bb1acacfa3aae3c, type: 2}
   m_IsPrefabAsset: 0
-=======
->>>>>>> ecebc338dc76d28182fd0d769de4588763665628:18T3 GDS210/Assets/Scenes/Level Layouts/AL Level 1 Layout.unity
 --- !u!1001 &1664748563
 Prefab:
   m_ObjectHideFlags: 0
@@ -7954,6 +7972,56 @@ Prefab:
     - target: {fileID: 1733114122141066, guid: c5a3fc824d5931642bb1acacfa3aae3c, type: 2}
       propertyPath: m_Name
       value: MovingPlatform (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114048452703989384, guid: c5a3fc824d5931642bb1acacfa3aae3c,
+        type: 2}
+      propertyPath: Direction
+      value: Left
+      objectReference: {fileID: 0}
+    - target: {fileID: 114048452703989384, guid: c5a3fc824d5931642bb1acacfa3aae3c,
+        type: 2}
+      propertyPath: XDistance
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114048452703989384, guid: c5a3fc824d5931642bb1acacfa3aae3c,
+        type: 2}
+      propertyPath: Speed
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 23463563953505042, guid: c5a3fc824d5931642bb1acacfa3aae3c,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 429dd90a38598a6439cac85af03f10df, type: 2}
+    - target: {fileID: 114048452703989384, guid: c5a3fc824d5931642bb1acacfa3aae3c,
+        type: 2}
+      propertyPath: XAxis
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114048452703989384, guid: c5a3fc824d5931642bb1acacfa3aae3c,
+        type: 2}
+      propertyPath: MaxYDistance
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114048452703989384, guid: c5a3fc824d5931642bb1acacfa3aae3c,
+        type: 2}
+      propertyPath: MinYDistance
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114048452703989384, guid: c5a3fc824d5931642bb1acacfa3aae3c,
+        type: 2}
+      propertyPath: MaxXDistance
+      value: 51.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114048452703989384, guid: c5a3fc824d5931642bb1acacfa3aae3c,
+        type: 2}
+      propertyPath: MinXDistance
+      value: 46.82
+      objectReference: {fileID: 0}
+    - target: {fileID: 114048452703989384, guid: c5a3fc824d5931642bb1acacfa3aae3c,
+        type: 2}
+      propertyPath: YAxis
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5a3fc824d5931642bb1acacfa3aae3c, type: 2}

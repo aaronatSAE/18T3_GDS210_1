@@ -60,7 +60,7 @@ public class PlayerMove : MonoBehaviour
         if (CollisionInfo.gameObject.tag == "Enemy")
         {
             ThisTransform.GetComponent<Rigidbody>().AddForce(Vector3.up * Time.deltaTime * ThisTransform.GetComponent<PlayerMove>().KnockbackHeight, ForceMode.Impulse); //.velocity = ThisTransform.up * Time.deltaTime * ThisTransform.GetComponent<PlayerMove>().KnockbackHeight;
-            ThisTransform.GetComponent<Rigidbody>() //.velocity = -ThisTransform.right * Time.deltaTime * ThisTransform.GetComponent<PlayerMove>().KnockbackDistance;
+            ThisTransform.GetComponent<Rigidbody>(); //.velocity = -ThisTransform.right * Time.deltaTime * ThisTransform.GetComponent<PlayerMove>().KnockbackDistance;
             ThisTransform.position = new Vector3(ThisTransform.position.x - KnockbackDistance, ThisTransform.position.y + KnockbackHeight, 0.0f);
             ThisTransform.rotation = Quaternion.identity;
             ThisTransform.GetComponent<PlayerMove>().enabled = false;

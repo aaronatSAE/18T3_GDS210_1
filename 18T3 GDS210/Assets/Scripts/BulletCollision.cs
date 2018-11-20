@@ -6,12 +6,7 @@ public class BulletCollision : MonoBehaviour
 {
     private void OnCollisionEnter(Collision CollisionInfo)
     {
-        if (CollisionInfo.transform.tag == "Ground")
-        {
-            this.gameObject.SetActive(false);
-        }
-
-        if (CollisionInfo.transform.tag == "Enemy")
+        if (CollisionInfo.transform.tag == "Ground" || CollisionInfo.transform.tag == "Enemy" || CollisionInfo.transform.tag == "Bridge")
         {
             this.gameObject.SetActive(false);
         }
@@ -19,7 +14,7 @@ public class BulletCollision : MonoBehaviour
 
     private void Update()
     {
-        if(this.gameObject.transform.position.y <= 0.5f)
+        if(this.gameObject.transform.position.y <= (this.gameObject.transform.parent.position.y - 0.5f))
         {
             this.gameObject.SetActive(false);
         }

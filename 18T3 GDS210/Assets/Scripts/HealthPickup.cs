@@ -18,13 +18,18 @@ public class HealthPickup : MonoBehaviour {
     {
         if (TriggerInfo.gameObject.tag == "Player")
         {
-            if (PlayerMove.GameInstance.HeartPieces < 3)
+            //if (PlayerMove.GameInstance.HeartPieces < 3)
+            //{
+            //    PlayerMove.GameInstance.HeartPieces++;
+            //}
+            //else
+            //{
+            //    PlayerMove.GameInstance.HeartPieces = -1;
+            //    PlayerMove.GameInstance.LivesRemaining++;
+            //}
+
+            if (PlayerMove.GameInstance.LivesRemaining < 3)
             {
-                PlayerMove.GameInstance.HeartPieces++;
-            }
-            else
-            {
-                PlayerMove.GameInstance.HeartPieces = -1;
                 PlayerMove.GameInstance.LivesRemaining++;
             }
 

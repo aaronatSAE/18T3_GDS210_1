@@ -9,13 +9,12 @@ public class PlayerMove : MonoBehaviour
     private BoxCollider PlayerCollider;
     private Animator Animation;
     private SpriteRenderer Sprite;
-    public int HeartPieces = 3;
+    //public int HeartPieces = 3;
     public int LivesRemaining;
     public int Score;
     public float JumpHeight = 512.0f;
     public float RunSpeed = 16.0f;
-    public float KnockbackDistance;
-    public float KnockbackHeight;
+    public float Knockback;
     public bool IsGrounded;
 
     public Transform Checkpoint;
@@ -59,28 +58,28 @@ public class PlayerMove : MonoBehaviour
 
         if (CollisionInfo.gameObject.tag == "Enemy")
         {
-            ThisTransform.GetComponent<Rigidbody>().AddForce(Vector3.up * Time.deltaTime * ThisTransform.GetComponent<PlayerMove>().KnockbackHeight, ForceMode.Impulse); //.velocity = ThisTransform.up * Time.deltaTime * ThisTransform.GetComponent<PlayerMove>().KnockbackHeight;
-            ThisTransform.GetComponent<Rigidbody>(); //.velocity = -ThisTransform.right * Time.deltaTime * ThisTransform.GetComponent<PlayerMove>().KnockbackDistance;
-            ThisTransform.position = new Vector3(ThisTransform.position.x - KnockbackDistance, ThisTransform.position.y + KnockbackHeight, 0.0f);
+            ThisTransform.GetComponent<Rigidbody>().useGravity = false;
+            ThisTransform.GetComponent<Rigidbody>().AddForce((ThisTransform.up + -ThisTransform.right) * Knockback, ForceMode.Force);
+            ThisTransform.GetComponent<Rigidbody>().useGravity = true;
             ThisTransform.rotation = Quaternion.identity;
             ThisTransform.GetComponent<PlayerMove>().enabled = false;
             IsGrounded = false;
 
-            if (HeartPieces == -1)
-            {
-                LivesRemaining--;
-                HeartPieces = 3;
-                ThisTransform.position = new Vector3(Checkpoint.position.x, Checkpoint.position.y + KnockbackHeight, Checkpoint.position.z);
-            }
-            else
-            {
-                HeartPieces--;
-            }
+            //if (HeartPieces == -1)
+            //{
+            //    LivesRemaining--;
+            //    HeartPieces = 3;
+            //    ThisTransform.position = new Vector3(Checkpoint.position.x, Checkpoint.position.y + Knockback, Checkpoint.position.z);
+            //}
+            //else
+            //{
+            //    HeartPieces--;
+            //}
 
-            if(LivesRemaining == 0 && HeartPieces == -1)
+            if(LivesRemaining == 0 /*&& HeartPieces == -1*/)
             {
                 ThisTransform.GetComponent<PlayerMove>().enabled = false;
-                ThisTransform.position = new Vector3(ThisTransform.position.x - KnockbackDistance, ThisTransform.position.y + KnockbackHeight, 0.0f);
+                ThisTransform.position = new Vector3(ThisTransform.position.x - Knockback, ThisTransform.position.y + Knockback, 0.0f);
                 PlayerCollider.enabled = false;
             }
         }

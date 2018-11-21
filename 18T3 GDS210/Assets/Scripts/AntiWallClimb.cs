@@ -25,14 +25,6 @@ public class AntiWallClimb : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider TriggerInfo)
-    {
-        if(TriggerInfo.tag == "Player")
-        {
-            TriggerInfo.GetComponent<PlayerMove>().IsGrounded = false;
-        }
-    }
-
     private void OnTriggerExit(Collider TriggerInfo)
     {
         if (TriggerInfo.tag == "Player")

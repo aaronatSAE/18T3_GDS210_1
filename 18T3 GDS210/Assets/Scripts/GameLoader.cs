@@ -46,6 +46,8 @@ public class GameLoader : MonoBehaviour
     public AudioSource VideoAudio;
     public VideoPlayer VideoPlayer;
     public Camera VideoCamera;
+    public Text HighscoreText;
+    public int HighScore;
     public Button[] UIButtons;
     public Text[] UIText;
 
@@ -57,7 +59,6 @@ public class GameLoader : MonoBehaviour
     private bool IsButtonPressed = false;
 
     private int i;
-    public int HighScore;
 
     Event KeyEvent;
 
@@ -225,10 +226,10 @@ public class GameLoader : MonoBehaviour
         {
             Debug.Log("in game");
             Options.SetActive(true);
+            OptionsButton.gameObject.SetActive(false);
+            AccessibilityButton.gameObject.SetActive(false);
             ResolutionDropdown.Select();
             Menu.enabled = false;
-            OptionsButton.enabled = false;
-            AccessibilityButton.enabled = false;
         }
     }
 
@@ -247,10 +248,10 @@ public class GameLoader : MonoBehaviour
         {
             Debug.Log("in game");
             Accessibility.SetActive(true);
+            OptionsButton.gameObject.SetActive(false);
+            AccessibilityButton.gameObject.SetActive(false);
             LeftButton.Select();
             Menu.enabled = false;
-            OptionsButton.enabled = false;
-            AccessibilityButton.enabled = false;
         }
 
     }
@@ -293,6 +294,8 @@ public class GameLoader : MonoBehaviour
             Debug.Log("in game");
             Options.SetActive(false);
             Accessibility.SetActive(false);
+            OptionsButton.gameObject.SetActive(true);
+            AccessibilityButton.gameObject.SetActive(true);
             Menu.enabled = true;
             OptionsButton.enabled = true;
             AccessibilityButton.enabled = true;
@@ -532,7 +535,8 @@ public class GameLoader : MonoBehaviour
             FullScreenToggle.isOn = Gamemanager.FullScreen;
             TextToSpeech.isOn = Gamemanager.TextToSpeech;
 
-
+            HighScore = Gamemanager.HighScore;
+            HighscoreText.text = "HighScore: " + HighScore;
 
             CharacterMoveLeft = (KeyCode)System.Enum.Parse(typeof(KeyCode), Gamemanager.LeftKey, true);
             LeftButton.transform.GetChild(0).GetComponent<Text>().text = Gamemanager.LeftKey;
@@ -609,6 +613,7 @@ public class GameLoader : MonoBehaviour
 
     public void Save()
     {
+        Gamemanager.HighScore = HighScore;
         string jsondata = JsonUtility.ToJson(Gamemanager, true);
         File.WriteAllText(Application.persistentDataPath + "/gamesettings.json", jsondata);
     }

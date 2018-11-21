@@ -297,13 +297,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e251bcc0f23916a4db2199830b5b6a4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HeartPieces: 3
   LivesRemaining: 2
   Score: 0
   JumpHeight: 372
   RunSpeed: 5
   Knockback: 150
   IsGrounded: 0
+  Lives:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  ScoreText: {fileID: 0}
   Checkpoint: {fileID: 0}
   Ground: {fileID: 0}
 --- !u!114 &114660946952285298

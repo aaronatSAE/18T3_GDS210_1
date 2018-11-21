@@ -19,11 +19,12 @@ public class Gem : MonoBehaviour
 		
 	}
 
-    private void OnCollisionEnter(Collision CollisionInfo)
+    private void OnCollisionEnter(Collision TriggerInfo)
     {
-        if (CollisionInfo.transform.tag == "Player")
+        if (TriggerInfo.transform.tag == "Player")
         {
             PlayerMove.GameInstance.Score += PointValue;
+            PlayerMove.GameInstance.ScoreText.text = "Score: " + PlayerMove.GameInstance.Score;
 
             if (GameLoader.GameInstance.HighScore < PlayerMove.GameInstance.Score)
             {

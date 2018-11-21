@@ -38,7 +38,7 @@ public class PlayerMove : MonoBehaviour
         }
     }
 
-    void Start ()
+    void Start()
     {
         Ground = GameObject.Find("Ground");
         ThisTransform = transform;
@@ -61,6 +61,7 @@ public class PlayerMove : MonoBehaviour
             ThisTransform.rotation = Quaternion.identity;
             ThisTransform.GetComponent<PlayerMove>().enabled = true;
             IsGrounded = true;
+            //Animation.SetTrigger("Idle");
         }
 
         if (CollisionInfo.gameObject.tag == "Enemy")
@@ -76,9 +77,9 @@ public class PlayerMove : MonoBehaviour
         }
     }
 
-    void Update ()
+    void Update()
     {
-		if (Input.GetKeyDown(GameLoader.GameInstance.CharacterJump) && IsGrounded == true)
+        if (Input.GetKeyDown(GameLoader.GameInstance.CharacterJump) && IsGrounded == true)
         {
             RigidBody.velocity = ThisTransform.up * Time.deltaTime * JumpHeight;
             IsGrounded = false;
@@ -87,12 +88,14 @@ public class PlayerMove : MonoBehaviour
         if (Input.GetKey(GameLoader.GameInstance.CharacterMoveLeft))
         {
             ThisTransform.Translate(Vector3.left * Time.deltaTime * RunSpeed, Space.Self);
+            Animation.SetTrigger("Run");
             Sprite.flipX = false;
         }
 
         if (Input.GetKey(GameLoader.GameInstance.CharacterMoveRight))
         {
             ThisTransform.Translate(Vector3.right * Time.deltaTime * RunSpeed, Space.Self);
+            Animation.SetTrigger("Run");
             Sprite.flipX = true;
         }
 

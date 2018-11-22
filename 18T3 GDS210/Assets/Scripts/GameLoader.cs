@@ -89,10 +89,10 @@ public class GameLoader : MonoBehaviour
     private void OnEnable()
     {
         SFXSource = AVManager.transform.GetChild(0).GetComponent<AudioSource>();
-        MusicSource = AVManager.transform.GetChild(1).GetComponent<AudioSource>();
-        VideoAudio = AVManager.transform.GetChild(2).GetComponent<AudioSource>();
-        VideoPlayer = AVManager.transform.GetChild(2).GetComponent<VideoPlayer>();
-        VideoCamera = AVManager.transform.GetChild(2).GetComponent<Camera>();
+        MusicSource = AVManager.transform.GetChild(3).GetComponent<AudioSource>();
+        VideoAudio = AVManager.transform.GetChild(4).GetComponent<AudioSource>();
+        VideoPlayer = AVManager.transform.GetChild(4).GetComponent<VideoPlayer>();
+        VideoCamera = AVManager.transform.GetChild(4).GetComponent<Camera>();
 
         Resolutions = Screen.resolutions;
 
@@ -575,8 +575,10 @@ public class GameLoader : MonoBehaviour
             OnButtonTextLoad();
 
             AVManager.transform.GetChild(0).GetComponent<AudioSource>().volume = SFXVolume.value = Gamemanager.SFXVolume;
-            AVManager.transform.GetChild(1).GetComponent<AudioSource>().volume = MusicVolume.value = Gamemanager.MusicVolume;
+            AVManager.transform.GetChild(1).GetComponent<AudioSource>().volume = SFXVolume.value;
             AVManager.transform.GetChild(2).GetComponent<AudioSource>().volume = SFXVolume.value;
+            AVManager.transform.GetChild(3).GetComponent<AudioSource>().volume = MusicVolume.value = Gamemanager.MusicVolume;
+            AVManager.transform.GetChild(4).GetComponent<AudioSource>().volume = SFXVolume.value;
         }
         else
         {

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemyMove : MonoBehaviour
 {
@@ -36,6 +37,21 @@ public class EnemyMove : MonoBehaviour
             }
 
             this.gameObject.SetActive(false);
+
+            if(ThisTransform.name == "Shroomy")
+            {
+                if (!GameLoader.GameInstance.AVManager.transform.GetChild(1).GetComponent<AudioSource>().isPlaying)
+                {
+                    GameLoader.GameInstance.AVManager.transform.GetChild(1).GetComponent<AudioSource>().PlayOneShot(GameLoader.GameInstance.ShroomySFX[1]);
+                }
+            }
+            else
+            {
+                if (!GameLoader.GameInstance.AVManager.transform.GetChild(2).GetComponent<AudioSource>().isPlaying)
+                {
+                    GameLoader.GameInstance.AVManager.transform.GetChild(2).GetComponent<AudioSource>().PlayOneShot(GameLoader.GameInstance.KnightySFX[1]);
+                }
+            }
         }
 
         if (CollisionInfo.transform.tag == "Ground" || CollisionInfo.transform.tag == "Enemy")
@@ -58,7 +74,22 @@ public class EnemyMove : MonoBehaviour
     {
         ThisTransform.Translate(new Vector3(Speed, 0, 0) * Time.deltaTime);
 
-        if(Infinite != true)
+        if (ThisTransform.name == "Shroomy")
+        {
+            if (!GameLoader.GameInstance.AVManager.transform.GetChild(1).GetComponent<AudioSource>().isPlaying)
+            {
+                GameLoader.GameInstance.AVManager.transform.GetChild(1).GetComponent<AudioSource>().PlayOneShot(GameLoader.GameInstance.ShroomySFX[0]);
+            }
+        }
+        else
+        {
+            if (!GameLoader.GameInstance.AVManager.transform.GetChild(2).GetComponent<AudioSource>().isPlaying)
+            {
+                GameLoader.GameInstance.AVManager.transform.GetChild(2).GetComponent<AudioSource>().PlayOneShot(GameLoader.GameInstance.KnightySFX[0]);
+            }
+        }
+
+        if (Infinite != true)
         {
             if (ThisTransform.position.x < PatrolMin || ThisTransform.position.x > PatrolMax)
             {

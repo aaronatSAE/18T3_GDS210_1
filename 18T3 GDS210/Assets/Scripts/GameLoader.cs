@@ -50,6 +50,10 @@ public class GameLoader : MonoBehaviour
     public int HighScore;
     public Button[] UIButtons;
     public Text[] UIText;
+    public AudioClip[] PlayerSFX;
+    public AudioClip[] ShroomySFX;
+    public AudioClip[] KnightySFX;
+    public AudioClip[] Music;
 
     private Color32 UIButtonColour;
     private Color32 UIButtonTextColour;
@@ -125,8 +129,12 @@ public class GameLoader : MonoBehaviour
 
     void Start ()
     {
-		//called third
-	}
+        //called third
+        Debug.Log(SceneManager.GetActiveScene().buildIndex);
+        AVManager.transform.GetChild(3).GetComponent<AudioSource>().clip = Music[SceneManager.GetActiveScene().buildIndex];
+        AVManager.transform.GetChild(3).GetComponent<AudioSource>().loop = true;
+        AVManager.transform.GetChild(3).GetComponent<AudioSource>().Play();
+    }
 	
 	void Update ()
     {
@@ -536,7 +544,11 @@ public class GameLoader : MonoBehaviour
             TextToSpeech.isOn = Gamemanager.TextToSpeech;
 
             HighScore = Gamemanager.HighScore;
-            HighscoreText.text = "HighScore: " + HighScore;
+
+            if(SceneManager.GetActiveScene().buildIndex > 0)
+            {
+                HighscoreText.text = "HighScore: " + HighScore;
+            }
 
             CharacterMoveLeft = (KeyCode)System.Enum.Parse(typeof(KeyCode), Gamemanager.LeftKey, true);
             LeftButton.transform.GetChild(0).GetComponent<Text>().text = Gamemanager.LeftKey;

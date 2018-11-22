@@ -88,3 +88,18 @@ MonoBehaviour:
   HighScore: 0
   UIButtons: []
   UIText: []
+  PlayerSFX:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  ShroomySFX:
+  - {fileID: 8300000, guid: f72bf96594f21a544a72462297588f8e, type: 3}
+  - {fileID: 0}
+  KnightySFX:
+  - {fileID: 0}
+  - {fileID: 0}
+  Music:
+  - {fileID: 8300000, guid: ac66101bc6753c048a608b2a6874a938, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}

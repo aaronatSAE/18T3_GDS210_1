@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerMove : MonoBehaviour
 {
@@ -60,6 +61,7 @@ public class PlayerMove : MonoBehaviour
             ThisTransform.position = new Vector3(ThisTransform.position.x, ThisTransform.position.y, Ground.transform.position.z);
             ThisTransform.rotation = Quaternion.identity;
             ThisTransform.GetComponent<PlayerMove>().enabled = true;
+            GameLoader.GameInstance.AVManager.transform.GetChild(0).GetComponent<AudioSource>().PlayOneShot(GameLoader.GameInstance.PlayerSFX[0]);
             IsGrounded = true;
         }
 
@@ -80,6 +82,7 @@ public class PlayerMove : MonoBehaviour
             ThisTransform.GetComponent<Rigidbody>().useGravity = true;
             ThisTransform.rotation = Quaternion.identity;
             ThisTransform.GetComponent<PlayerMove>().enabled = false;
+            GameLoader.GameInstance.AVManager.transform.GetChild(0).GetComponent<AudioSource>().PlayOneShot(GameLoader.GameInstance.PlayerSFX[1]);
         }
     }
 
@@ -89,12 +92,19 @@ public class PlayerMove : MonoBehaviour
         {
             RigidBody.velocity = ThisTransform.up * Time.deltaTime * JumpHeight;
             IsGrounded = false;
+            GameLoader.GameInstance.AVManager.transform.GetChild(0).GetComponent<AudioSource>().PlayOneShot(GameLoader.GameInstance.PlayerSFX[2]);
         }
 
         if (Input.GetKey(GameLoader.GameInstance.CharacterMoveLeft))
         {
             ThisTransform.Translate(Vector3.left * Time.deltaTime * RunSpeed, Space.Self);
             Animation.SetTrigger("Run");
+
+            if(!GameLoader.GameInstance.AVManager.transform.GetChild(0).GetComponent<AudioSource>().isPlaying)
+            {
+                GameLoader.GameInstance.AVManager.transform.GetChild(0).GetComponent<AudioSource>().PlayOneShot(GameLoader.GameInstance.PlayerSFX[3]);
+            }
+
             Sprite.flipX = false;
         }
 
@@ -102,6 +112,12 @@ public class PlayerMove : MonoBehaviour
         {
             ThisTransform.Translate(Vector3.right * Time.deltaTime * RunSpeed, Space.Self);
             Animation.SetTrigger("Run");
+
+            if (!GameLoader.GameInstance.AVManager.transform.GetChild(0).GetComponent<AudioSource>().isPlaying)
+            {
+                GameLoader.GameInstance.AVManager.transform.GetChild(0).GetComponent<AudioSource>().PlayOneShot(GameLoader.GameInstance.PlayerSFX[3]);
+            }
+
             Sprite.flipX = true;
         }
 

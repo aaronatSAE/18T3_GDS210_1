@@ -7,7 +7,7 @@ public class EnemySquish : MonoBehaviour
 {
     private void OnTriggerEnter(Collider TriggerInfo)
     {
-        if(TriggerInfo.gameObject.tag == "Enemy")
+        if(TriggerInfo.gameObject.tag == "Enemy" && TriggerInfo.gameObject.name != "Knighty")
         {
             PlayerMove.GameInstance.Score += TriggerInfo.gameObject.GetComponent<EnemyMove>().PointValue;
             PlayerMove.GameInstance.ScoreText.text = "Score: " + PlayerMove.GameInstance.Score;

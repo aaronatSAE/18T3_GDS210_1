@@ -61,7 +61,13 @@ public class PlayerMove : MonoBehaviour
             ThisTransform.rotation = Quaternion.identity;
             ThisTransform.GetComponent<PlayerMove>().enabled = true;
             IsGrounded = true;
-            //Animation.SetTrigger("Idle");
+        }
+
+        if (CollisionInfo.gameObject.tag == "Bridge")
+        {
+            ThisTransform.position = new Vector3(ThisTransform.position.x, ThisTransform.position.y, Ground.transform.position.z);
+            ThisTransform.rotation = Quaternion.identity;
+            ThisTransform.GetComponent<PlayerMove>().enabled = true;
         }
 
         if (CollisionInfo.gameObject.tag == "Enemy")

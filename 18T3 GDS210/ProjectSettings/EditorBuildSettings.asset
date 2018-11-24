@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/CutScene_0.unity
+    guid: 7ab2aedd51fe1084f9ea8584c0336c33
+  - enabled: 1
     path: Assets/Scenes/AntonyClements.unity
     guid: 1852bfa583619004abbf33ead6146078
   - enabled: 1

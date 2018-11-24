@@ -11,6 +11,7 @@ TagManager:
   - Heart
   - Exit
   - Bridge
+  - CutScene
   layers:
   - Default
   - TransparentFX

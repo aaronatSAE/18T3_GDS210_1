@@ -1,46 +1,42 @@
 ﻿using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using SpeechLib;
 
 public class CutSceneControl : MonoBehaviour
 {
     public Image[] CutSceneOrder;
-    public bool CrossFade_0;
-    public bool CrossFade_1;
-    // Use this for initialization
+    private string Text;
+
+    SpVoice Voice = new SpVoice();
+
     void Start ()
     {
         CutSceneOrder = FindObjectsOfType<Image>();
-        CrossFade_0 = true;
+        Text = "hello world";
+        Invoke("FirstFade", 2.0f);
     }
 
-    // Update is called once per frame
-    void Update()
+    void FirstFade()
     {
-        //If the toggle returns true, fade in the Image
-        if (CrossFade_0 == true)
-        {
-            CrossFade_1 = false;
-            CutSceneOrder[0].CrossFadeAlpha(0, 2.0f, false);
-            CutSceneOrder[1].CrossFadeAlpha(1, 2.0f, false);
-        }
-        //else
-        //{
-        //    CutSceneOrder[0].CrossFadeAlpha(1, 2.0f, false);
-        //    CutSceneOrder[1].CrossFadeAlpha(0, 2.0f, false);
-        //}
+        Invoke("Speak", 2.0f);
+        CutSceneOrder[0].CrossFadeAlpha(0, 2.0f, false);
+        CutSceneOrder[1].CrossFadeAlpha(1, 2.0f, false);
 
-        if (CrossFade_1 == true)
-        {
-            CrossFade_0 = false;
-            CutSceneOrder[1].CrossFadeAlpha(0, 2.0f, false);
-            CutSceneOrder[2].CrossFadeAlpha(1, 2.0f, false);
-        }
-        //else
-        //{
-        //    CutSceneOrder[1].CrossFadeAlpha(1, 2.0f, false);
-        //    CutSceneOrder[2].CrossFadeAlpha(0, 2.0f, false);
-        //}
+        Invoke("SecondFade", 4.0f);
+    }
+
+    void SecondFade()
+    {
+        Invoke("Speak", 2.0f);
+        CutSceneOrder[1].CrossFadeAlpha(0, 2.0f, false);
+        CutSceneOrder[2].CrossFadeAlpha(1, 2.0f, false);
+    }
+
+    public void Speak()
+    {
+        Voice.Speak(Text);
     }
 }

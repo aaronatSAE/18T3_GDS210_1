@@ -4,61 +4,35 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using SpeechLib;
-using UnityEngine.SceneManagement;
 
 public class CutSceneControl : MonoBehaviour
 {
-    public Canvas canvas;
-    public GameObject[] CutSceneOrder;
-    public Sprite[] CutSceneImage;
-    public new RectTransform transform;
+    public Image[] CutSceneOrder;
     private string Text;
-    private int i;
 
     SpVoice Voice = new SpVoice();
 
     void Start ()
     {
-        canvas = FindObjectOfType<Canvas>();
-        for(i = 0; i <CutSceneOrder.Length; i++)
-        {
-            CutSceneOrder[i] = new GameObject("Scene " + i);
-            CutSceneOrder[i].AddComponent<Image>();
-            CutSceneOrder[i].transform.parent = canvas.transform;
-            CutSceneOrder[i].GetComponent<Image>().sprite = CutSceneImage[i];
-            transform = CutSceneOrder[i].GetComponent<Image>().rectTransform;
-            transform.sizeDelta = new Vector2(1148,603);
-            transform.localPosition = new Vector3(0, 0, 0);
-        }
-
-        i = 0;
-        //Text = "hello world";
-        Invoke("Fade", 2.0f);
+        CutSceneOrder = FindObjectsOfType<Image>();
+        Text = "hello world";
+        Invoke("FirstFade", 2.0f);
     }
 
-    void Fade()
+    void FirstFade()
     {
-        //Invoke("Speak", 2.0f);
-        Debug.Log(i);
-        CutSceneOrder[i].GetComponent<Image>().CrossFadeAlpha(0, 2.0f, false);
+        Invoke("Speak", 2.0f);
+        CutSceneOrder[0].CrossFadeAlpha(0, 2.0f, false);
+        CutSceneOrder[1].CrossFadeAlpha(1, 2.0f, false);
 
-        if(i < CutSceneOrder.Length -1)
-        {
-            i++;
-            CutSceneOrder[i].GetComponent<Image>().CrossFadeAlpha(1, 2.0f, false);
-            Invoke("Fade", 4.0f);
-        }
-        else
-        {
-            if(SceneManager.GetActiveScene().buildIndex < SceneManager.sceneCount)
-            {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1, LoadSceneMode.Single);
-            }
-            else
-            {
-                SceneManager.LoadScene(1, LoadSceneMode.Single);
-            }
-        }
+        Invoke("SecondFade", 4.0f);
+    }
+
+    void SecondFade()
+    {
+        Invoke("Speak", 2.0f);
+        CutSceneOrder[1].CrossFadeAlpha(0, 2.0f, false);
+        CutSceneOrder[2].CrossFadeAlpha(1, 2.0f, false);
     }
 
     public void Speak()

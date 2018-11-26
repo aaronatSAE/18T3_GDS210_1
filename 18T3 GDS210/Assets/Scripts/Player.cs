@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class PlayerMove : MonoBehaviour
+public class Player : MonoBehaviour
 {
     private Transform ThisTransform;
     private Rigidbody RigidBody;
@@ -24,7 +24,7 @@ public class PlayerMove : MonoBehaviour
     public GameObject Ground;
 
 
-    public static PlayerMove GameInstance = null;
+    public static Player GameInstance = null;
 
     private void Awake()
     {
@@ -60,7 +60,7 @@ public class PlayerMove : MonoBehaviour
         {
             ThisTransform.position = new Vector3(ThisTransform.position.x, ThisTransform.position.y, Ground.transform.position.z);
             ThisTransform.rotation = Quaternion.identity;
-            ThisTransform.GetComponent<PlayerMove>().enabled = true;
+            ThisTransform.GetComponent<Player>().enabled = true;
             GameLoader.GameInstance.AVManager.transform.GetChild(0).GetComponent<AudioSource>().PlayOneShot(GameLoader.GameInstance.PlayerSFX[0]);
             Animation.SetTrigger("Idle");
             IsGrounded = true;
@@ -70,7 +70,7 @@ public class PlayerMove : MonoBehaviour
         {
             ThisTransform.position = new Vector3(ThisTransform.position.x, ThisTransform.position.y, Ground.transform.position.z);
             ThisTransform.rotation = Quaternion.identity;
-            ThisTransform.GetComponent<PlayerMove>().enabled = true;
+            ThisTransform.GetComponent<Player>().enabled = true;
         }
 
         if (CollisionInfo.gameObject.tag == "Enemy")
@@ -83,7 +83,7 @@ public class PlayerMove : MonoBehaviour
             Animation.SetTrigger("Hurt");
             ThisTransform.GetComponent<Rigidbody>().useGravity = true;
             ThisTransform.rotation = Quaternion.identity;
-            ThisTransform.GetComponent<PlayerMove>().enabled = false;
+            ThisTransform.GetComponent<Player>().enabled = false;
             GameLoader.GameInstance.AVManager.transform.GetChild(0).GetComponent<AudioSource>().PlayOneShot(GameLoader.GameInstance.PlayerSFX[1]);
         }
     }
@@ -150,7 +150,7 @@ public class PlayerMove : MonoBehaviour
         if (LivesRemaining < 0)
         {
             GameLoader.GameInstance.Save();
-            ThisTransform.GetComponent<PlayerMove>().enabled = false;
+            ThisTransform.GetComponent<Player>().enabled = false;
             ThisTransform.GetComponent<Rigidbody>().AddForce((ThisTransform.up + -ThisTransform.right) * Knockback, ForceMode.Force);
             PlayerCollider.enabled = false;
         }

@@ -23,12 +23,12 @@ public class Gem : MonoBehaviour
     {
         if (TriggerInfo.transform.tag == "Player")
         {
-            PlayerMove.GameInstance.Score += PointValue;
-            PlayerMove.GameInstance.ScoreText.text = "Score: " + PlayerMove.GameInstance.Score;
+            Player.GameInstance.Score += PointValue;
+            Player.GameInstance.ScoreText.text = "Score: " + Player.GameInstance.Score;
 
-            if (GameLoader.GameInstance.HighScore < PlayerMove.GameInstance.Score)
+            if (GameLoader.GameInstance.HighScore < Player.GameInstance.Score)
             {
-                GameLoader.GameInstance.HighScore = PlayerMove.GameInstance.Score;
+                GameLoader.GameInstance.HighScore = Player.GameInstance.Score;
             }
 
             this.gameObject.SetActive(false);

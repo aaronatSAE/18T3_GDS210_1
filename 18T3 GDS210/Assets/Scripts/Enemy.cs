@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class EnemyMove : MonoBehaviour
+public class Enemy : MonoBehaviour
 {
     private Transform ThisTransform;
     private Rigidbody RigidBody;
     private SpriteRenderer Sprite;
+    public Sprite DeathSprite;
+    public float SquishSpeed;
     public int PointValue;
     public float Speed;
     public bool Infinite;
@@ -15,6 +17,7 @@ public class EnemyMove : MonoBehaviour
     public float Min;
     private float PatrolMax;
     private float PatrolMin;
+    public bool Dead;
 
     void Start()
     {
@@ -29,14 +32,14 @@ public class EnemyMove : MonoBehaviour
     {
         if (CollisionInfo.transform.tag == "ThrownObject")
         {
-            PlayerMove.GameInstance.Score += PointValue;
+            Player.GameInstance.Score += PointValue;
 
-            if(GameLoader.GameInstance.HighScore < PlayerMove.GameInstance.Score)
+            if(GameLoader.GameInstance.HighScore < Player.GameInstance.Score)
             {
-                GameLoader.GameInstance.HighScore = PlayerMove.GameInstance.Score;
+                GameLoader.GameInstance.HighScore = Player.GameInstance.Score;
             }
 
-            this.gameObject.SetActive(false);
+            Dead = true;
 
             if(ThisTransform.name == "Shroomy")
             {
@@ -104,6 +107,28 @@ public class EnemyMove : MonoBehaviour
                     Sprite.flipX = true;
                 }
             }
+        }
+
+        if(Dead == true)
+        {
+            ThisTransform.position = new Vector3(ThisTransform.position.x, ThisTransform.position.y, 2.0f);
+            ThisTransform.GetComponent<Enemy>().enabled = false;
+            ThisTransform.GetComponent<Animator>().enabled = false;
+            ThisTransform.GetComponent<SpriteRenderer>().sprite = DeathSprite;
+
+            if (Speed > 0)
+            {
+                Sprite.flipX = false;
+            }
+            else
+            {
+                Sprite.flipX = true;
+            }
+            Debug.Log("shroomy scale before = " + ThisTransform.localScale.y);
+            ThisTransform.localScale = Vector3.Lerp(ThisTransform.localScale, new Vector3(ThisTransform.localScale.x,0, ThisTransform.localScale.z), SquishSpeed);
+            Debug.Log("shroomy scale after = " + ThisTransform.localScale.y);
+
+            ThisTransform.gameObject.SetActive(false);
         }
 	}
 }

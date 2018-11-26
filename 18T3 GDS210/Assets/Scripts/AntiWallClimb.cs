@@ -21,7 +21,7 @@ public class AntiWallClimb : MonoBehaviour
     {
         if (TriggerInfo.tag == "Player")
         {
-            TriggerInfo.GetComponent<PlayerMove>().IsGrounded = false;
+            TriggerInfo.GetComponent<Player>().IsGrounded = false;
         }
     }
 
@@ -29,7 +29,7 @@ public class AntiWallClimb : MonoBehaviour
     {
         if (TriggerInfo.tag == "Player")
         {
-            TriggerInfo.GetComponent<PlayerMove>().IsGrounded = true;
+            TriggerInfo.GetComponent<Player>().IsGrounded = true;
         }
     }
 }

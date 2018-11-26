@@ -9,17 +9,27 @@ public class EnemySquish : MonoBehaviour
     {
         if(TriggerInfo.gameObject.tag == "Enemy" && TriggerInfo.gameObject.name != "Knighty")
         {
-            PlayerMove.GameInstance.Score += TriggerInfo.gameObject.GetComponent<EnemyMove>().PointValue;
-            PlayerMove.GameInstance.ScoreText.text = "Score: " + PlayerMove.GameInstance.Score;
+            Player.GameInstance.Score += TriggerInfo.gameObject.GetComponent<Enemy>().PointValue;
+            Player.GameInstance.ScoreText.text = "Score: " + Player.GameInstance.Score;
 
-            if (GameLoader.GameInstance.HighScore < PlayerMove.GameInstance.Score)
+            if (GameLoader.GameInstance.HighScore < Player.GameInstance.Score)
             {
-                GameLoader.GameInstance.HighScore = PlayerMove.GameInstance.Score;
+                GameLoader.GameInstance.HighScore = Player.GameInstance.Score;
             }
 
-            TriggerInfo.gameObject.SetActive(false);
-            this.transform.parent.GetComponent<Rigidbody>().velocity = this.transform.parent.transform.up * Time.deltaTime * this.transform.parent.GetComponent<PlayerMove>().JumpHeight;
-            this.transform.parent.GetComponent<PlayerMove>().IsGrounded = false;
+            TriggerInfo.GetComponent<Enemy>().Dead = true;
+
+
+            if(this.transform.parent.GetComponent<SpriteRenderer>().flipX == true)
+            {
+                this.transform.parent.GetComponent<Rigidbody>().velocity = (this.transform.parent.transform.up + this.transform.parent.transform.right) * Time.deltaTime * this.transform.parent.GetComponent<Player>().JumpHeight;
+            }
+            else
+            {
+                this.transform.parent.GetComponent<Rigidbody>().velocity = (this.transform.parent.transform.up + -this.transform.parent.transform.right) * Time.deltaTime * this.transform.parent.GetComponent<Player>().JumpHeight;
+            }
+
+            this.transform.parent.GetComponent<Player>().IsGrounded = false;
         }
     }
 }

@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 
 public class CutSceneControl : MonoBehaviour
 {
-    public Canvas canvas;
+    public Canvas WindowSize;
     public GameObject[] CutSceneOrder;
     public Sprite[] CutSceneSprite;
     public Image[] CutSceneImage;
@@ -19,14 +19,14 @@ public class CutSceneControl : MonoBehaviour
 
     void Start()
     {
-        canvas = FindObjectOfType<Canvas>();
+        WindowSize = FindObjectOfType<Canvas>();
 
         for (i = 0; i < CutSceneOrder.Length; i++)
         {
             CutSceneOrder[i] = new GameObject("Scene " + i);
-            CutSceneOrder[i].transform.SetParent(canvas.transform);
+            CutSceneOrder[i].transform.SetParent(WindowSize.transform);
             CutSceneOrder[i].AddComponent<Image>();
-            CutSceneOrder[i].GetComponent<Image>().rectTransform.sizeDelta = new Vector2(1148, 603);
+            CutSceneOrder[i].GetComponent<Image>().rectTransform.sizeDelta = WindowSize.GetComponent<RectTransform>().sizeDelta;
             CutSceneOrder[i].GetComponent<Image>().rectTransform.localPosition = new Vector3(0, 0, 0);
             CutSceneOrder[i].GetComponent<Image>().sprite = CutSceneSprite[i];
             CutSceneImage[i] = CutSceneOrder[i].GetComponent<Image>();
@@ -41,7 +41,7 @@ public class CutSceneControl : MonoBehaviour
     IEnumerator Fade()
     {
         StopCoroutine(CrossFade());
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1.0f);
         StartCoroutine(CrossFade());
 
     }
@@ -49,7 +49,7 @@ public class CutSceneControl : MonoBehaviour
     IEnumerator CrossFade()
     {
         StopCoroutine(Fade());
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1.0f);
         Debug.Log(i);
 
         CutSceneImage[i].CrossFadeAlpha(0, 2.0f, false);

@@ -28,9 +28,9 @@ public class HealthPickup : MonoBehaviour {
             //    PlayerMove.GameInstance.LivesRemaining++;
             //}
 
-            if (PlayerMove.GameInstance.LivesRemaining < 3)
+            if (Player.GameInstance.LivesRemaining < 3)
             {
-                PlayerMove.GameInstance.LivesRemaining++;
+                Player.GameInstance.LivesRemaining++;
             }
 
             this.gameObject.SetActive(false);

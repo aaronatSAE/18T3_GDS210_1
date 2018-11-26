@@ -100,11 +100,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54b21b38d4f2d244c8534f51a0409553, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DeathSprite: {fileID: 21300000, guid: e9cf21304937799459c0ab13a31c3d40, type: 3}
   PointValue: 100
   Speed: -1
   Infinite: 0
   Max: 3
   Min: 3
+  Dead: 0
 --- !u!212 &212238476641563872
 SpriteRenderer:
   m_ObjectHideFlags: 1

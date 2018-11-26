@@ -41,7 +41,7 @@ public class CutSceneControl : MonoBehaviour
     IEnumerator Fade()
     {
         StopCoroutine(CrossFade());
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1.0f);
         StartCoroutine(CrossFade());
 
     }
@@ -49,7 +49,7 @@ public class CutSceneControl : MonoBehaviour
     IEnumerator CrossFade()
     {
         StopCoroutine(Fade());
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1.0f);
         Debug.Log(i);
 
         CutSceneImage[i].CrossFadeAlpha(0, 2.0f, false);

@@ -8,6 +8,7 @@ public class EnemyMove : MonoBehaviour
     private Transform ThisTransform;
     private Rigidbody RigidBody;
     private SpriteRenderer Sprite;
+    public Sprite DeathSprite;
     public int PointValue;
     public float Speed;
     public bool Infinite;
@@ -15,6 +16,7 @@ public class EnemyMove : MonoBehaviour
     public float Min;
     private float PatrolMax;
     private float PatrolMin;
+    public bool Dead;
 
     void Start()
     {
@@ -36,7 +38,7 @@ public class EnemyMove : MonoBehaviour
                 GameLoader.GameInstance.HighScore = PlayerMove.GameInstance.Score;
             }
 
-            this.gameObject.SetActive(false);
+            Dead = true;
 
             if(ThisTransform.name == "Shroomy")
             {
@@ -104,6 +106,30 @@ public class EnemyMove : MonoBehaviour
                     Sprite.flipX = true;
                 }
             }
+        }
+
+        if(Dead == true)
+        {
+            ThisTransform.position = new Vector3(ThisTransform.position.x, ThisTransform.position.y, 2.0f);
+            ThisTransform.GetComponent<EnemyMove>().enabled = false;
+            ThisTransform.GetComponent<Animator>().enabled = false;
+            ThisTransform.GetComponent<SpriteRenderer>().sprite = DeathSprite;
+
+            if (Speed > 0)
+            {
+                Sprite.flipX = false;
+            }
+            else
+            {
+                Sprite.flipX = true;
+            }
+
+            while (ThisTransform.localScale.y > 0)
+            {
+                ThisTransform.localScale = new Vector3(ThisTransform.localScale.x, ThisTransform.localScale.y / 2, ThisTransform.localScale.z);
+            }
+
+            ThisTransform.gameObject.SetActive(false);
         }
 	}
 }

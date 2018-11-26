@@ -17,7 +17,7 @@ public class EnemySquish : MonoBehaviour
                 GameLoader.GameInstance.HighScore = PlayerMove.GameInstance.Score;
             }
 
-            TriggerInfo.gameObject.SetActive(false);
+            TriggerInfo.GetComponent<EnemyMove>().Dead = true;
             this.transform.parent.GetComponent<Rigidbody>().velocity = this.transform.parent.transform.up * Time.deltaTime * this.transform.parent.GetComponent<PlayerMove>().JumpHeight;
             this.transform.parent.GetComponent<PlayerMove>().IsGrounded = false;
         }

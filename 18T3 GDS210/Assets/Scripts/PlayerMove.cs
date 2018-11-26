@@ -62,6 +62,7 @@ public class PlayerMove : MonoBehaviour
             ThisTransform.rotation = Quaternion.identity;
             ThisTransform.GetComponent<PlayerMove>().enabled = true;
             GameLoader.GameInstance.AVManager.transform.GetChild(0).GetComponent<AudioSource>().PlayOneShot(GameLoader.GameInstance.PlayerSFX[0]);
+            Animation.SetTrigger("Idle");
             IsGrounded = true;
         }
 
@@ -79,6 +80,7 @@ public class PlayerMove : MonoBehaviour
             IsGrounded = false;
             ThisTransform.GetComponent<Rigidbody>().useGravity = false;
             ThisTransform.GetComponent<Rigidbody>().AddForce((ThisTransform.up + -ThisTransform.right) * Knockback, ForceMode.Force);
+            Animation.SetTrigger("Hurt");
             ThisTransform.GetComponent<Rigidbody>().useGravity = true;
             ThisTransform.rotation = Quaternion.identity;
             ThisTransform.GetComponent<PlayerMove>().enabled = false;
@@ -98,7 +100,7 @@ public class PlayerMove : MonoBehaviour
         if (Input.GetKey(GameLoader.GameInstance.CharacterMoveLeft))
         {
             ThisTransform.Translate(Vector3.left * Time.deltaTime * RunSpeed, Space.Self);
-            Animation.SetTrigger("Run");
+            //Animation.SetTrigger("Run");
 
             if(!GameLoader.GameInstance.AVManager.transform.GetChild(0).GetComponent<AudioSource>().isPlaying)
             {
@@ -111,7 +113,7 @@ public class PlayerMove : MonoBehaviour
         if (Input.GetKey(GameLoader.GameInstance.CharacterMoveRight))
         {
             ThisTransform.Translate(Vector3.right * Time.deltaTime * RunSpeed, Space.Self);
-            Animation.SetTrigger("Run");
+            //Animation.SetTrigger("Run");
 
             if (!GameLoader.GameInstance.AVManager.transform.GetChild(0).GetComponent<AudioSource>().isPlaying)
             {
@@ -149,7 +151,7 @@ public class PlayerMove : MonoBehaviour
         {
             GameLoader.GameInstance.Save();
             ThisTransform.GetComponent<PlayerMove>().enabled = false;
-            ThisTransform.position = new Vector3(ThisTransform.position.x - Knockback, ThisTransform.position.y + Knockback, 0.0f);
+            ThisTransform.GetComponent<Rigidbody>().AddForce((ThisTransform.up + -ThisTransform.right) * Knockback, ForceMode.Force);
             PlayerCollider.enabled = false;
         }
     }

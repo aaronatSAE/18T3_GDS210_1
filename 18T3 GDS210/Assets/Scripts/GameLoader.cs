@@ -130,9 +130,10 @@ public class GameLoader : MonoBehaviour
     void Start ()
     {
         //called third
-        AVManager.transform.GetChild(3).GetComponent<AudioSource>().clip = Music[SceneManager.GetActiveScene().buildIndex];
-        AVManager.transform.GetChild(3).GetComponent<AudioSource>().loop = true;
-        AVManager.transform.GetChild(3).GetComponent<AudioSource>().Play();
+        Debug.Log(SceneManager.GetActiveScene().buildIndex);
+        //AVManager.transform.GetChild(3).GetComponent<AudioSource>().clip = Music[SceneManager.GetActiveScene().buildIndex];
+        //AVManager.transform.GetChild(3).GetComponent<AudioSource>().loop = true;
+        //AVManager.transform.GetChild(3).GetComponent<AudioSource>().Play();
     }
 	
 	void Update ()

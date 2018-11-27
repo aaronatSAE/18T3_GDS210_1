@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level Layouts/AL Level 1 Layout.unity
     guid: 2e476d8f8aba9614188c90b32fec2dba
+  - enabled: 1
+    path: Assets/Scenes/Level Layouts/AL Level 2 Layout.unity
+    guid: ed7210408effa21498fc14b247203de0
   m_configObjects: {}

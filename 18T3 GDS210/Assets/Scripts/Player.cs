@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
-    private Transform ThisTransform;
+    [SerializeField] private Transform ThisTransform;
     private Rigidbody RigidBody;
     private BoxCollider PlayerCollider;
     private Animator Animation;

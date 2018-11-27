@@ -130,10 +130,9 @@ public class GameLoader : MonoBehaviour
     void Start ()
     {
         //called third
-        Debug.Log(SceneManager.GetActiveScene().buildIndex);
-        //AVManager.transform.GetChild(3).GetComponent<AudioSource>().clip = Music[SceneManager.GetActiveScene().buildIndex];
-        //AVManager.transform.GetChild(3).GetComponent<AudioSource>().loop = true;
-        //AVManager.transform.GetChild(3).GetComponent<AudioSource>().Play();
+        AVManager.transform.GetChild(3).GetComponent<AudioSource>().clip = Music[SceneManager.GetActiveScene().buildIndex];
+        AVManager.transform.GetChild(3).GetComponent<AudioSource>().loop = true;
+        AVManager.transform.GetChild(3).GetComponent<AudioSource>().Play();
     }
 	
 	void Update ()
@@ -216,7 +215,7 @@ public class GameLoader : MonoBehaviour
 
     public void OnPlayButtonClick()
     {
-        SceneManager.LoadScene(1, LoadSceneMode.Single);
+        SceneManager.LoadScene(2, LoadSceneMode.Single);
     }
 
     public void OnOptionsButtonClick()
@@ -545,7 +544,7 @@ public class GameLoader : MonoBehaviour
 
             HighScore = Gamemanager.HighScore;
 
-            if(SceneManager.GetActiveScene().buildIndex > 0)
+            if(SceneManager.GetActiveScene().buildIndex > 1)
             {
                 HighscoreText.text = "HighScore: " + HighScore;
             }

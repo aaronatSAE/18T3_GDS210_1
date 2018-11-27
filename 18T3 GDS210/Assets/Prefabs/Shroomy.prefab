@@ -101,7 +101,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DeathSprite: {fileID: 21300000, guid: 819770f814e587c47a39cbcd0c44982f, type: 3}
-  SquishSpeed: 0
   PointValue: 100
   Speed: 1
   Infinite: 0

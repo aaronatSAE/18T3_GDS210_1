@@ -6,11 +6,13 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] private Transform ThisTransform;
+    private Transform ThisTransform;
     private Rigidbody RigidBody;
     private BoxCollider PlayerCollider;
     private Animator Animation;
     private SpriteRenderer Sprite;
+    public Sprite DeathSprite;
+    public bool Dead;
     public int LivesRemaining;
     public int Score;
     public float JumpHeight = 512.0f;
@@ -73,7 +75,7 @@ public class Player : MonoBehaviour
             ThisTransform.GetComponent<Player>().enabled = true;
         }
 
-        if (CollisionInfo.gameObject.tag == "Enemy")
+        if (CollisionInfo.gameObject.tag == "Enemy" && LivesRemaining >-1)
         {
             LivesRemaining--;
 
@@ -100,7 +102,7 @@ public class Player : MonoBehaviour
         if (Input.GetKey(GameLoader.GameInstance.CharacterMoveLeft))
         {
             ThisTransform.Translate(Vector3.left * Time.deltaTime * RunSpeed, Space.Self);
-            //Animation.SetTrigger("Run");
+            Animation.SetTrigger("Run");
 
             if(!GameLoader.GameInstance.AVManager.transform.GetChild(0).GetComponent<AudioSource>().isPlaying)
             {
@@ -113,7 +115,7 @@ public class Player : MonoBehaviour
         if (Input.GetKey(GameLoader.GameInstance.CharacterMoveRight))
         {
             ThisTransform.Translate(Vector3.right * Time.deltaTime * RunSpeed, Space.Self);
-            //Animation.SetTrigger("Run");
+            Animation.SetTrigger("Run");
 
             if (!GameLoader.GameInstance.AVManager.transform.GetChild(0).GetComponent<AudioSource>().isPlaying)
             {
@@ -129,6 +131,7 @@ public class Player : MonoBehaviour
                 Lives[0].gameObject.SetActive(false);
                 Lives[1].gameObject.SetActive(false);
                 Lives[2].gameObject.SetActive(false);
+                Dead = true;
                 break;
             case 0:
                 Lives[0].gameObject.SetActive(true);
@@ -147,12 +150,15 @@ public class Player : MonoBehaviour
                 break;
         }
 
-        if (LivesRemaining < 0)
+        if (Dead == true)
         {
             GameLoader.GameInstance.Save();
+            //ThisTransform.position = new Vector3(ThisTransform.position.x, ThisTransform.position.y, 2.0f);
             ThisTransform.GetComponent<Player>().enabled = false;
             ThisTransform.GetComponent<Rigidbody>().AddForce((ThisTransform.up + -ThisTransform.right) * Knockback, ForceMode.Force);
-            PlayerCollider.enabled = false;
+            ThisTransform.GetComponent<Animator>().enabled = false;
+            ThisTransform.GetComponent<SpriteRenderer>().sprite = DeathSprite;
+            SceneManager.LoadScene(1, LoadSceneMode.Single);
         }
     }
 }

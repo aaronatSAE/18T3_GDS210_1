@@ -89,17 +89,20 @@ MonoBehaviour:
   UIButtons: []
   UIText: []
   PlayerSFX:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 8300000, guid: bd1f9ecf439c9d344a36066703b28a67, type: 3}
+  - {fileID: 8300000, guid: 0ca36b6f9b6ff024fb04ac83f4f0bb73, type: 3}
+  - {fileID: 8300000, guid: 5eb11df87b3a8ea44856a5eba5e2d5af, type: 3}
+  - {fileID: 8300000, guid: 82f567fe090e7e64e9d3c703e6b0e661, type: 3}
+  - {fileID: 8300000, guid: 001141ceacd96814b8f177ff10af447d, type: 3}
+  - {fileID: 8300000, guid: a2397e9f7a2cc5a43b681dc15fbb57de, type: 3}
   ShroomySFX:
-  - {fileID: 8300000, guid: f72bf96594f21a544a72462297588f8e, type: 3}
-  - {fileID: 0}
+  - {fileID: 8300000, guid: e6676f5fcb28e714b8f5394077c96e03, type: 3}
+  - {fileID: 8300000, guid: b1bf1c7eee313994da22e8d01198f91c, type: 3}
   KnightySFX:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 8300000, guid: e6676f5fcb28e714b8f5394077c96e03, type: 3}
+  - {fileID: 8300000, guid: b1bf1c7eee313994da22e8d01198f91c, type: 3}
   Music:
-  - {fileID: 8300000, guid: ac66101bc6753c048a608b2a6874a938, type: 3}
   - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 8300000, guid: f1df05e82e0b25643a7860f0ebc2ef1c, type: 3}
+  - {fileID: 8300000, guid: eae59fdd22df5d741a63bc8bec4acaa1, type: 3}
+  - {fileID: 8300000, guid: c913a8421dbb9394ab173b1f93c7ed8b, type: 3}

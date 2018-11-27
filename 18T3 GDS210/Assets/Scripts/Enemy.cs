@@ -9,7 +9,6 @@ public class Enemy : MonoBehaviour
     private Rigidbody RigidBody;
     private SpriteRenderer Sprite;
     public Sprite DeathSprite;
-    public float SquishSpeed;
     public int PointValue;
     public float Speed;
     public bool Infinite;
@@ -40,6 +39,7 @@ public class Enemy : MonoBehaviour
             }
 
             Dead = true;
+            //Squish.GameInstance.Squishie();
 
             if(ThisTransform.name == "Shroomy")
             {
@@ -124,9 +124,6 @@ public class Enemy : MonoBehaviour
             {
                 Sprite.flipX = true;
             }
-            Debug.Log("shroomy scale before = " + ThisTransform.localScale.y);
-            ThisTransform.localScale = Vector3.Lerp(ThisTransform.localScale, new Vector3(ThisTransform.localScale.x,0, ThisTransform.localScale.z), SquishSpeed);
-            Debug.Log("shroomy scale after = " + ThisTransform.localScale.y);
 
             ThisTransform.gameObject.SetActive(false);
         }

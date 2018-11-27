@@ -95,6 +95,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 82f567fe090e7e64e9d3c703e6b0e661, type: 3}
   - {fileID: 8300000, guid: 001141ceacd96814b8f177ff10af447d, type: 3}
   - {fileID: 8300000, guid: a2397e9f7a2cc5a43b681dc15fbb57de, type: 3}
+  - {fileID: 8300000, guid: 372af98a80313d84883579928ea06a3a, type: 3}
   ShroomySFX:
   - {fileID: 8300000, guid: e6676f5fcb28e714b8f5394077c96e03, type: 3}
   - {fileID: 8300000, guid: b1bf1c7eee313994da22e8d01198f91c, type: 3}

@@ -56,6 +56,7 @@ public class FireControl : MonoBehaviour
             if(AvailableScrolls > 0)
             {
                 Spawn();
+                GameLoader.GameInstance.AVManager.transform.GetChild(0).GetComponent<AudioSource>().PlayOneShot(GameLoader.GameInstance.PlayerSFX[4]);
             }
         }
     }

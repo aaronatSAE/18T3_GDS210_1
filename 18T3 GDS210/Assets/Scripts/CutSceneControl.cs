@@ -50,7 +50,6 @@ public class CutSceneControl : MonoBehaviour
     {
         StopCoroutine(Fade());
         yield return new WaitForSeconds(1.0f);
-        Debug.Log(i);
 
         CutSceneImage[i].CrossFadeAlpha(0, 2.0f, false);
 

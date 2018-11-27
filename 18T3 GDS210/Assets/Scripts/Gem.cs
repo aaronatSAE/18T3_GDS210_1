@@ -31,6 +31,8 @@ public class Gem : MonoBehaviour
                 GameLoader.GameInstance.HighScore = Player.GameInstance.Score;
             }
 
+            GameLoader.GameInstance.AVManager.transform.GetChild(0).GetComponent<AudioSource>().PlayOneShot(GameLoader.GameInstance.PlayerSFX[5]);
+
             this.gameObject.SetActive(false);
         }
     }

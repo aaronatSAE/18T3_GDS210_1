@@ -206,6 +206,8 @@ public class GameLoader : MonoBehaviour
     void OnSFXSliderChange()
     {
         SFXSource.volume = Gamemanager.SFXvolume = SFXVolume.value;
+        AVManager.transform.GetChild(1).GetComponent<AudioSource>().volume = SFXSource.volume;
+        AVManager.transform.GetChild(2).GetComponent<AudioSource>().volume = SFXSource.volume;
     }
 
     void OnMusicSliderChange()
@@ -220,7 +222,7 @@ public class GameLoader : MonoBehaviour
 
     public void OnOptionsButtonClick()
     {
-        if(SceneManager.GetActiveScene().buildIndex == 0)
+        if(SceneManager.GetActiveScene().buildIndex == 1)
         {
             Options.SetActive(true);
             ResolutionDropdown.Select();
@@ -231,7 +233,6 @@ public class GameLoader : MonoBehaviour
         }
         else
         {
-            Debug.Log("in game");
             Options.SetActive(true);
             OptionsButton.gameObject.SetActive(false);
             AccessibilityButton.gameObject.SetActive(false);
@@ -242,7 +243,7 @@ public class GameLoader : MonoBehaviour
 
     public void OnAccessibilityButtonClick()
     {
-        if (SceneManager.GetActiveScene().buildIndex == 0)
+        if (SceneManager.GetActiveScene().buildIndex == 1)
         {
             Accessibility.SetActive(true);
             LeftButton.Select();
@@ -253,7 +254,6 @@ public class GameLoader : MonoBehaviour
         }
         else
         {
-            Debug.Log("in game");
             Accessibility.SetActive(true);
             OptionsButton.gameObject.SetActive(false);
             AccessibilityButton.gameObject.SetActive(false);
@@ -286,7 +286,7 @@ public class GameLoader : MonoBehaviour
 
     public void OnApplyButtonClick()
     {
-        if (SceneManager.GetActiveScene().buildIndex == 0)
+        if (SceneManager.GetActiveScene().buildIndex == 1)
         {
             Options.SetActive(false);
             Accessibility.SetActive(false);

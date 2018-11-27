@@ -14,6 +14,7 @@ public class ScrollPickup : MonoBehaviour
         if(TriggerInfo.tag == "Player")
         {
             TriggerInfo.transform.GetChild(1).GetComponent<FireControl>().AvailableScrolls += 1;
+            GameLoader.GameInstance.AVManager.transform.GetChild(0).GetComponent<AudioSource>().PlayOneShot(GameLoader.GameInstance.PlayerSFX[6]);
             this.gameObject.SetActive(false);
         }
     }

@@ -18,11 +18,14 @@ public class FadeOut : MonoBehaviour
     {
         if (GameInstance == null)
         {
+            Debug.Log("GameInstance = null");
             GameInstance = this;
+            Debug.Log("GameInstance = [" + GameInstance + "]");
         }
 
         if (GameInstance != this)
         {
+            Debug.Log("Destroying ["+gameObject.name+ "] because GameInstance = [" + GameInstance + "]");
             Destroy(gameObject);
         }
     }
@@ -34,10 +37,12 @@ public class FadeOut : MonoBehaviour
 
     public IEnumerator FadingOut(SpriteRenderer Sprite)
     {
+        Debug.Log("Starting fade.");
         Color Colour = Sprite.color;
 
         while (Colour.a > 0.0f)
         {
+            Debug.Log("Continuing fade with alpha at [" + Colour.a + "].");
             Colour.a -= Time.deltaTime / FadeOutTime;
             Sprite.color = Colour;
 
@@ -46,9 +51,9 @@ public class FadeOut : MonoBehaviour
                 Colour.a = 0.0f;
             }
 
-            yield return null;
-
             Sprite.color = Colour;
+
+            yield return null;
         }
     }
 }

@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour
 {
     private Transform ThisTransform;
     private Rigidbody RigidBody;
-    private SpriteRenderer Sprite;
+    [SerializeField] private SpriteRenderer Sprite;
     public Sprite DeathSprite;
     public int PointValue;
     public float Speed;
@@ -125,7 +125,7 @@ public class Enemy : MonoBehaviour
                 Sprite.flipX = true;
             }
 
-            //FadeOut.GameInstance.StartFade();
+            FadeOut.GameInstance.StartFade();
 
             ThisTransform.gameObject.SetActive(false);
         }

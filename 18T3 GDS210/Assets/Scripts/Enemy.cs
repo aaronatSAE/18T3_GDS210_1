@@ -125,6 +125,8 @@ public class Enemy : MonoBehaviour
                 Sprite.flipX = true;
             }
 
+            //FadeOut.GameInstance.StartFade();
+
             ThisTransform.gameObject.SetActive(false);
         }
 	}

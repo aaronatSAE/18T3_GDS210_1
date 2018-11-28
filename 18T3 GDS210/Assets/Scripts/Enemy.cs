@@ -7,8 +7,10 @@ public class Enemy : MonoBehaviour
 {
     private Transform ThisTransform;
     private Rigidbody RigidBody;
-    [SerializeField] private SpriteRenderer Sprite;
+    private SpriteRenderer Sprite;
     public Sprite DeathSprite;
+    public FadeOut Fade;
+    public float FadeOutTime = 1.0f;
     public int PointValue;
     public float Speed;
     public bool Infinite;
@@ -25,6 +27,7 @@ public class Enemy : MonoBehaviour
         Sprite = GetComponent<SpriteRenderer>();
         PatrolMax = ThisTransform.position.x + Max;
         PatrolMin = ThisTransform.position.x - Min;
+        Fade = GetComponent<FadeOut>();
     }
 
     private void OnCollisionEnter(Collision CollisionInfo)
@@ -115,6 +118,7 @@ public class Enemy : MonoBehaviour
             ThisTransform.GetComponent<Enemy>().enabled = false;
             ThisTransform.GetComponent<Animator>().enabled = false;
             ThisTransform.GetComponent<SpriteRenderer>().sprite = DeathSprite;
+            ThisTransform.localScale = new Vector3(ThisTransform.localScale.x, ThisTransform.localScale.y / 2, ThisTransform.localScale.z);
 
             if (Speed > 0)
             {
@@ -125,9 +129,7 @@ public class Enemy : MonoBehaviour
                 Sprite.flipX = true;
             }
 
-            FadeOut.GameInstance.StartFade();
-
-            ThisTransform.gameObject.SetActive(false);
+            StartCoroutine(Fade.FadingOut(GetComponent<SpriteRenderer>(),FadeOutTime));
         }
 	}
 }

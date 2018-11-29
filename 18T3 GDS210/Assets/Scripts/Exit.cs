@@ -72,7 +72,7 @@ public class Exit : MonoBehaviour
     {
         StopCoroutine(FadeIn());
 
-        while (Colour[0].a < 255.0f)
+        while (Colour[1].a > 0.0f)
         {
             Colour[0].a += Time.deltaTime / FadeTimer;
             Colour[1].a -= Time.deltaTime / FadeTimer;
@@ -80,9 +80,9 @@ public class Exit : MonoBehaviour
             Sprite[0].color = Colour[0];
             Sprite[1].color = Colour[1];
 
-            if (Colour[0].a >= 255.0f)
+            if (Colour[1].a <= 0.0f)
             {
-                Colour[0].a = 255.0f;
+                Colour[1].a = 0.0f;
             }
 
             Sprite[0].color = Colour[0];

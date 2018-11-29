@@ -61,7 +61,7 @@ public class Exit : MonoBehaviour
 
         }
 
-        yield return new WaitForSeconds(.5f);
+        yield return new WaitForSeconds(FadeTimer + .5f);
 
         StartCoroutine(FadeOut());
         
@@ -89,7 +89,7 @@ public class Exit : MonoBehaviour
 
         }
 
-        yield return new WaitForSeconds(.5f);
+        yield return new WaitForSeconds(FadeTimer + .5f);
 
         StartCoroutine(FadeIn());
     }

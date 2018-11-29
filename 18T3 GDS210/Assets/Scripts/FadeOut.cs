@@ -29,6 +29,8 @@ public class FadeOut : MonoBehaviour
             yield return null;
         }
 
+        yield return null;
+
         gameObject.SetActive(false);
     }
 }

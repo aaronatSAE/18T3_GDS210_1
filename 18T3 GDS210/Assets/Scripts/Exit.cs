@@ -48,8 +48,8 @@ public class Exit : MonoBehaviour
             Colour[0].a -= Time.deltaTime / FadeTimer;
             Colour[1].a += Time.deltaTime / FadeTimer;
 
-            //Sprite[0].color = Colour[0];
-            //Sprite[1].color = Colour[1];
+            Sprite[0].color = Colour[0];
+            Sprite[1].color = Colour[1];
 
             if (Colour[0].a <= 0.0f)
             {
@@ -59,9 +59,10 @@ public class Exit : MonoBehaviour
             Sprite[0].color = Colour[0];
             Sprite[1].color = Colour[1];
 
+            yield return new WaitForSeconds(0);
         }
 
-        yield return new WaitForSeconds(FadeTimer + .5f);
+        yield return new WaitForSeconds(0);
 
         StartCoroutine(FadeOut());
         
@@ -76,8 +77,8 @@ public class Exit : MonoBehaviour
             Colour[0].a += Time.deltaTime / FadeTimer;
             Colour[1].a -= Time.deltaTime / FadeTimer;
 
-            //Sprite[0].color = Colour[0];
-            //Sprite[1].color = Colour[1];
+            Sprite[0].color = Colour[0];
+            Sprite[1].color = Colour[1];
 
             if (Colour[0].a >= 255.0f)
             {
@@ -87,9 +88,10 @@ public class Exit : MonoBehaviour
             Sprite[0].color = Colour[0];
             Sprite[1].color = Colour[1];
 
+            yield return new WaitForSeconds(0);
         }
 
-        yield return new WaitForSeconds(FadeTimer + .5f);
+        yield return new WaitForSeconds(0);
 
         StartCoroutine(FadeIn());
     }

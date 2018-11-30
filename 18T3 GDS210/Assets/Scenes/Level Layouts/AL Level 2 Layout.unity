@@ -5161,6 +5161,11 @@ Prefab:
       propertyPath: Lives.Array.data[2]
       value: 
       objectReference: {fileID: 1205795514}
+    - target: {fileID: 212609818586322750, guid: 0140c25bcd2d37847b6faf8efc7d5e38,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0140c25bcd2d37847b6faf8efc7d5e38, type: 2}
   m_IsPrefabAsset: 0

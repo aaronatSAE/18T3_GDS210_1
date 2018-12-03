@@ -153,7 +153,6 @@ public class Player : MonoBehaviour
         if (Dead == true)
         {
             GameLoader.GameInstance.Save();
-            //ThisTransform.position = new Vector3(ThisTransform.position.x, ThisTransform.position.y, 2.0f);
             ThisTransform.GetComponent<Player>().enabled = false;
             ThisTransform.GetComponent<Rigidbody>().AddForce((ThisTransform.up + -ThisTransform.right) * Knockback, ForceMode.Force);
             ThisTransform.GetComponent<Animator>().enabled = false;

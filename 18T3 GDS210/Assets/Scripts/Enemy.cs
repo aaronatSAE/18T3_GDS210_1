@@ -42,7 +42,6 @@ public class Enemy : MonoBehaviour
             }
 
             Dead = true;
-            //Squish.GameInstance.Squishie();
 
             if(ThisTransform.name == "Shroomy")
             {

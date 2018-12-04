@@ -399,7 +399,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 235950129}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a2ccc33ef8a827d4badf4f13d6ae9ecd, type: 3}
   m_Name: 
@@ -677,6 +677,48 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 2
+--- !u!1001 &479536267
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4341473289459970, guid: 81fac57bb3bf1b04a9b46bb6b3e1ff78, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4341473289459970, guid: 81fac57bb3bf1b04a9b46bb6b3e1ff78, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4341473289459970, guid: 81fac57bb3bf1b04a9b46bb6b3e1ff78, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4341473289459970, guid: 81fac57bb3bf1b04a9b46bb6b3e1ff78, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4341473289459970, guid: 81fac57bb3bf1b04a9b46bb6b3e1ff78, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4341473289459970, guid: 81fac57bb3bf1b04a9b46bb6b3e1ff78, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4341473289459970, guid: 81fac57bb3bf1b04a9b46bb6b3e1ff78, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4341473289459970, guid: 81fac57bb3bf1b04a9b46bb6b3e1ff78, type: 2}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 81fac57bb3bf1b04a9b46bb6b3e1ff78, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &596163343
 GameObject:
   m_ObjectHideFlags: 0
@@ -1028,9 +1070,14 @@ MonoBehaviour:
   VideoAudio: {fileID: 0}
   VideoPlayer: {fileID: 0}
   VideoCamera: {fileID: 0}
+  HighscoreText: {fileID: 0}
+  HighScore: 0
   UIButtons: []
   UIText: []
-  HighScore: 0
+  PlayerSFX: []
+  ShroomySFX: []
+  KnightySFX: []
+  Music: []
 --- !u!4 &768080739
 Transform:
   m_ObjectHideFlags: 0

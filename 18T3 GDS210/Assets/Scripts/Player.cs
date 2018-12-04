@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
     public Sprite DeathSprite;
     public bool Dead;
     public int LivesRemaining;
+    public int RespawnsRemaining;
     public int Score;
     public float JumpHeight = 512.0f;
     public float RunSpeed = 16.0f;
@@ -150,13 +151,24 @@ public class Player : MonoBehaviour
                 break;
         }
 
-        if (Dead == true)
+        if (Dead == true && RespawnsRemaining > -1)
+        {
+            ThisTransform.GetComponent<Player>().enabled = false;
+            ThisTransform.GetComponent<SpriteRenderer>().sprite = DeathSprite;
+            ThisTransform.GetComponent<Animator>().enabled = false;
+            ThisTransform.GetComponent<Player>().enabled = true;
+            ThisTransform.GetComponent<Animator>().enabled = true;
+            ThisTransform.position = Checkpoint.position;
+            LivesRemaining = 2;
+            RespawnsRemaining--;
+            Dead = false;
+        }
+        else if(Dead = true && RespawnsRemaining < 0)
         {
             GameLoader.GameInstance.Save();
             ThisTransform.GetComponent<Player>().enabled = false;
-            ThisTransform.GetComponent<Rigidbody>().AddForce((ThisTransform.up + -ThisTransform.right) * Knockback, ForceMode.Force);
-            ThisTransform.GetComponent<Animator>().enabled = false;
             ThisTransform.GetComponent<SpriteRenderer>().sprite = DeathSprite;
+            ThisTransform.GetComponent<Animator>().enabled = false;
             SceneManager.LoadScene(1, LoadSceneMode.Single);
         }
     }

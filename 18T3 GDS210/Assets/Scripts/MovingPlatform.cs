@@ -14,6 +14,9 @@ public class MovingPlatform : MonoBehaviour
     public bool YAxis;
     public float MaxYDistance = 0.0f;
     public float MinYDistance = 0.0f;
+    public bool ZAxis;
+    public float MaxZDistance = 0.0f;
+    public float MinZDistance = 0.0f;
 
 
 
@@ -51,6 +54,14 @@ public class MovingPlatform : MonoBehaviour
             }
         }
 
+        if (ZAxis == true)
+        {
+            if (ThisTransform.position.z > MaxZDistance || ThisTransform.position.z < MinZDistance)
+            {
+                Speed *= -1.0f;
+            }
+        }
+
         switch (Direction)
         {
             case "Up":
@@ -58,6 +69,9 @@ public class MovingPlatform : MonoBehaviour
                 break;
             case "Left":
                 ThisTransform.Translate(new Vector3(Speed, 0, 0) * Time.deltaTime);
+                break;
+            case "Forward":
+                ThisTransform.Translate(new Vector3(0, 0, Speed) * Time.deltaTime);
                 break;
         }
     }

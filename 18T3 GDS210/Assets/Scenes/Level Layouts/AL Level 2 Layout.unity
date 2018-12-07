@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.08841569, g: 0.28307486, b: 0.48466122, a: 1}
+  m_IndirectSpecularColor: {r: 0.088638164, g: 0.28292742, b: 0.48432153, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -418,12 +418,12 @@ Prefab:
     - target: {fileID: 114953249212081132, guid: f6c99957f9ecb2b449075b1b85027a4a,
         type: 2}
       propertyPath: Direction
-      value: Up
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 114953249212081132, guid: f6c99957f9ecb2b449075b1b85027a4a,
         type: 2}
       propertyPath: Speed
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114953249212081132, guid: f6c99957f9ecb2b449075b1b85027a4a,
         type: 2}
@@ -443,12 +443,12 @@ Prefab:
     - target: {fileID: 114953249212081132, guid: f6c99957f9ecb2b449075b1b85027a4a,
         type: 2}
       propertyPath: YAxis
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114953249212081132, guid: f6c99957f9ecb2b449075b1b85027a4a,
         type: 2}
       propertyPath: MaxYDistance
-      value: -2.944
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1659358095907056, guid: f6c99957f9ecb2b449075b1b85027a4a, type: 2}
       propertyPath: m_TagString
@@ -473,7 +473,8 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 270
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114953249212081132, guid: f6c99957f9ecb2b449075b1b85027a4a, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: f6c99957f9ecb2b449075b1b85027a4a, type: 2}
   m_IsPrefabAsset: 0
 --- !u!4 &30693823 stripped
@@ -498,13 +499,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: Up
-  Speed: 2
+  Speed: 0
   XAxis: 0
   MaxXDistance: -4.2
   MinXDistance: 1
   YAxis: 1
   MaxYDistance: -0.6955
   MinYDistance: 0
+  ZAxis: 0
+  MaxZDistance: 0
+  MinZDistance: 0
 --- !u!1001 &40803162
 Prefab:
   m_ObjectHideFlags: 0
@@ -1077,12 +1081,12 @@ Prefab:
     - target: {fileID: 114953249212081132, guid: f6c99957f9ecb2b449075b1b85027a4a,
         type: 2}
       propertyPath: Direction
-      value: Up
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 114953249212081132, guid: f6c99957f9ecb2b449075b1b85027a4a,
         type: 2}
       propertyPath: Speed
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114953249212081132, guid: f6c99957f9ecb2b449075b1b85027a4a,
         type: 2}
@@ -1102,12 +1106,12 @@ Prefab:
     - target: {fileID: 114953249212081132, guid: f6c99957f9ecb2b449075b1b85027a4a,
         type: 2}
       propertyPath: YAxis
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114953249212081132, guid: f6c99957f9ecb2b449075b1b85027a4a,
         type: 2}
       propertyPath: MaxYDistance
-      value: -2.944
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1659358095907056, guid: f6c99957f9ecb2b449075b1b85027a4a, type: 2}
       propertyPath: m_TagString
@@ -1132,7 +1136,8 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 270
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114953249212081132, guid: f6c99957f9ecb2b449075b1b85027a4a, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: f6c99957f9ecb2b449075b1b85027a4a, type: 2}
   m_IsPrefabAsset: 0
 --- !u!4 &145205700 stripped
@@ -1157,13 +1162,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: Up
-  Speed: 2
+  Speed: 0
   XAxis: 0
   MaxXDistance: -4.2
   MinXDistance: 1
   YAxis: 1
   MaxYDistance: -0.6955
   MinYDistance: 0
+  ZAxis: 0
+  MaxZDistance: 0
+  MinZDistance: 0
 --- !u!1001 &147061431
 Prefab:
   m_ObjectHideFlags: 0
@@ -1544,7 +1552,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2ccc33ef8a827d4badf4f13d6ae9ecd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Direction: Left
+  Direction: Forward
   Speed: 0.5
   XAxis: 1
   MaxXDistance: -26
@@ -1552,6 +1560,9 @@ MonoBehaviour:
   YAxis: 0
   MaxYDistance: 0
   MinYDistance: 0
+  ZAxis: 0
+  MaxZDistance: 0
+  MinZDistance: 0
 --- !u!1 &230571358
 GameObject:
   m_ObjectHideFlags: 0
@@ -5100,12 +5111,12 @@ Prefab:
     - target: {fileID: 114048452703989384, guid: c5a3fc824d5931642bb1acacfa3aae3c,
         type: 2}
       propertyPath: MaxYDistance
-      value: 9.69
+      value: 10.69
       objectReference: {fileID: 0}
     - target: {fileID: 114048452703989384, guid: c5a3fc824d5931642bb1acacfa3aae3c,
         type: 2}
       propertyPath: MinYDistance
-      value: 0
+      value: -0.001112938
       objectReference: {fileID: 0}
     - target: {fileID: 114048452703989384, guid: c5a3fc824d5931642bb1acacfa3aae3c,
         type: 2}
@@ -6969,12 +6980,12 @@ Prefab:
     - target: {fileID: 114953249212081132, guid: f6c99957f9ecb2b449075b1b85027a4a,
         type: 2}
       propertyPath: Direction
-      value: Up
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 114953249212081132, guid: f6c99957f9ecb2b449075b1b85027a4a,
         type: 2}
       propertyPath: Speed
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114953249212081132, guid: f6c99957f9ecb2b449075b1b85027a4a,
         type: 2}
@@ -6984,22 +6995,22 @@ Prefab:
     - target: {fileID: 114953249212081132, guid: f6c99957f9ecb2b449075b1b85027a4a,
         type: 2}
       propertyPath: MaxXDistance
-      value: -4.2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114953249212081132, guid: f6c99957f9ecb2b449075b1b85027a4a,
         type: 2}
       propertyPath: MinXDistance
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114953249212081132, guid: f6c99957f9ecb2b449075b1b85027a4a,
         type: 2}
       propertyPath: YAxis
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114953249212081132, guid: f6c99957f9ecb2b449075b1b85027a4a,
         type: 2}
       propertyPath: MaxYDistance
-      value: -0.6955
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1659358095907056, guid: f6c99957f9ecb2b449075b1b85027a4a, type: 2}
       propertyPath: m_TagString
@@ -7024,7 +7035,8 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 270
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114953249212081132, guid: f6c99957f9ecb2b449075b1b85027a4a, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: f6c99957f9ecb2b449075b1b85027a4a, type: 2}
   m_IsPrefabAsset: 0
 --- !u!4 &1772402249 stripped
@@ -7049,13 +7061,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: Up
-  Speed: 2
+  Speed: 0
   XAxis: 0
   MaxXDistance: -4.2
   MinXDistance: 1
   YAxis: 1
   MaxYDistance: -0.6955
   MinYDistance: 0
+  ZAxis: 0
+  MaxZDistance: 0
+  MinZDistance: 0
 --- !u!1001 &1784632501
 Prefab:
   m_ObjectHideFlags: 0
@@ -7254,7 +7269,18 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 270
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 114953249212081132, guid: f6c99957f9ecb2b449075b1b85027a4a,
+        type: 2}
+      propertyPath: XAxis
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114953249212081132, guid: f6c99957f9ecb2b449075b1b85027a4a,
+        type: 2}
+      propertyPath: Speed
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114953249212081132, guid: f6c99957f9ecb2b449075b1b85027a4a, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: f6c99957f9ecb2b449075b1b85027a4a, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1001 &1838267558

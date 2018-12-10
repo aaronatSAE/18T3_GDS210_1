@@ -29,6 +29,7 @@ public class Exit : MonoBehaviour
         if(TriggerInfo.tag == "Player")
         {
             GameLoader.GameInstance.Save();
+
             if (SceneManager.GetActiveScene().buildIndex < SceneManager.sceneCountInBuildSettings)
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1, LoadSceneMode.Single);

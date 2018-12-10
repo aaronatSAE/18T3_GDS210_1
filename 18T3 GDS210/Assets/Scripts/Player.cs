@@ -44,6 +44,7 @@ public class Player : MonoBehaviour
 
     void Start()
     {
+        Checkpoint = null;
         Ground = GameObject.Find("Ground");
         ThisTransform = transform;
         RigidBody = GetComponent<Rigidbody>();

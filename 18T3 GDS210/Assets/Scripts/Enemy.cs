@@ -36,9 +36,10 @@ public class Enemy : MonoBehaviour
         {
             Player.Score += PointValue;
 
-            if(GameLoader.GameInstance.HighScore < Player.Score)
+            if (GameLoader.GameInstance.HighScore < Player.Score)
             {
                 GameLoader.GameInstance.HighScore = Player.Score;
+                GameLoader.GameInstance.HighscoreText.text = "HighScore: " + GameLoader.GameInstance.HighScore;
             }
 
             Dead = true;

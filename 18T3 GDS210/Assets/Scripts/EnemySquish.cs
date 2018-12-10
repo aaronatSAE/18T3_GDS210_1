@@ -15,6 +15,7 @@ public class EnemySquish : MonoBehaviour
             if (GameLoader.GameInstance.HighScore < Player.Score)
             {
                 GameLoader.GameInstance.HighScore = Player.Score;
+                GameLoader.GameInstance.HighscoreText.text = "HighScore: " + GameLoader.GameInstance.HighScore;
             }
 
             TriggerInfo.GetComponent<Enemy>().Dead = true;

@@ -23,12 +23,12 @@ public class Gem : MonoBehaviour
     {
         if (TriggerInfo.transform.tag == "Player")
         {
-            Player.Score += PointValue;
-            Player.GameInstance.ScoreText.text = "Score: " + Player.Score;
+            Player.GameInstance.Score += PointValue;
+            Player.GameInstance.ScoreText.text = "Score: " + Player.GameInstance.Score;
 
-            if (GameLoader.GameInstance.HighScore < Player.Score)
+            if (GameLoader.GameInstance.HighScore < Player.GameInstance.Score)
             {
-                GameLoader.GameInstance.HighScore = Player.Score;
+                GameLoader.GameInstance.HighScore = Player.GameInstance.Score;
             }
 
             GameLoader.GameInstance.AVManager.transform.GetChild(0).GetComponent<AudioSource>().PlayOneShot(GameLoader.GameInstance.PlayerSFX[5]);

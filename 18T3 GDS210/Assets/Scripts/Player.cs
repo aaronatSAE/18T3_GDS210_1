@@ -15,7 +15,7 @@ public class Player : MonoBehaviour
     public bool Dead;
     public int LivesRemaining;
     public int RespawnsRemaining;
-    public static int Score;
+    public int Score;
     public float JumpHeight = 512.0f;
     public float RunSpeed = 16.0f;
     public float Knockback;

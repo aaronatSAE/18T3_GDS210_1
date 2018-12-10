@@ -9,12 +9,12 @@ public class EnemySquish : MonoBehaviour
     {
         if(TriggerInfo.gameObject.tag == "Enemy" && TriggerInfo.gameObject.name != "Knighty")
         {
-            Player.Score += TriggerInfo.gameObject.GetComponent<Enemy>().PointValue;
-            Player.GameInstance.ScoreText.text = "Score: " + Player.Score;
+            Player.GameInstance.Score += TriggerInfo.gameObject.GetComponent<Enemy>().PointValue;
+            Player.GameInstance.ScoreText.text = "Score: " + Player.GameInstance.Score;
 
-            if (GameLoader.GameInstance.HighScore < Player.Score)
+            if (GameLoader.GameInstance.HighScore < Player.GameInstance.Score)
             {
-                GameLoader.GameInstance.HighScore = Player.Score;
+                GameLoader.GameInstance.HighScore = Player.GameInstance.Score;
                 GameLoader.GameInstance.HighscoreText.text = "HighScore: " + GameLoader.GameInstance.HighScore;
             }
 

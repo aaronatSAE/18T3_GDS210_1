@@ -52,6 +52,9 @@ public class Player : MonoBehaviour
         Animation = GetComponent<Animator>();
         Sprite = GetComponent<SpriteRenderer>();
 
+        ScoreText.text = "Score: " + ScoreManager.LevelScore;
+        this.transform.GetChild(1).GetComponent<FireControl>().AvailableScrolls = ScoreManager.ScrollCount;
+
         for (int i = 0; i < LivesRemaining; i++)
         {
             Lives[i].gameObject.SetActive(true);

@@ -12,6 +12,7 @@ public class GameLoader : MonoBehaviour
     public GameObject Options;
     public GameObject Accessibility;
     public GameObject AVManager;
+    public GameObject ScoreManager;
 
     public KeyCode CharacterMoveLeft;
     public KeyCode CharacterMoveRight;
@@ -93,6 +94,8 @@ public class GameLoader : MonoBehaviour
         VideoAudio = AVManager.transform.GetChild(4).GetComponent<AudioSource>();
         VideoPlayer = AVManager.transform.GetChild(4).GetComponent<VideoPlayer>();
         VideoCamera = AVManager.transform.GetChild(4).GetComponent<Camera>();
+
+        ScoreManager = GameObject.Find("ScoreManager");
 
         Resolutions = Screen.resolutions;
 

@@ -295,6 +295,12 @@ Canvas:
   m_CorrespondingSourceObject: {fileID: 223028532014086568, guid: d77079c93dcdd764d9c3a0a92197d0ef,
     type: 2}
   m_PrefabInternal: {fileID: 14956417}
+--- !u!114 &14956421 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114764112641442582, guid: d77079c93dcdd764d9c3a0a92197d0ef,
+    type: 2}
+  m_PrefabInternal: {fileID: 14956417}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &28913463
 GameObject:
   m_ObjectHideFlags: 0
@@ -6075,6 +6081,11 @@ Prefab:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114146680604376394, guid: 0140c25bcd2d37847b6faf8efc7d5e38,
+        type: 2}
+      propertyPath: ScoreText
+      value: 
+      objectReference: {fileID: 14956421}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0140c25bcd2d37847b6faf8efc7d5e38, type: 2}
   m_IsPrefabAsset: 0
@@ -8041,6 +8052,10 @@ Prefab:
     - target: {fileID: 1444629666575478, guid: 3d36a996403ef6f469fdb75f69f2d93c, type: 2}
       propertyPath: m_Name
       value: Knighty (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1444629666575478, guid: 3d36a996403ef6f469fdb75f69f2d93c, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d36a996403ef6f469fdb75f69f2d93c, type: 2}

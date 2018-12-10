@@ -29,14 +29,16 @@ public class Exit : MonoBehaviour
         if(TriggerInfo.tag == "Player")
         {
             GameLoader.GameInstance.Save();
+            ScoreManager.LevelScore = Player.GameInstance.Score;
+            ScoreManager.ScrollCount = Player.GameInstance.transform.GetChild(1).GetComponent<FireControl>().AvailableScrolls;
 
-            if (SceneManager.GetActiveScene().buildIndex < SceneManager.sceneCountInBuildSettings)
+            if (SceneManager.GetActiveScene().buildIndex < (SceneManager.sceneCountInBuildSettings - 1))
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1, LoadSceneMode.Single);
             }
             else
             {
-                SceneManager.LoadScene(0, LoadSceneMode.Single);
+                SceneManager.LoadScene(1, LoadSceneMode.Single);
             }
         }
     }

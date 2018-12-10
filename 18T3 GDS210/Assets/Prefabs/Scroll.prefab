@@ -38,8 +38,8 @@ GameObject:
   - component: {fileID: 4223427161561572}
   - component: {fileID: 33614842088814076}
   - component: {fileID: 23902793911654118}
-  - component: {fileID: 136446190579789350}
   - component: {fileID: 114789683191992518}
+  - component: {fileID: 65030420427991518}
   m_Layer: 0
   m_Name: Scroll
   m_TagString: Untagged
@@ -56,7 +56,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4683371251132024}
   - component: {fileID: 212422345494312222}
-  - component: {fileID: 65865224435373028}
   m_Layer: 0
   m_Name: Scroll
   m_TagString: Untagged
@@ -147,17 +146,17 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1125300506611714}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!65 &65865224435373028
+--- !u!65 &65030420427991518
 BoxCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1860008984278880}
+  m_GameObject: {fileID: 1125300506611714}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 22.6, y: 21.2, z: 9.4}
+  m_Size: {x: 1, y: 2, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &114789683191992518
 MonoBehaviour:
@@ -170,19 +169,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0a7de60c7915a44994aff484ae50331, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!136 &136446190579789350
-CapsuleCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1125300506611714}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!198 &198760037759043854
 ParticleSystem:
   m_ObjectHideFlags: 1

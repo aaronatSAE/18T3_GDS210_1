@@ -62,7 +62,7 @@ public class CutSceneControl : MonoBehaviour
         else
         {
             yield return new WaitForSeconds(2);
-            if (SceneManager.GetActiveScene().buildIndex < SceneManager.sceneCount)
+            if (SceneManager.GetActiveScene().buildIndex < SceneManager.sceneCountInBuildSettings)
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1, LoadSceneMode.Single);
             }

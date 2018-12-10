@@ -34,11 +34,11 @@ public class Enemy : MonoBehaviour
     {
         if (CollisionInfo.transform.tag == "ThrownObject")
         {
-            Player.GameInstance.Score += PointValue;
+            Player.Score += PointValue;
 
-            if(GameLoader.GameInstance.HighScore < Player.GameInstance.Score)
+            if(GameLoader.GameInstance.HighScore < Player.Score)
             {
-                GameLoader.GameInstance.HighScore = Player.GameInstance.Score;
+                GameLoader.GameInstance.HighScore = Player.Score;
             }
 
             Dead = true;

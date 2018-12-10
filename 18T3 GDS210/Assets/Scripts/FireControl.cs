@@ -13,7 +13,7 @@ public class FireControl : MonoBehaviour
 
     private float NextFire = 1.0F;
 
-    public float AvailableScrolls;
+    public int AvailableScrolls;
 
     List<GameObject> TrownObjectList = new List<GameObject>();
     

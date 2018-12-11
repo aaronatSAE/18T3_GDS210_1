@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4208909, g: 0.71482235, b: 0.8809126, a: 1}
+  m_IndirectSpecularColor: {r: 0.42101374, g: 0.714805, b: 0.8810152, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -625,6 +625,11 @@ Prefab:
       propertyPath: MinYDistance
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 64045174788834626, guid: 30f0a2cce37dcb040b81b6d48d1affa1,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300002, guid: c402411535f7b5e46832619dfdc11b88, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30f0a2cce37dcb040b81b6d48d1affa1, type: 2}
   m_IsPrefabAsset: 0
@@ -832,6 +837,11 @@ Prefab:
       propertyPath: MinYDistance
       value: -27
       objectReference: {fileID: 0}
+    - target: {fileID: 64045174788834626, guid: 30f0a2cce37dcb040b81b6d48d1affa1,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300002, guid: c402411535f7b5e46832619dfdc11b88, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30f0a2cce37dcb040b81b6d48d1affa1, type: 2}
   m_IsPrefabAsset: 0
@@ -1171,6 +1181,11 @@ Prefab:
       propertyPath: MinYDistance
       value: -27
       objectReference: {fileID: 0}
+    - target: {fileID: 64045174788834626, guid: 30f0a2cce37dcb040b81b6d48d1affa1,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300002, guid: c402411535f7b5e46832619dfdc11b88, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30f0a2cce37dcb040b81b6d48d1affa1, type: 2}
   m_IsPrefabAsset: 0
@@ -1284,6 +1299,11 @@ Prefab:
       propertyPath: MinYDistance
       value: -27
       objectReference: {fileID: 0}
+    - target: {fileID: 64045174788834626, guid: 30f0a2cce37dcb040b81b6d48d1affa1,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300002, guid: c402411535f7b5e46832619dfdc11b88, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30f0a2cce37dcb040b81b6d48d1affa1, type: 2}
   m_IsPrefabAsset: 0
@@ -1821,6 +1841,11 @@ Prefab:
       propertyPath: MinYDistance
       value: -27
       objectReference: {fileID: 0}
+    - target: {fileID: 64045174788834626, guid: 30f0a2cce37dcb040b81b6d48d1affa1,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300002, guid: c402411535f7b5e46832619dfdc11b88, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30f0a2cce37dcb040b81b6d48d1affa1, type: 2}
   m_IsPrefabAsset: 0
@@ -2141,6 +2166,11 @@ Prefab:
       propertyPath: MinYDistance
       value: -27
       objectReference: {fileID: 0}
+    - target: {fileID: 64045174788834626, guid: 30f0a2cce37dcb040b81b6d48d1affa1,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300002, guid: c402411535f7b5e46832619dfdc11b88, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30f0a2cce37dcb040b81b6d48d1affa1, type: 2}
   m_IsPrefabAsset: 0
@@ -2617,8 +2647,8 @@ GameObject:
   - component: {fileID: 413416489}
   - component: {fileID: 413416488}
   m_Layer: 0
-  m_Name: Cylinder (1)
-  m_TagString: Untagged
+  m_Name: Bridge
+  m_TagString: Bridge
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2684,12 +2714,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 413416487}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: -48.95, y: -3.73, z: 0.38}
-  m_LocalScale: {x: 1, y: 3.6636288, z: 1}
+  m_LocalScale: {x: 1, y: 3.6636307, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_Father: {fileID: 1953871958}
+  m_RootOrder: 65
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1001 &417313689
 Prefab:
@@ -2796,6 +2826,11 @@ Prefab:
       propertyPath: MinYDistance
       value: -27
       objectReference: {fileID: 0}
+    - target: {fileID: 64045174788834626, guid: 30f0a2cce37dcb040b81b6d48d1affa1,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300002, guid: c402411535f7b5e46832619dfdc11b88, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30f0a2cce37dcb040b81b6d48d1affa1, type: 2}
   m_IsPrefabAsset: 0
@@ -3429,6 +3464,11 @@ Prefab:
       propertyPath: MinYDistance
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 64045174788834626, guid: 30f0a2cce37dcb040b81b6d48d1affa1,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300002, guid: c402411535f7b5e46832619dfdc11b88, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30f0a2cce37dcb040b81b6d48d1affa1, type: 2}
   m_IsPrefabAsset: 0
@@ -3542,6 +3582,11 @@ Prefab:
       propertyPath: MinYDistance
       value: -27
       objectReference: {fileID: 0}
+    - target: {fileID: 64045174788834626, guid: 30f0a2cce37dcb040b81b6d48d1affa1,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300002, guid: c402411535f7b5e46832619dfdc11b88, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30f0a2cce37dcb040b81b6d48d1affa1, type: 2}
   m_IsPrefabAsset: 0
@@ -4972,6 +5017,11 @@ Prefab:
       propertyPath: MinYDistance
       value: -27
       objectReference: {fileID: 0}
+    - target: {fileID: 64045174788834626, guid: 30f0a2cce37dcb040b81b6d48d1affa1,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300002, guid: c402411535f7b5e46832619dfdc11b88, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30f0a2cce37dcb040b81b6d48d1affa1, type: 2}
   m_IsPrefabAsset: 0
@@ -5244,6 +5294,11 @@ Prefab:
       propertyPath: MinYDistance
       value: -27
       objectReference: {fileID: 0}
+    - target: {fileID: 64045174788834626, guid: 30f0a2cce37dcb040b81b6d48d1affa1,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300002, guid: c402411535f7b5e46832619dfdc11b88, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30f0a2cce37dcb040b81b6d48d1affa1, type: 2}
   m_IsPrefabAsset: 0
@@ -5362,6 +5417,11 @@ Prefab:
       propertyPath: MinYDistance
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 64045174788834626, guid: 30f0a2cce37dcb040b81b6d48d1affa1,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300002, guid: c402411535f7b5e46832619dfdc11b88, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30f0a2cce37dcb040b81b6d48d1affa1, type: 2}
   m_IsPrefabAsset: 0
@@ -5532,6 +5592,11 @@ Prefab:
       propertyPath: MinYDistance
       value: -27
       objectReference: {fileID: 0}
+    - target: {fileID: 64045174788834626, guid: 30f0a2cce37dcb040b81b6d48d1affa1,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300002, guid: c402411535f7b5e46832619dfdc11b88, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30f0a2cce37dcb040b81b6d48d1affa1, type: 2}
   m_IsPrefabAsset: 0
@@ -6972,6 +7037,11 @@ Prefab:
       propertyPath: MinYDistance
       value: -27
       objectReference: {fileID: 0}
+    - target: {fileID: 64045174788834626, guid: 30f0a2cce37dcb040b81b6d48d1affa1,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300002, guid: c402411535f7b5e46832619dfdc11b88, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30f0a2cce37dcb040b81b6d48d1affa1, type: 2}
   m_IsPrefabAsset: 0
@@ -7605,6 +7675,11 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 64045174788834626, guid: 30f0a2cce37dcb040b81b6d48d1affa1,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300002, guid: c402411535f7b5e46832619dfdc11b88, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30f0a2cce37dcb040b81b6d48d1affa1, type: 2}
   m_IsPrefabAsset: 0
@@ -7962,6 +8037,11 @@ Prefab:
       propertyPath: MinYDistance
       value: -27
       objectReference: {fileID: 0}
+    - target: {fileID: 64045174788834626, guid: 30f0a2cce37dcb040b81b6d48d1affa1,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300002, guid: c402411535f7b5e46832619dfdc11b88, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30f0a2cce37dcb040b81b6d48d1affa1, type: 2}
   m_IsPrefabAsset: 0
@@ -8152,6 +8232,11 @@ Prefab:
       propertyPath: MinYDistance
       value: -28.8
       objectReference: {fileID: 0}
+    - target: {fileID: 64045174788834626, guid: 30f0a2cce37dcb040b81b6d48d1affa1,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300002, guid: c402411535f7b5e46832619dfdc11b88, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30f0a2cce37dcb040b81b6d48d1affa1, type: 2}
   m_IsPrefabAsset: 0
@@ -8503,6 +8588,11 @@ Prefab:
       propertyPath: MinYDistance
       value: -27
       objectReference: {fileID: 0}
+    - target: {fileID: 64045174788834626, guid: 30f0a2cce37dcb040b81b6d48d1affa1,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300002, guid: c402411535f7b5e46832619dfdc11b88, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30f0a2cce37dcb040b81b6d48d1affa1, type: 2}
   m_IsPrefabAsset: 0
@@ -8621,6 +8711,11 @@ Prefab:
       propertyPath: MinYDistance
       value: -27
       objectReference: {fileID: 0}
+    - target: {fileID: 64045174788834626, guid: 30f0a2cce37dcb040b81b6d48d1affa1,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300002, guid: c402411535f7b5e46832619dfdc11b88, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30f0a2cce37dcb040b81b6d48d1affa1, type: 2}
   m_IsPrefabAsset: 0
@@ -9486,6 +9581,11 @@ Prefab:
       propertyPath: MinYDistance
       value: -27
       objectReference: {fileID: 0}
+    - target: {fileID: 64045174788834626, guid: 30f0a2cce37dcb040b81b6d48d1affa1,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300002, guid: c402411535f7b5e46832619dfdc11b88, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30f0a2cce37dcb040b81b6d48d1affa1, type: 2}
   m_IsPrefabAsset: 0
@@ -9682,6 +9782,11 @@ Prefab:
       propertyPath: MinYDistance
       value: -27
       objectReference: {fileID: 0}
+    - target: {fileID: 64045174788834626, guid: 30f0a2cce37dcb040b81b6d48d1affa1,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300002, guid: c402411535f7b5e46832619dfdc11b88, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30f0a2cce37dcb040b81b6d48d1affa1, type: 2}
   m_IsPrefabAsset: 0
@@ -10468,6 +10573,11 @@ Prefab:
       propertyPath: MinYDistance
       value: -27
       objectReference: {fileID: 0}
+    - target: {fileID: 64045174788834626, guid: 30f0a2cce37dcb040b81b6d48d1affa1,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300002, guid: c402411535f7b5e46832619dfdc11b88, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30f0a2cce37dcb040b81b6d48d1affa1, type: 2}
   m_IsPrefabAsset: 0
@@ -11300,8 +11410,8 @@ GameObject:
   - component: {fileID: 1735744650}
   - component: {fileID: 1735744649}
   m_Layer: 0
-  m_Name: Cylinder
-  m_TagString: Untagged
+  m_Name: Bridge
+  m_TagString: Bridge
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11367,12 +11477,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1735744648}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: -49.92, y: -3.73, z: 0.38}
-  m_LocalScale: {x: 1, y: 3.6636288, z: 1}
+  m_LocalScale: {x: 1, y: 3.6636307, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_Father: {fileID: 1953871958}
+  m_RootOrder: 64
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!114 &1744815095 stripped
 MonoBehaviour:
@@ -11453,8 +11563,8 @@ GameObject:
   - component: {fileID: 1810308552}
   - component: {fileID: 1810308551}
   m_Layer: 0
-  m_Name: Cylinder (2)
-  m_TagString: Untagged
+  m_Name: Bridge
+  m_TagString: Bridge
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11520,12 +11630,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1810308550}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: -48.06, y: -3.73, z: 0.38}
-  m_LocalScale: {x: 1, y: 3.6636288, z: 1}
+  m_LocalScale: {x: 1, y: 3.6636307, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_Father: {fileID: 1953871958}
+  m_RootOrder: 66
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1001 &1811697251
 Prefab:
@@ -11984,6 +12094,11 @@ Prefab:
       propertyPath: MinYDistance
       value: -27
       objectReference: {fileID: 0}
+    - target: {fileID: 64045174788834626, guid: 30f0a2cce37dcb040b81b6d48d1affa1,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300002, guid: c402411535f7b5e46832619dfdc11b88, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30f0a2cce37dcb040b81b6d48d1affa1, type: 2}
   m_IsPrefabAsset: 0
@@ -12184,6 +12299,9 @@ Transform:
   - {fileID: 1865344790}
   - {fileID: 1511177985}
   - {fileID: 367402851}
+  - {fileID: 1735744652}
+  - {fileID: 413416491}
+  - {fileID: 1810308554}
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -12723,6 +12841,11 @@ Prefab:
       propertyPath: MinYDistance
       value: -27
       objectReference: {fileID: 0}
+    - target: {fileID: 64045174788834626, guid: 30f0a2cce37dcb040b81b6d48d1affa1,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300002, guid: c402411535f7b5e46832619dfdc11b88, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30f0a2cce37dcb040b81b6d48d1affa1, type: 2}
   m_IsPrefabAsset: 0

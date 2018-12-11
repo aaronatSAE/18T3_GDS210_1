@@ -19,6 +19,7 @@ public class Enemy : MonoBehaviour
     private float PatrolMax;
     private float PatrolMin;
     public bool Dead;
+    private AudioSource SFX;
 
     void Start()
     {
@@ -28,6 +29,22 @@ public class Enemy : MonoBehaviour
         PatrolMax = ThisTransform.position.x + Max;
         PatrolMin = ThisTransform.position.x - Min;
         Fade = GetComponent<FadeOut>();
+        SFX = GetComponent<AudioSource>();
+
+        if(ThisTransform.name == "Shroomy")
+        {
+            SFX.clip = GameLoader.GameInstance.ShroomySFX[0];
+        }
+        else
+        {
+            SFX.clip = GameLoader.GameInstance.KnightySFX[0];
+        }
+
+        SFX.volume = GameLoader.GameInstance.SFXVolume.value;
+
+        SFX.loop = true;
+
+        SFX.Play();
     }
 
     private void OnCollisionEnter(Collision CollisionInfo)
@@ -81,19 +98,15 @@ public class Enemy : MonoBehaviour
     {
         ThisTransform.Translate(new Vector3(Speed, 0, 0) * Time.deltaTime);
 
-        if (ThisTransform.name == "Shroomy")
+        SFX.volume = GameLoader.GameInstance.SFXVolume.value;
+
+        if(Time.timeScale == 0)
         {
-            if (!GameLoader.GameInstance.AVManager.transform.GetChild(1).GetComponent<AudioSource>().isPlaying)
-            {
-                GameLoader.GameInstance.AVManager.transform.GetChild(1).GetComponent<AudioSource>().PlayOneShot(GameLoader.GameInstance.ShroomySFX[0]);
-            }
+            SFX.Pause();
         }
         else
         {
-            if (!GameLoader.GameInstance.AVManager.transform.GetChild(2).GetComponent<AudioSource>().isPlaying)
-            {
-                GameLoader.GameInstance.AVManager.transform.GetChild(2).GetComponent<AudioSource>().PlayOneShot(GameLoader.GameInstance.KnightySFX[0]);
-            }
+            SFX.UnPause();
         }
 
         if (Infinite != true)

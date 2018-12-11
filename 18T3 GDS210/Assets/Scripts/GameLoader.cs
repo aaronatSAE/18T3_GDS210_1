@@ -12,7 +12,6 @@ public class GameLoader : MonoBehaviour
     public GameObject Options;
     public GameObject Accessibility;
     public GameObject AVManager;
-    public GameObject ScoreManager;
 
     public KeyCode CharacterMoveLeft;
     public KeyCode CharacterMoveRight;
@@ -95,8 +94,6 @@ public class GameLoader : MonoBehaviour
         VideoPlayer = AVManager.transform.GetChild(4).GetComponent<VideoPlayer>();
         VideoCamera = AVManager.transform.GetChild(4).GetComponent<Camera>();
 
-        ScoreManager = GameObject.Find("ScoreManager");
-
         Resolutions = Screen.resolutions;
 
         if (Resolutions != null)
@@ -125,6 +122,12 @@ public class GameLoader : MonoBehaviour
 
         Options.SetActive(false);
         Accessibility.SetActive(false);
+
+        if(SceneManager.GetActiveScene().buildIndex == 2 || SceneManager.GetActiveScene().buildIndex == 3)
+        {
+            WindowSize.transform.GetChild(3).gameObject.SetActive(false);
+            WindowSize.transform.GetChild(4).gameObject.SetActive(false);
+        }
 
         Load();
         //called second
@@ -225,18 +228,10 @@ public class GameLoader : MonoBehaviour
 
     public void OnOptionsButtonClick()
     {
-        if(SceneManager.GetActiveScene().buildIndex == 1)
+        if(SceneManager.GetActiveScene().buildIndex > 1)
         {
             Options.SetActive(true);
             ResolutionDropdown.Select();
-            PlayButton.enabled = false;
-            OptionsButton.enabled = false;
-            AccessibilityButton.enabled = false;
-            QuitButton.enabled = false;
-        }
-        else
-        {
-            Options.SetActive(true);
             OptionsButton.gameObject.SetActive(false);
             AccessibilityButton.gameObject.SetActive(false);
             ResolutionDropdown.Select();
@@ -246,18 +241,10 @@ public class GameLoader : MonoBehaviour
 
     public void OnAccessibilityButtonClick()
     {
-        if (SceneManager.GetActiveScene().buildIndex == 1)
+        if (SceneManager.GetActiveScene().buildIndex > 1)
         {
             Accessibility.SetActive(true);
             LeftButton.Select();
-            PlayButton.enabled = false;
-            OptionsButton.enabled = false;
-            AccessibilityButton.enabled = false;
-            QuitButton.enabled = false;
-        }
-        else
-        {
-            Accessibility.SetActive(true);
             OptionsButton.gameObject.SetActive(false);
             AccessibilityButton.gameObject.SetActive(false);
             LeftButton.Select();
@@ -301,7 +288,6 @@ public class GameLoader : MonoBehaviour
         }
         else
         {
-            Debug.Log("in game");
             Options.SetActive(false);
             Accessibility.SetActive(false);
             OptionsButton.gameObject.SetActive(true);

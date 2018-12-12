@@ -19,7 +19,7 @@ public class Gem : MonoBehaviour
 		
 	}
 
-    private void OnCollisionEnter(Collision TriggerInfo)
+    private void OnTriggerEnter(Collision TriggerInfo)
     {
         if (TriggerInfo.transform.tag == "Player")
         {

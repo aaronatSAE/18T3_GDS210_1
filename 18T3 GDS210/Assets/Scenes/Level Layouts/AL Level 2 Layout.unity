@@ -1216,53 +1216,6 @@ MonoBehaviour:
   ZAxis: 0
   MaxZDistance: 0
   MinZDistance: 0
---- !u!1001 &147061431
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 546157196}
-    m_Modifications:
-    - target: {fileID: 4262613359086198, guid: df94cedd65d36eb4cb53154736e87315, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 27.93
-      objectReference: {fileID: 0}
-    - target: {fileID: 4262613359086198, guid: df94cedd65d36eb4cb53154736e87315, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 33.13
-      objectReference: {fileID: 0}
-    - target: {fileID: 4262613359086198, guid: df94cedd65d36eb4cb53154736e87315, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4262613359086198, guid: df94cedd65d36eb4cb53154736e87315, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4262613359086198, guid: df94cedd65d36eb4cb53154736e87315, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4262613359086198, guid: df94cedd65d36eb4cb53154736e87315, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4262613359086198, guid: df94cedd65d36eb4cb53154736e87315, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4262613359086198, guid: df94cedd65d36eb4cb53154736e87315, type: 2}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: df94cedd65d36eb4cb53154736e87315, type: 2}
-  m_IsPrefabAsset: 0
---- !u!4 &147061432 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4262613359086198, guid: df94cedd65d36eb4cb53154736e87315,
-    type: 2}
-  m_PrefabInternal: {fileID: 147061431}
 --- !u!1 &148998722 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1438805537869764, guid: d77079c93dcdd764d9c3a0a92197d0ef,
@@ -2679,7 +2632,6 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 147061432}
   - {fileID: 1838267559}
   m_Father: {fileID: 0}
   m_RootOrder: 9

@@ -1,31 +1,14 @@
 fileFormatVersion: 2
-guid: d389c077b0da2824fb2894def556e038
+guid: 7181f6c652914b6438ce4c195c60a115
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
-    100002: pSphere1
-    100004: pSphere2
-    100006: pSphere3
-    100008: Tree_Trunk
     400000: //RootNode
-    400002: pSphere1
-    400004: pSphere2
-    400006: pSphere3
-    400008: Tree_Trunk
     2100000: lambert1
-    2300000: pSphere1
-    2300002: pSphere2
-    2300004: pSphere3
-    2300006: Tree_Trunk
-    3300000: pSphere1
-    3300002: pSphere2
-    3300004: pSphere3
-    3300006: Tree_Trunk
-    4300000: Tree_Trunk
-    4300002: pSphere1
-    4300004: pSphere2
-    4300006: pSphere3
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: pCylinder1
   externalObjects: {}
   materials:
     importMaterials: 1

@@ -11,9 +11,11 @@ public class CutSceneControl : MonoBehaviour
     public Canvas WindowSize;
     public GameObject[] CutSceneOrder;
     public Sprite[] CutSceneSprite;
-    public Image[] CutSceneImage;
+    public Color[] CutSceneColour;
     private string Text;
     private int i;
+    private int j;
+    public float FadeTimer;
 
     SpVoice Voice = new SpVoice();
 
@@ -25,51 +27,82 @@ public class CutSceneControl : MonoBehaviour
         {
             CutSceneOrder[i] = new GameObject("Scene " + i);
             CutSceneOrder[i].transform.SetParent(WindowSize.transform);
-            CutSceneOrder[i].AddComponent<Image>();
-            CutSceneOrder[i].GetComponent<Image>().rectTransform.sizeDelta = WindowSize.GetComponent<RectTransform>().sizeDelta;
-            CutSceneOrder[i].GetComponent<Image>().rectTransform.localPosition = new Vector3(0, 0, 0);
-            CutSceneOrder[i].GetComponent<Image>().sprite = CutSceneSprite[i];
-            CutSceneImage[i] = CutSceneOrder[i].GetComponent<Image>();
-
+            CutSceneOrder[i].AddComponent<SpriteRenderer>();
+            CutSceneOrder[i].GetComponent<SpriteRenderer>().sprite = CutSceneSprite[i];
+            CutSceneColour[i] = CutSceneOrder[i].GetComponent<SpriteRenderer>().color;
         }
 
         i = 0;
+        j = i + 1;
         Text = "hello world";
-        StartCoroutine(Fade());
+        StartCoroutine(FadeIn());
     }
 
-    IEnumerator Fade()
+    private IEnumerator FadeIn()
     {
-        StopCoroutine(CrossFade());
-        yield return new WaitForSeconds(1.0f);
-        StartCoroutine(CrossFade());
+        StopCoroutine(FadeOut());
 
-    }
-
-    IEnumerator CrossFade()
-    {
-        StopCoroutine(Fade());
-        yield return new WaitForSeconds(1.0f);
-
-        CutSceneImage[i].CrossFadeAlpha(0, 2.0f, false);
-
-        if (i < CutSceneOrder.Length - 1)
+        while (CutSceneColour[i].a > 0.0f)
         {
-            i++;
-            CutSceneImage[i].CrossFadeAlpha(1, 2.0f, false);
-            StartCoroutine(Fade());
+            CutSceneColour[i].a -= Time.deltaTime / FadeTimer;
+            CutSceneColour[j].a += Time.deltaTime / FadeTimer;
+
+            CutSceneOrder[i].GetComponent<SpriteRenderer>().color = CutSceneColour[i];
+            CutSceneOrder[j].GetComponent<SpriteRenderer>().color = CutSceneColour[j];
+
+            if (CutSceneColour[i].a <= 0.0f)
+            {
+                CutSceneColour[i].a = 0.0f;
+            }
+
+            CutSceneOrder[i].GetComponent<SpriteRenderer>().color = CutSceneColour[i];
+            CutSceneOrder[j].GetComponent<SpriteRenderer>().color = CutSceneColour[j];
+
+            yield return new WaitForSeconds(0);
+        }
+
+        yield return new WaitForSeconds(0);
+
+        if(j >= CutSceneOrder.Length)
+        {
+            SceneManager.LoadScene(1, LoadSceneMode.Single);
         }
         else
         {
-            yield return new WaitForSeconds(2);
-            if (SceneManager.GetActiveScene().buildIndex < SceneManager.sceneCountInBuildSettings)
+            StartCoroutine(FadeOut());
+        }
+    }
+
+    private IEnumerator FadeOut()
+    {
+        StopCoroutine(FadeIn());
+
+        while (CutSceneColour[j].a > 0.0f)
+        {
+            CutSceneColour[i].a += Time.deltaTime / FadeTimer;
+            CutSceneColour[j].a -= Time.deltaTime / FadeTimer;
+
+            CutSceneOrder[i].GetComponent<SpriteRenderer>().color = CutSceneColour[i];
+            CutSceneOrder[j].GetComponent<SpriteRenderer>().color = CutSceneColour[j];
+
+            if (CutSceneColour[j].a <= 0.0f)
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1, LoadSceneMode.Single);
+                CutSceneColour[j].a = 0.0f;
             }
-            else
-            {
-                SceneManager.LoadScene(1, LoadSceneMode.Single);
-            }
+
+            CutSceneOrder[i].GetComponent<SpriteRenderer>().color = CutSceneColour[i];
+            CutSceneOrder[j].GetComponent<SpriteRenderer>().color = CutSceneColour[j];
+
+            yield return new WaitForSeconds(0);
+        }
+
+        yield return new WaitForSeconds(0);
+
+        if(i < CutSceneOrder.Length)
+        {
+            i++;
+            j = i + 1;
+            StartCoroutine(FadeIn());
         }
     }
 

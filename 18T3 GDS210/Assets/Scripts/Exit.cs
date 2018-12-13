@@ -69,7 +69,6 @@ public class Exit : MonoBehaviour
         yield return new WaitForSeconds(0);
 
         StartCoroutine(FadeOut());
-        
     }
 
     private IEnumerator FadeOut()

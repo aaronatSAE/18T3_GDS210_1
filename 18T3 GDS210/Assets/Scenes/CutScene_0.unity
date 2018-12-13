@@ -345,19 +345,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de59666a1adb3204fb854c6d0cccb1d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvas: {fileID: 0}
+  WindowSize: {fileID: 0}
   CutSceneOrder:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   CutSceneSprite:
-  - {fileID: 21300000, guid: 68f0ba290b2bbae409ddd0be99ab3be0, type: 3}
-  - {fileID: 21300000, guid: 18d7581f1637fe84e9cebd052e93bb9a, type: 3}
-  - {fileID: 21300000, guid: 4faf25777388bb644980abf7b3576261, type: 3}
-  CutSceneImage:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: d3268874b91ce254a93cce42bcac4f9c, type: 3}
+  - {fileID: 21300000, guid: ceb18ed8256c67146ba7db7476c294ca, type: 3}
+  - {fileID: 21300000, guid: e9def159ff6c79f4db62bf0cfa746285, type: 3}
+  CutSceneColour:
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  FadeTimer: 1
 --- !u!4 &1877232669
 Transform:
   m_ObjectHideFlags: 0

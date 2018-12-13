@@ -290,7 +290,7 @@ MonoBehaviour:
   LivesRemaining: 2
   RespawnsRemaining: 2
   Score: 0
-  JumpHeight: 372
+  JumpHeight: 390
   RunSpeed: 5
   Knockback: 150
   IsGrounded: 0

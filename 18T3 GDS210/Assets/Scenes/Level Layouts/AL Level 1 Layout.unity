@@ -18906,6 +18906,36 @@ Prefab:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 4300002, guid: c402411535f7b5e46832619dfdc11b88, type: 3}
+    - target: {fileID: 114687101734838772, guid: 30f0a2cce37dcb040b81b6d48d1affa1,
+        type: 2}
+      propertyPath: Speed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114687101734838772, guid: 30f0a2cce37dcb040b81b6d48d1affa1,
+        type: 2}
+      propertyPath: MaxXDistance
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114687101734838772, guid: 30f0a2cce37dcb040b81b6d48d1affa1,
+        type: 2}
+      propertyPath: MinXDistance
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114687101734838772, guid: 30f0a2cce37dcb040b81b6d48d1affa1,
+        type: 2}
+      propertyPath: MaxYDistance
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114687101734838772, guid: 30f0a2cce37dcb040b81b6d48d1affa1,
+        type: 2}
+      propertyPath: MinYDistance
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114687101734838772, guid: 30f0a2cce37dcb040b81b6d48d1affa1,
+        type: 2}
+      propertyPath: YAxis
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30f0a2cce37dcb040b81b6d48d1affa1, type: 2}
   m_IsPrefabAsset: 0

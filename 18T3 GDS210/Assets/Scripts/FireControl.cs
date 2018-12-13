@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FireControl : MonoBehaviour
 {
@@ -37,14 +38,28 @@ public class FireControl : MonoBehaviour
         {
             if (!TrownObjectList[i].activeInHierarchy)
             {
-                TrownObjectList[i].SetActive(true);
-                TrownObjectList[i].transform.position = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
-                TrownObjectList[i].GetComponent<Rigidbody>().velocity = transform.right * Speed;
+                if(this.transform.parent.GetComponent<SpriteRenderer>().flipX == true)
+                {
+                    TrownObjectList[i].SetActive(true);
+
+                    TrownObjectList[i].transform.position = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
+                    TrownObjectList[i].GetComponent<Rigidbody>().velocity = Vector3.right * Speed;
+                    TrownObjectList[i].transform.GetChild(0).GetComponent<SpriteRenderer>().flipX = false;
+                }
+                else
+                {
+                    TrownObjectList[i].SetActive(true);
+
+                    TrownObjectList[i].transform.position = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
+                    TrownObjectList[i].GetComponent<Rigidbody>().velocity = Vector3.left * Speed;
+                    TrownObjectList[i].transform.GetChild(0).GetComponent<SpriteRenderer>().flipX = true;
+                }
                 break;
             }
         }
 
         AvailableScrolls -= 1;
+        GameLoader.GameInstance.WindowSize.transform.GetChild(5).GetChild(5).GetChild(0).GetComponent<Text>().text = " x " + AvailableScrolls;
     }
 
     void Update()

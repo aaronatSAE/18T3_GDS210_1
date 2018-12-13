@@ -54,6 +54,7 @@ public class Player : MonoBehaviour
 
         ScoreText.text = "Score: " + ScoreManager.LevelScore;
         this.transform.GetChild(1).GetComponent<FireControl>().AvailableScrolls = ScoreManager.ScrollCount;
+        GameLoader.GameInstance.WindowSize.transform.GetChild(5).GetChild(5).GetChild(0).GetComponent<Text>().text = " x " + this.transform.GetChild(1).GetComponent<FireControl>().AvailableScrolls;
 
         for (int i = 0; i < LivesRemaining; i++)
         {
@@ -115,6 +116,9 @@ public class Player : MonoBehaviour
             }
 
             Sprite.flipX = false;
+
+            ThisTransform.GetChild(1).rotation = Quaternion.Euler(ThisTransform.GetChild(1).rotation.x, 180.0f, ThisTransform.GetChild(1).rotation.z);
+            ThisTransform.GetChild(1).localPosition = new Vector3(-1.0f, ThisTransform.GetChild(1).localPosition.y, ThisTransform.GetChild(1).localPosition.z);
         }
 
         if (Input.GetKey(GameLoader.GameInstance.CharacterMoveRight))
@@ -128,6 +132,9 @@ public class Player : MonoBehaviour
             }
 
             Sprite.flipX = true;
+
+            ThisTransform.GetChild(1).rotation = Quaternion.Euler(ThisTransform.GetChild(1).rotation.x, 0.0f, ThisTransform.GetChild(1).rotation.z);
+            ThisTransform.GetChild(1).localPosition = new Vector3(1.0f, ThisTransform.GetChild(1).localPosition.y, ThisTransform.GetChild(1).localPosition.z);
         }
 
         switch (LivesRemaining)

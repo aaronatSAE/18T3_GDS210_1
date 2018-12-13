@@ -19,8 +19,9 @@ public class Gem : MonoBehaviour
 		
 	}
 
-    private void OnTriggerEnter(Collision TriggerInfo)
+    private void OnTriggerEnter(Collider TriggerInfo)
     {
+        Debug.Log(TriggerInfo.tag);
         if (TriggerInfo.transform.tag == "Player")
         {
             Player.GameInstance.Score += PointValue;

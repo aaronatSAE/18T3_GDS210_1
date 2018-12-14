@@ -27,9 +27,14 @@ public class CutSceneControl : MonoBehaviour
         {
             CutSceneOrder[i] = new GameObject("Scene " + i);
             CutSceneOrder[i].transform.SetParent(WindowSize.transform);
-            CutSceneOrder[i].AddComponent<SpriteRenderer>();
-            CutSceneOrder[i].GetComponent<SpriteRenderer>().sprite = CutSceneSprite[i];
-            CutSceneColour[i] = CutSceneOrder[i].GetComponent<SpriteRenderer>().color;
+            CutSceneOrder[i].GetComponent<Transform>().localPosition = Vector3.zero;
+            CutSceneOrder[i].AddComponent<RectTransform>();
+            CutSceneOrder[i].GetComponent<RectTransform>().anchorMax = new Vector2(1, 1);
+            CutSceneOrder[i].GetComponent<RectTransform>().anchorMin = new Vector2(0, 0);
+            CutSceneOrder[i].GetComponent<RectTransform>().sizeDelta = WindowSize.GetComponent<RectTransform>().sizeDelta;
+            //CutSceneOrder[i].AddComponent<SpriteRenderer>();
+            //CutSceneOrder[i].GetComponent<SpriteRenderer>().sprite = CutSceneSprite[i];
+            //CutSceneColour[i] = CutSceneOrder[i].GetComponent<SpriteRenderer>().color;
         }
 
         i = 0;

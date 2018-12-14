@@ -351,9 +351,9 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   CutSceneSprite:
-  - {fileID: 21300000, guid: d3268874b91ce254a93cce42bcac4f9c, type: 3}
-  - {fileID: 21300000, guid: ceb18ed8256c67146ba7db7476c294ca, type: 3}
-  - {fileID: 21300000, guid: e9def159ff6c79f4db62bf0cfa746285, type: 3}
+  - {fileID: 21300000, guid: cc8d4bc047db2734d87dc5c33fe9aa26, type: 3}
+  - {fileID: 21300000, guid: 4225b307c0012c842aecfbd05c280a11, type: 3}
+  - {fileID: 21300000, guid: 6b2dd14051601dc4982b7eceb59a26f9, type: 3}
   CutSceneColour:
   - {r: 0, g: 0, b: 0, a: 0}
   - {r: 0, g: 0, b: 0, a: 0}

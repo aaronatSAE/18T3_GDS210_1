@@ -123,10 +123,10 @@ public class GameLoader : MonoBehaviour
         Options.SetActive(false);
         Accessibility.SetActive(false);
 
-        if(SceneManager.GetActiveScene().buildIndex == 2 || SceneManager.GetActiveScene().buildIndex == 3)
+        if (SceneManager.GetActiveScene().buildIndex == 2 || SceneManager.GetActiveScene().buildIndex == 3)
         {
-            WindowSize.transform.GetChild(3).gameObject.SetActive(false);
-            WindowSize.transform.GetChild(4).gameObject.SetActive(false);
+            OptionsButton.gameObject.SetActive(false);
+            AccessibilityButton.gameObject.SetActive(false);
         }
 
         Load();

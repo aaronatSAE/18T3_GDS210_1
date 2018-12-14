@@ -346,14 +346,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WindowSize: {fileID: 0}
+  CutScenePrefab: {fileID: 114544820218839750, guid: eedb143330b969a43989d06b41d1a810,
+    type: 2}
   CutSceneOrder:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   CutSceneSprite:
-  - {fileID: 21300000, guid: cc8d4bc047db2734d87dc5c33fe9aa26, type: 3}
-  - {fileID: 21300000, guid: 4225b307c0012c842aecfbd05c280a11, type: 3}
   - {fileID: 21300000, guid: 6b2dd14051601dc4982b7eceb59a26f9, type: 3}
+  - {fileID: 21300000, guid: 4225b307c0012c842aecfbd05c280a11, type: 3}
+  - {fileID: 21300000, guid: cc8d4bc047db2734d87dc5c33fe9aa26, type: 3}
   CutSceneColour:
   - {r: 0, g: 0, b: 0, a: 0}
   - {r: 0, g: 0, b: 0, a: 0}
@@ -420,9 +422,9 @@ MonoBehaviour:
   m_UiScaleMode: 0
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96

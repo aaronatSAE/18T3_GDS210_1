@@ -9,7 +9,8 @@ using UnityEngine.SceneManagement;
 public class CutSceneControl : MonoBehaviour
 {
     public Canvas WindowSize;
-    public GameObject[] CutSceneOrder;
+    public Image CutScenePrefab;
+    public Image[] CutSceneOrder;
     public Sprite[] CutSceneSprite;
     public Color[] CutSceneColour;
     private string Text;
@@ -25,16 +26,12 @@ public class CutSceneControl : MonoBehaviour
 
         for (i = 0; i < CutSceneOrder.Length; i++)
         {
-            CutSceneOrder[i] = new GameObject("Scene " + i);
+            CutSceneOrder[i] = Instantiate(CutScenePrefab, transform.position, transform.rotation);
             CutSceneOrder[i].transform.SetParent(WindowSize.transform);
-            CutSceneOrder[i].GetComponent<Transform>().localPosition = Vector3.zero;
-            CutSceneOrder[i].AddComponent<RectTransform>();
-            CutSceneOrder[i].GetComponent<RectTransform>().anchorMax = new Vector2(1, 1);
-            CutSceneOrder[i].GetComponent<RectTransform>().anchorMin = new Vector2(0, 0);
-            CutSceneOrder[i].GetComponent<RectTransform>().sizeDelta = WindowSize.GetComponent<RectTransform>().sizeDelta;
-            //CutSceneOrder[i].AddComponent<SpriteRenderer>();
-            //CutSceneOrder[i].GetComponent<SpriteRenderer>().sprite = CutSceneSprite[i];
-            //CutSceneColour[i] = CutSceneOrder[i].GetComponent<SpriteRenderer>().color;
+            CutSceneOrder[i].GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
+            CutSceneOrder[i].GetComponent<Image>().sprite = CutSceneSprite[i];
+            CutSceneOrder[i].GetComponent<RectTransform>().sizeDelta = new Vector2(0, 0);
+            CutSceneColour[i] = CutSceneOrder[i].GetComponent<Image>().color;
         }
 
         i = 0;
@@ -52,16 +49,16 @@ public class CutSceneControl : MonoBehaviour
             CutSceneColour[i].a -= Time.deltaTime / FadeTimer;
             CutSceneColour[j].a += Time.deltaTime / FadeTimer;
 
-            CutSceneOrder[i].GetComponent<SpriteRenderer>().color = CutSceneColour[i];
-            CutSceneOrder[j].GetComponent<SpriteRenderer>().color = CutSceneColour[j];
+            CutSceneOrder[i].color = CutSceneColour[i];
+            CutSceneOrder[j].color = CutSceneColour[j];
 
             if (CutSceneColour[i].a <= 0.0f)
             {
                 CutSceneColour[i].a = 0.0f;
             }
 
-            CutSceneOrder[i].GetComponent<SpriteRenderer>().color = CutSceneColour[i];
-            CutSceneOrder[j].GetComponent<SpriteRenderer>().color = CutSceneColour[j];
+            CutSceneOrder[i].color = CutSceneColour[i];
+            CutSceneOrder[j].color = CutSceneColour[j];
 
             yield return new WaitForSeconds(0);
         }
@@ -87,16 +84,16 @@ public class CutSceneControl : MonoBehaviour
             CutSceneColour[i].a += Time.deltaTime / FadeTimer;
             CutSceneColour[j].a -= Time.deltaTime / FadeTimer;
 
-            CutSceneOrder[i].GetComponent<SpriteRenderer>().color = CutSceneColour[i];
-            CutSceneOrder[j].GetComponent<SpriteRenderer>().color = CutSceneColour[j];
+            CutSceneOrder[i].color = CutSceneColour[i];
+            CutSceneOrder[j].color = CutSceneColour[j];
 
             if (CutSceneColour[j].a <= 0.0f)
             {
                 CutSceneColour[j].a = 0.0f;
             }
 
-            CutSceneOrder[i].GetComponent<SpriteRenderer>().color = CutSceneColour[i];
-            CutSceneOrder[j].GetComponent<SpriteRenderer>().color = CutSceneColour[j];
+            CutSceneOrder[i].color = CutSceneColour[i];
+            CutSceneOrder[j].color = CutSceneColour[j];
 
             yield return new WaitForSeconds(0);
         }

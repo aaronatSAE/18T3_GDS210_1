@@ -228,12 +228,16 @@ public class GameLoader : MonoBehaviour
 
     public void OnOptionsButtonClick()
     {
-        if(SceneManager.GetActiveScene().buildIndex > 1)
+        if(SceneManager.GetActiveScene().buildIndex > 0)
         {
             Options.SetActive(true);
             ResolutionDropdown.Select();
-            OptionsButton.gameObject.SetActive(false);
-            AccessibilityButton.gameObject.SetActive(false);
+            PlayButton.enabled = false;
+            OptionsButton.enabled = false;
+            AccessibilityButton.enabled = false;
+            QuitButton.enabled = false;
+            //OptionsButton.gameObject.SetActive(false);
+            //AccessibilityButton.gameObject.SetActive(false);
             ResolutionDropdown.Select();
             Menu.enabled = false;
         }
@@ -241,12 +245,16 @@ public class GameLoader : MonoBehaviour
 
     public void OnAccessibilityButtonClick()
     {
-        if (SceneManager.GetActiveScene().buildIndex > 1)
+        if (SceneManager.GetActiveScene().buildIndex > 0)
         {
             Accessibility.SetActive(true);
             LeftButton.Select();
-            OptionsButton.gameObject.SetActive(false);
-            AccessibilityButton.gameObject.SetActive(false);
+            PlayButton.enabled = false;
+            OptionsButton.enabled = false;
+            AccessibilityButton.enabled = false;
+            QuitButton.enabled = false;
+            //OptionsButton.gameObject.SetActive(false);
+            //AccessibilityButton.gameObject.SetActive(false);
             LeftButton.Select();
             Menu.enabled = false;
         }
